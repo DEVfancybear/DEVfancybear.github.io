@@ -1,0 +1,52 @@
+html body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #2be6c9;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    font-size: 4em;
+    cursor: pointer;
+    width: 100%;
+    padding: 20px;
+    line-height: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+@keyframes menu {
+    0% {background-color: bisque; color: coral;}
+    25% {background-color: aqua; color: chartreuse;}
+    50% {background-color: chartreuse; color: darkblue;}
+    75% {background-color: deeppink; color: forestgreen;}
+    100% {background-color: darkgreen; color: crimson;}
+}
+
+.icon1 {
+    margin: 25px 0 10px 0;
+    animation: menu 6s ease infinite;
+    
+    
+}
+
+.icon2 {
+    margin: 25px 0 10px 0;
+    animation: menu 6s ease infinite;
+    
+    
+}
+
+.icon3 {
+    margin: 25px 0 10px 0;
+    animation: menu 6s ease infinite;
+    
+    
+}

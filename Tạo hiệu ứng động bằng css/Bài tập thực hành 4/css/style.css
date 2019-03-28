@@ -1,0 +1,85 @@
+html body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: lightblue;
+}
+
+* {
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.menu {
+    cursor: pointer;
+    margin: auto;
+    max-width: 1000px;
+}
+
+@keyframes title {
+    0% {background-color: antiquewhite; color: aqua;}
+    25% {background-color: bisque; color: blueviolet;}
+    50% {background-color: burlywood; color: chartreuse;}
+    75% {background-color: darkcyan; color: coral;}
+    100% {background-color: darkmagenta; color: deeppink;}
+}
+
+
+h1 {
+    animation: title 10s ease infinite;
+    text-align: center;
+}
+
+.col {
+    float: left;
+    width: 33.333333%;
+    padding: 15px;
+    position: relative;
+}
+
+.thumb {
+    padding: 4px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.thumb img {
+    opacity: 1;
+    vertical-align: middle;
+    transition: opacity 0.5s linear;
+
+}
+
+img {
+    width: 200px;
+    height: 200px;
+}
+
+.thumb:hover img {
+    opacity: 0.5;
+    max-width: 70%;
+    transform: scale(1.2);
+}
+
+.thumb:hover {
+    transform: translate(0, -5px);
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.2);
+    
+}
+
+
+.footer {
+    font-size: 30px;
+    color: red;
+    float: left;
+    animation: text 5s 3s ease-in infinite;
+}
+
+@keyframes text {
+    from {transform: translateX(150px)}
+    to {transform: translateX(700px)}
+    
+}
