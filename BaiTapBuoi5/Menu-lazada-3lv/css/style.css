@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+/* Body */
+
+.menu ul {
+    text-align: center;
+    background-color: dimgrey;
+}
+
+.menu ul li {
+    display: inline-table;
+    padding: 8px 16px;
+    height: 40px;
+    line-height: 40px;
+    width: 150px;
+    position: relative;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    display: block;
+    color: chartreuse;
+}
+
+.menu ul li:hover {
+    background: yellow;
+}
+
+/* End body */
+
+
+
+/* Dropdown menu lv1 */
+.menu ul li > .yasuo {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.yasuo li {
+    position: relative;
+}
+
+.yasuo li a {
+    width: 150px;
+}
+
+.menu ul li:hover .yasuo {
+    display: block;
+}
+
+/* End dropdown menu lv1 */
+
+
+/* Dropdown menu lv2 */
+
+.riven {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.yasuo li:hover .riven {
+    display: block;
+}
+
+.zed {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.yasuo li:hover .zed {
+    display: block;
+}
+
+.yi {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.yasuo li:hover .yi {
+    display: block;
+}
+
+.vayne {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.yasuo li:hover .vayne {
+    display: block;
+}
+
+.kalista {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.yasuo li:hover .kalista {
+    display: block;
+}
+
+
+.leesin {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.yasuo li:hover .leesin {
+    display: block;
+}
+
+.decade {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.yasuo li:hover .decade {
+    display: block;
+}
+
+
+.messi {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.yasuo li:hover .messi {
+    display: block;
+}
+
+.deiend {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.yasuo li:hover .deiend {
+    display: block;
+}
+
+.xinzhao {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.yasuo li:hover .xinzhao {
+    display: block;
+}
+
+.leblanc {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.yasuo li:hover .leblanc {
+    display: block;
+}
+
+.otaku {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.yasuo li:hover .otaku {
+    display: block;
+}
+
+
+/* End dropdown menu lv2 */
+
+
+
+
+/* Dropdown menu lv3 */
+
+.sentai-1 {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.send:hover .sentai-1 {
+    display: block;
+}
+
+.bigbang {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.bigbang-1:hover .bigbang {
+    display: block;
+}
+
+.cr7 {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.cr-1:hover .cr7 {
+    display: block;
+}
+
+
+.messi-1 {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+.cr-2:hover .messi-1 {
+    display: block;
+}
+
+
+/* End dropdown menu lv3 */
