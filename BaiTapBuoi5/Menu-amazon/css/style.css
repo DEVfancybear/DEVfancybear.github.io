@@ -1,0 +1,253 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 13px;
+}
+
+body {
+    margin: 0;
+    color: white;
+    font-family: arial,sans-serif;
+    background-color: #808080;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header {
+    background-color: #232f3e;
+    width: 100%;
+    position: relative;
+    white-space: nowrap;
+}
+
+.riven {
+    width: 92px;
+    height: 44px;
+    display: inline-block;
+    transform: translate(0, 10px);
+    margin-left: 10px;
+}
+
+.riven:hover {
+    border: 1px solid #aaa;
+}
+
+.zed {
+    width: 22px;
+    height: 22px;
+    overflow: hidden;
+    float: left;
+    margin-top: 11px;
+}
+
+.zed img {
+    transform: translate(-66px, -304px);
+}
+
+span.alita {
+    display: block;
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+div.alita {
+    float: left;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+nav {
+    display: inline-block;
+    margin-left: 50px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+li {
+    display: inline-block;
+    margin: 5px;
+    padding: 2px;
+    border: 1px solid #232f3e;
+}
+
+li:hover {
+    border: 1px solid #aaa;
+}
+
+.menu-sub-menu-wrapper {
+    font-weight: bold;
+    position: relative;
+}
+
+
+
+.menu-sub-menu-wrapper::after {
+    content: '\25bc';
+    display: inline-block;
+    color: #666;
+    font-size: 10px;
+    margin-left: 10px;
+}
+
+.lang {
+    height: 43px;
+    border-right: 1px solid #aaa;
+}
+
+.icon-lang {
+    width: 14px;
+    height: 14px;
+    overflow: hidden;
+}
+
+.icon-lang img {
+    transform: translate(-77px,-25px);
+}
+
+.wrapper-lang {
+    display: inline-block;
+}
+
+.group2 {
+    position: relative;
+    width: 400px;
+    float: right;
+    transform: translate(0px,15px);
+}
+
+.group2 .menu-sub-menu-wrapper::after {
+    margin-left: 0px;
+}
+
+.sign-in {
+    display: inline-block;
+}
+
+.normal-text {
+    font-weight: normal;
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.icon-cart {
+    width: 38px;
+    height: 26px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.icon-cart img {
+    transform: translate(-10px,-340px);
+}
+
+.number-of-items {
+    font-size: 16px;
+    color: orange;
+    position: absolute;
+    top: 6px;
+    left: 272px;
+}
+
+.yasuo {
+    display: inline-block;
+    width: 49.8%;
+    position: relative;
+}
+
+.soku {
+    width: 200px;
+    background-color: white;
+    color: black;
+    position: absolute;
+    top: 20px;
+    left: -1px;
+    display: none;
+    border-radius: 5px;
+}
+
+.point-up {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    transform: rotate(45deg);
+    background-color: white;
+}
+
+.toco .point-up {
+    top: -3px;
+    left: 87px;
+}
+
+.soku li {
+    display: list-item;
+     border: none; 
+}
+
+.soku li:hover {
+    text-decoration: underline;
+    color: orange;
+}
+
+.has-menu:hover .soku {
+    display: block;
+}
+
+.lang .soku {
+    top: 42px;
+    left: 0px;
+}
+
+.lang .point-up {
+    top: -6px;
+    left: 22px;
+}
+
+.menu-sign-in  .soku {
+    width: 400px;
+    top: 35px;
+    left: -155px;
+}
+
+.menu-sign-in  .point-up {
+    top: -3px;
+    left: 258px;
+}
+
+.menu-2 .un-hover:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu-2 {
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.menu-2 a {
+    color: blue;
+    padding-left: 10px;
+    font-size: 10px;
+}
+
+.menu-2 a:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+.menu-2 .underline {
+    border-bottom: 1px solid #c4c4c4;
+}
