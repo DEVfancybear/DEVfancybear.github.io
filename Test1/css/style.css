@@ -1,0 +1,38 @@
+html, body {
+   font-family: Arial, sans-serif; 
+}
+h1 {
+    text-align: center;
+    color: darkgoldenrod;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+}
+
+img {
+    width: 100%;
+    
+}
+
+.img-wrapper {
+    transition: transfrom 1s;
+}
+
+.img-wrapper:hover img {
+    transform: scale(1.2);
+    transition: transform 0.5s;
+}
+
+.img1 {
+    max-width: 60%;
+}
