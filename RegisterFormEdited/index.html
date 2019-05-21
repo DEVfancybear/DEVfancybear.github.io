@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register Form Show Infomation</title>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <body>
+        <div class="container">
+            <div class="card card-container">
+                <p>Đăng ký</p>
+                <form class="form-signin" action="info.html" method="get">
+                    <input id='a1' type="text" name="FirstName" placeholder="Họ" required>
+                    <input id='a1' type="text" name="Surname" placeholder="Tên" required><br>
+                    <input id='a2' type="email" name="Contact" placeholder="Số di động hoặc email" required><br>
+                    <input id='a2' type="password" name="Password" placeholder="Mật khẩu mới" required><br>
+                    <input id='a2' type="text" name="Address" placeholder='Địa chỉ' required><br> Ngày sinh <br>
+                    <select name="Day" id="day">             
+                        </select>
+                    <select name="Month" id="month">
+                        </select>
+                    <select name="Year" id="year">
+                        </select>
+                    <br>
+                    <br>
+                    <input type="radio" name="Gender" id="male" value="Male"><label for="male">Male</label>
+                    <input type="radio" name="Gender" id="female" value="Female"><label for="female"> Female</label>
+                    <input type="radio" name="Gender" id="other" value="Other"><label for="other"> Other</label><br>
+                    <br>
+                    <button>Đăng ký</button>
+                </form>
+            </div>
+        </div>
+        <script type="text/javascript" src='javasript.js'></script>
+        <script>
+            let day = '<option>Day' + '</option>';
+            let month = '<option>Month</option>';
+            let year = '<option>Year</option>';
+            for (let i = 1; i <= 31; i++) {
+                day += '<option>' + i + '</option>';
+            }
+            for (let i = 1; i <= 12; i++) {
+                month += `<option>${i}</option>`;
+            }
+            for (let i = 2019; i >= 1905; i--) {
+                year += `<option>${i}</option>`;
+            }
+            document.getElementById('day').innerHTML = day;
+            document.getElementById('month').innerHTML = month;
+            document.getElementById('year').innerHTML = year;
+        </script>
+    </body>
+
+</html>
