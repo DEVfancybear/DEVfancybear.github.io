@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Tạo 1 website bán hàng bằng Bootstrap gồm 3 trang, mỗi trang đều có favicon và title, nếu dùng ảnh phải có alt:
+        - Trang chủ: Hiển thị thông tin khuyến mãi, dùng Banner hoặc Slider (carousel). Hiển thị 1 số sản phẩm hot hoặc bán chạy, bấm vào sản phẩm bay ra trang Chi tiết sản phẩm.
+        - Trang danh sách sản phẩm: Hiển thị thông tin các sản phẩm, có breadcrumb, filter, pagenation. Sản phẩm có tên, ảnh và giá. Bấm vào sản phẩm chuyển qua trang Chi tiết sản phẩm.
+        - Trang chi tiết sản phẩm: Hiển thị thông tin chi tiết của sản phẩm bao gồm: Tên, ảnh (có thể có nhiều ảnh), mô tả chi tiết sản phẩm. -->
+    <title>Telegram</title>
+    <link rel="shortcut icon " type="img/png" href="img/favicon.ico.ico" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="showInfo.html"><strong>Telegram</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="showInfo.htmlnavbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Trang chủ<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="infoProduct.html" target="_blank">Các sản phẩm của chúng tôi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="showInfo.html">Contact</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+    <!--Phần đầu trang-->
+    <div class="body">
+        <div class="calltoaction">
+            <div class="jumbotron">
+                <h1 class="display-4">Chào mừng bạn đến với Telegram - Shop bán laptop lớn nhất thế giới</h1>
+                <p class="lead">Hãy thoải mái lựa chọn các sản phẩm khuyến mãi của chúng tôi trong tháng 5 này nhé!</p>
+                <hr class="my-4">
+                <p>Hãy tạo một tài khoản để mua sắm</p>
+                <p class="lead">
+                    <a class="btn btn-primary btn-lg" href="#" role="button">Đăng kí</a>
+                </p>
+                <p class="lead">
+                    <a class="btn btn-primary btn-lg btn-feauture" href="#" role="button">Đăng nhập</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!--Phần banner -->
+
+    <div class="content">
+        <blockquote class="blockquote text-center">
+            <p class="mb-0">Những sản phẩm khuyến mại của chúng tôi</p>
+            <footer class="blockquote-footer">Hãy lựa chọn cho bạn một sản phẩm thật ưng ý nhé! <cite title="Source Title">Chúc quý khách vui vẻ</cite></footer>
+        </blockquote>
+        <div class="card-group">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="img/anh1.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Dell XPS 13 9370</h5>
+                    <p class="card-text">Ultrabook cao cấp, màn hình Infinity tràn viền, thời lượng pin dài.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Có 1 phiên bản cấu hình</li>
+                    <li class="list-group-item">
+                        <p style="color: red;">Giá từ 27.990.000 ₫</p>
+                    </li>
+                </ul>
+                <div class="card-body">
+                    <a href="showInfo.html" class="card-link">Chi tiết sản phẩm tại đây</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="img/anh2.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">HP Pavilion 15 Gaming</h5>
+                    <p class="card-text">Gaming giá rẻ, thiết kế chắc chắn, viền màn hình mỏng, hiệu năng cao</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Có 5 phiên bản cấu hình</li>
+                    <li class="list-group-item">
+                        <p style="color: red;">Giá từ 19.990.000 ₫
+                        </p>
+                    </li>
+                </ul>
+                <div class="card-body">
+                    <a href="showInfo.html" class="card-link">Chi tiết sản phẩm tại đây</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="img/anh3.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Thinkpad P50</h5>
+                    <p class="card-text">Máy trạm mạnh mẽ, bàn phím hàng đầu, màn hình hiển thị sống động.
+                    </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Có 9 phiên bản cấu hình</li>
+                    <li class="list-group-item">
+                        <p style="color: red;">23.990.000 ₫
+                        </p>
+                    </li>
+                </ul>
+                <div class="card-body">
+                    <a href="showInfo.html" class="card-link">Chi tiết sản phẩm tại đây</a>
+                </div>
+            </div>
+        </div>
+        <div class="list-img-1 card-group">
+            <div class="card px-2" style="width: 18rem;">
+                <img class="card-img-top" src="img/anh4.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Macbook Air 2018 (Retina)</h5>
+                    <p class="card-text">Thiết kế mỏng nhẹ, Màn hình Retina hiển thị xuất sắc.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Có 2 phiên bản cấu hình</li>
+                    <li class="list-group-item">
+                        <p style="color: red;">Giá từ 29.990.000 ₫</p>
+                    </li>
+                </ul>
+                <div class="card-body">
+                    <a href="showInfo.html" class="card-link">Chi tiết sản phẩm tại đây</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="img/anh5.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Dell Inspiron 7577</h5>
+                    <p class="card-text">Gaming tầm trung, Thiết kế chắc chắn, Máy hoạt động mát
+
+                    </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Có 5 phiên bản cấu hình</li>
+                    <li class="list-group-item">
+                        <p style="color: red;">Giá từ 19.990.000 ₫
+                        </p>
+                    </li>
+                </ul>
+                <div class="card-body">
+                    <a href="showInfo.html" class="card-link">Chi tiết sản phẩm tại đây</a>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="img/images1.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Thinkpad P52</h5>
+                    <p class="card-text">Máy trạm thế hệ mới, hiệu suất cao, ổn định.
+
+
+                    </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Có 1 phiên bản cấu hình</li>
+                    <li class="list-group-item">
+                        <p style="color: red;">Giá từ 41.990.000 ₫
+                        </p>
+                    </li>
+                </ul>
+                <div class="card-body">
+                    <a href="showInfo.html" class="card-link">Chi tiết sản phẩm tại đây</a>
+                </div>
+            </div>
+        </div>
+        <!--Phần hiển thị thông tin sản phẩm khuyễn mãi -->
+    </div>
+    </div>
+    <!-- <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="showInfo.html" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div> -->
+    <!--Phần thân trang-->
+    <div class="footer">
+
+    </div>
+    <!--Phần cuối trang-->
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
+
+</html>
