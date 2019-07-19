@@ -1,0 +1,116 @@
+//VARIABLES
+$white: #FFF;
+$gray: #444;
+$blue: #21ACE7;
+$yellow: #FFC26B;
+$black-3: rgba(0,0,0,.3);
+$font-size-lg: 18px;
+
+//MIXINS
+@mixin animate{
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    transition: 0.4s;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    -ms-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+// body{
+//   background: $blue;
+//   font-size:0;
+//   > p{
+//     font-size: $font-size-lg;
+//     color: $white;
+//     text-align: center;
+//     font-weight:bold;
+//   }
+// }
+
+//input checkbox
+input[type=checkbox] {    
+  display: none;
+  //checkbox in checked state
+  &:checked {
+    ~ .collapse {
+      height: 160px;
+      .iconPlus {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+      .minus {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+      }
+      ul {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+//collapse element
+.collapse {
+  @include animate;
+  display: block;
+  width: 300px;
+  height: 40px;
+  margin: 50px auto 10px;
+  padding: 10px 15px;
+  overflow: hidden;
+  cursor:pointer;
+  background: $white;
+  border-radius: 4px;
+  box-shadow: 0 3px 2px 1px $black-3;
+  p {
+    display: inline-block;
+    vertical-align: middle;
+    margin:0;
+    color: $blue;
+    font-size: $font-size-lg;
+  }
+  .iconPlus {
+    @include animate;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+    width: 20px;
+    .plus {
+      display: block;
+      width: 3px;
+      height: 21px;
+      margin: 0 auto;
+      background: $blue;
+    }
+    .minus {
+      @include animate;
+      position: absolute;
+      display: inline-block;
+      width: 20px;
+      height: 3px;
+      top: 9px;
+      background: $blue;
+    }
+  }
+  .details{
+    display:block;
+    padding:15px 0;
+    colo: $gray;
+    font-size: 15px;
+  }
+}
