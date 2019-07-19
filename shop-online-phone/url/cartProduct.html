@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>AQ Mobile</title>
+    <link rel="shortcut icon" type="image/png" href="../img/favicon.ico" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Oregano&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Open+Sans" rel="stylesheet">
+    <link href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- file css chung cho cả trang web -->
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <!-- file css riêng cho trang cartProduct -->
+    <link href="../css/file css/cartProduct.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- phần đầu trang web -->
+    <header>
+        <div class="container-fluid headerDescription">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="row headerRow">
+                        <div class="col-sm-4">
+                            <img src="../img/placeholder.png" alt="AQ Mobile" />
+                            <span class="headerTextOne">Miễn phí giao hàng</span>
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="../img/best-price.png" alt="AQ Mobile" />
+                            <span class="headerTextOne">Tiết kiệm thời gian mua sắm</span>
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="../img/protection.png" alt="AQ Mobile" />
+                            <span class="headerTextOne">Kiểm tra sản phẩm trước khi nhận</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="row">
+                        <div class="col-sm-12 col-lg-12 set-padding-4">
+                            <a href="cartProduct.html"><img src="../img/trolley.png" alt="AQ Mobile"></a>
+                            <a href="cartProduct.html"><span>Giỏ hàng (2)</span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="row">
+                        <br>
+                        <center>
+                            <button class="btn btn-primary btn-sm btn-lg" href="#signup" data-toggle="modal" data-target=".log-sign">Đăng nhập/Đăng kí</button>
+                        </center>
+                        <br>
+                        <!-- </div> -->
+                        <!-- Modal -->
+                        <div class="modal fade bs-modal-sm log-sign" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="bs-example bs-example-tabs">
+                                        <ul id="myTab" class="nav nav-tabs">
+                                            <li id="tab1" class=" active tab-style login-shadow "><a href="#signin" data-toggle="tab">Đăng nhập</a></li>
+                                            <li id="tab2" class=" tab-style "><a href="#signup" data-toggle="tab">Đăng kí</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div id="myTabContent" class="tab-content">
+                                            <div class="tab-pane fade active in" id="signin">
+                                                <form class="form-horizontal">
+                                                    <fieldset>
+                                                        <!-- Sign In Form -->
+                                                        <!-- Text input-->
+                                                        <div class="group">
+                                                            <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                                                            <label class="label" for="date">Email của bạn</label></div>
+                                                        <!-- Password input-->
+                                                        <div class="group">
+                                                            <input required="" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
+                                                            <label class="label" for="date">Nhập mật khẩu</label>
+                                                        </div>
+                                                        <em>minimum 6 characters</em>
+                                                        <div class="forgot-link">
+                                                            <a href="#forgot" data-toggle="modal" data-target="#forgot-password">Quên mật khẩu?</a>
+                                                        </div>
+                                                        <!-- Button -->
+                                                        <div class="control-group">
+                                                            <label class="control-label" for="signin"></label>
+                                                            <div class="controls">
+                                                                <button id="signin" name="signin" class="btn btn-primary btn-block">Đăng nhập</button>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </form>
+                                            </div>
+                                            <div class="tab-pane fade" id="signup">
+                                                <form class="form-horizontal">
+                                                    <fieldset>
+                                                        <!-- Sign Up Form -->
+                                                        <!-- Text input-->
+                                                        <div class="group">
+                                                            <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                                                            <label class="label" for="date">Họ</label></div>
+                                                        <!-- Text input-->
+                                                        <div class="group">
+                                                            <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                                                            <label class="label" for="date">Tên</label></div>
+                                                        <!-- Password input-->
+                                                        <div class="group">
+                                                            <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                                                            <label class="label" for="date">Email mới</label></div>
+                                                        <!-- Text input-->
+                                                        <div class="group">
+                                                            <input required="" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
+                                                            <label class="label" for="date">Mật khẩu</label></div>
+                                                        <em>1-8 Characters</em>
+                                                        <div class="group2">
+                                                            <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                                                            <label class="label" for="date">Nhập lại mật khẩu</label></div>
+                                                        <em>Mật khẩu này phải trùng khợp với mật khẩu đã nhập trên</em>
+                                                        <div class="group2">
+                                                            <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                                                            <label class="label" for="date">Thành phố</label></div>
+                                                        <div class="group2">
+                                                            <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                                                            <label class="label" for="date">Địa chỉ chi tiết</label></div>
+                                                        <!-- Button -->
+                                                        <div class="control-group">
+                                                            <label class="control-label" for="confirmsignup"></label>
+                                                            <div class="controls">
+                                                                <button id="confirmsignup" name="confirmsignup" class="btn btn-primary btn-block">Đăng kí</button>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--modal2-->
+                        <div class="modal fade bs-modal-sm" id="forgot-password" tabindex="0" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Bạn cần điền địa chỉ email vào đây để chúng tôi gửi lại mã</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form class="form-horizontal">
+                                            <fieldset>
+                                                <div class="group">
+                                                    <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                                                    <label class="label" for="date">Địa chỉ email tài khoản</label></div>
+                                                <div class="control-group">
+                                                    <label class="control-label" for="forpassword"></label>
+                                                    <div class="controls">
+                                                        <button id="forpasswodr" name="forpassword" class="btn btn-primary btn-block">Gửi tới email này</button>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- phần thanh menu và dropdown -->
+        <div class="container-fluid">
+            <div class="row headerDescriptionOne">
+                <div class="col-sm-4">
+                    <span class="headerTextTwo"><a class="textDecoration" href="../index.html">AQ Mobile</a></span>
+                </div>
+                <div class="col-sm-5">
+                    <div class="row">
+                        <nav class="navbar navbar-light navbar-expand-lg mainmenu">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
+                                    <!-- <li class="active"><a href="#">Trang chủ <span class="sr-only">(current)</span></a></li> -->
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Điện thoại</a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a href="showProduct.html">Apple</a></li>
+                                            <li><a href="showProduct.html">Samsung</a></li>
+                                            <li><a href="showProduct.html">Huawei</a></li>
+                                            <li><a href="showProduct.html">Oppo</a></li>
+                                            <li><a href="showProduct.html">Xiaomi</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hàng cũ</a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a href="showProduct.html">Apple</a></li>
+                                            <li><a href="showProduct.html">Samsung</a></li>
+                                            <li><a href="showProduct.html">Huawei</a></li>
+                                            <li><a href="showProduct.html">Oppo</a></li>
+                                            <li><a href="showProduct.html">Xiaomi</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="showProduct.html">Khuyến mại</a></li>
+                                    <li><a href="showProduct.html">Bán chạy</a></li>
+                                    <li><a href="showProduct.html">Giới thiệu</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <!-- <div class="row"> -->
+                    <div class="col-11 headerSearchBar headerSearchBox">
+                        <div class="main-f5">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Tìm kiếm">
+                                <div class="input-group-append">
+                                    <button class="btn btn-secondary" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-1">
+                    </div>
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+        <!-- end phần thanh menu và dropdown -->
+    </header>
+    <!-- end phần đầu trang web -->
+    <!-- phần thân của trang web -->
+    <div class="container">
+        <div class="row">
+            <h3>GIỎ HÀNG (02 SẢN PHẨM)</h3>
+        </div>
+        <div class="row formBody">
+            <div class="col-lg-4">
+                <div class="marginText">
+                    <img src="../img/img-15.png" alt="AQ Mobile">
+                    <div>
+                        <h4 class="marginTextOne">XIAOMI BLACKSHARK</h4>
+                        <a href="#" class="marginTextOne">Cung cấp bởi Xiaomi Việt Nam</a>
+                        <div class="row marginTextOne">
+                            <a href="#">Xóa</a>
+                            <a href="#" class="marginTextOne">Thêm vào giỏ hàng</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="row">
+                    <div class="col-12">
+                        <h3>11.690.000 đ <span><s><small class="text_style_21">10.690.000 đ</small></s></span></h3>
+                    </div>
+                    <div class="col-12">
+                        <div class="add-to-cart">
+                            <div class="product-qty qty">
+                                <span>Số lượng: </span>
+                                <span class="minus bg-dark">-</span>
+                                <input type="number" class="count" name="qty" value="1">
+                                <span class="plus bg-dark">+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="row">
+                    <div class="col-12">
+                        <h4>Số tiền hiện tại: <span class="fontSizeText">11.600.000 đ</span></h4>
+                    </div>
+                    <div class="col-12">
+                        <div class="add-to-cartOne">
+                            <div class="product-qty">
+                                <span class="fontSizeText">Mã giảm giá: </span>
+                                <input class="btn btn-default btn-lg btn-qtyOne" value="2019" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <img src="../img/img-18.png" alt="AQ Mobile">
+                    </div>
+                    <div class="col-12">
+                        <p class="fontSizeText">TỔNG HÓA ĐƠN: <span class="fontSizeText">
+                                11.600.000 đ
+                            </span></p>
+                        <p class="text-padding-one"><small>(đã bao gồm vat)</small></p>
+                    </div>
+                    <div class="col-4 offset-2">
+                        <a href="infoPayMent.html"><button class="subscribe btn btn-primary " type="button"> TIẾN HÀNH THANH TOÁN </button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end phần thân của trang web -->
+    <!-- end phần thân của trang web -->
+    <!-- phần cuối trang web -->
+    <footer class="page-footer font-small indigo">
+        <!-- Footer Links -->
+        <div class="container boxStyleThree text-center text-md-left">
+            <!-- Grid row -->
+            <div class="row">
+                <!-- Grid column -->
+                <div class="col-4 col-md-4 mx-auto">
+                    <!-- Links -->
+                    <!-- <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5> -->
+                    <div class="row">
+                        <img src="../img/img 6.png" alt="AQ Mobile">
+                        <ul class="list-unstyled">
+                            <!--  <li>
+                                            </li> -->
+                            <li>
+                                <h4 class="footerStyle">Tổng đài hỗ trợ khách hàng</h4>
+                            </li>
+                            <li class="footerStyle">
+                                <img src="../img/img-9.png" alt="AQ Mobile">
+                                <span class="headerTextOne">0123456789</span>
+                            </li>
+                            <li class="footerStyle">
+                                <h5>Tổng đài tư vấn dịch vụ</h5>
+                            </li>
+                            <li class="footerStyle">
+                                <img src="../img/img-9.png" alt="AQ Mobile">
+                                <span class="headerTextOne">0123456789</span>
+                            </li>
+                            <li class="footerStyle">
+                                <h5>Email nhận phản hồi</h5>
+                            </li>
+                            <li class="footerStyle">
+                                <img src="../img/email.png" alt="AQ Mobile">
+                                <span class="headerTextOne">support@service.com</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Grid column -->
+                <hr class="clearfix w-100 d-md-none">
+                <!-- Grid column -->
+                <div class="col-4 col-md-4 mx-auto">
+                    <!-- Links -->
+                    <!-- <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5> -->
+                    <div class="row">
+                        <img src="../img/img 6.png" alt="AQ Mobile">
+                        <ul class="list-unstyled">
+                            <!-- <li>
+                                                
+                                            </li> -->
+                            <li>
+                                <h4 class="footerStyle">Thông tin</h4>
+                            </li>
+                            <li>
+                                <a href="#!">Quy chế hoạt động</a>
+                            </li>
+                            <li>
+                                <a href="#!">Chính sách bảo mật</a>
+                            </li>
+                            <li>
+                                <a href="#!">Chính sách đổi trả</a>
+                            </li>
+                            <li>
+                                <a href="#!">Chính sách thanh toán</a>
+                            </li>
+                            <li>
+                                <a href="#!">Chính sách thanh toán</a>
+                            </li>
+                            <li>
+                                <a href="#!">Câu hỏi thường gặp</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Grid column -->
+                <hr class="clearfix w-100 d-md-none">
+                <!-- Grid column -->
+                <div class="col-4 col-md-4 mx-auto">
+                    <!-- Links -->
+                    <!-- <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5> -->
+                    <div class="row">
+                        <img src="../img/img 6.png" alt="AQ Mobile">
+                        <ul class="list-unstyled">
+                            <!-- <li>
+                                                
+                                            </li> -->
+                            <li>
+                                <h4 class="footerStyle">Hệ thống cửa hàng</h4>
+                            </li>
+                            <li>
+                                <h5>Trụ sở</h5>
+                            </li>
+                            <li>
+                                <img src="../img/pin.png" alt="AQ Mobile">
+                                <span>Xóm 3, thôn Nam Hải, tỉnh Cà Mau</span>
+                            </li>
+                            <li>
+                                <h5>Hà Nội</h5>
+                            </li>
+                            <li>
+                                <img src="../img/pin.png" alt="AQ Mobile">
+                                <span>Số 455 Đội Cấn, Quận Ba Đình, Hà Nội</span>
+                            </li>
+                            <li>
+                                <h5>TP.Hồ Chí Minh</h5>
+                            </li>
+                            <li>
+                                <img src="../img/pin.png" alt="AQ Mobile">
+                                <span>Số 70 Lữ Gia, Phường 15, Quận 11, TP. Hồ Chí Minh
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Grid column -->
+                <hr class="clearfix w-100 d-md-none">
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+        </div>
+        <!-- Footer Links -->
+        <!-- Footer Text -->
+        <div class="container text-center text-md-left">
+            <!-- Grid row -->
+            <div class="row">
+                <div class="col-sm-12 col-lg-12">
+                    <div class="row">
+                        <img src="../img/img-10.png" class="img-fluid" alt="AQ Mobile">
+                    </div>
+                </div>
+                <!-- Grid column -->
+                <div class="row">
+                    <div class="col-md-4 mt-md-0 mt-3">
+                        <h4 class="text-uppercase font-weight-bold footerStyle">KẾT NỐI VỚI AQ MOBILE</h4>
+                        <div class="row">
+                            <!-- Content -->
+                            <div class="col-sm-3 col-lg-3">
+                                <a href="#"><img src="../img/youtube.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                            </div>
+                            <div class="col-sm-3 col-lg-3">
+                                <a href="#"> <img src="../img/twitter.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                            </div>
+                            <div class="col-sm-3 col-lg-3">
+                                <a href="#"><img src="../img/instagram.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                            </div>
+                            <div class="col-sm-3 col-lg-3">
+                                <a href="#"><img src="../img/fb.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    <hr class="clearfix w-100 d-md-none pb-3">
+                    <!-- Grid column -->
+                    <div class="col-md-4 mb-md-0 mb-3">
+                        <div class="row">
+                            <!-- Content -->
+                            <h4 class="text-uppercase font-weight-bold footerStyle">ĐĂNG KÍ NHẬN TIN TỨC</h4>
+                            <div class="col-md-12 mb-4">
+                                <div class="row">
+                                    <form class="input-group">
+                                        <input type="text" class="form-control form-control-sm" placeholder="Email" aria-label="Your email" aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-sm btn-outline-white my-0" type="button">ĐĂNG KÍ</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!--Grid column-->
+                        </div>
+                    </div>
+                    <hr class="clearfix w-100 d-md-none pb-3">
+                    <div class="col-md-4 mt-md-0 mt-3">
+                        <div class="row boxStyleFour">
+                            <!-- Content -->
+                            <!-- <h4 class="text-uppercase font-weight-bold">TÀI TRỢ BỞI</h4> -->
+                            <div class="col-sm-3 col-lg-3">
+                                <a href="#"><img src="../img/visa.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                            </div>
+                            <div class="col-sm-3 col-lg-3">
+                                <a href="#"><img src="../img/mastercard.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                            </div>
+                            <div class="col-sm-3 col-lg-3">
+                                <a href="#"><img src="../img/american-express.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                            </div>
+                            <div class="col-sm-3 col-lg-3">
+                                <a href="#"><img src="../img/discover.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Grid column -->
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2019 Copyright:
+                <a href="#">Le Trung Duong</a>
+            </div>
+            <!-- Copyright -->
+        </div>
+    </footer>
+    <!-- end phần cuối trang web -->
+    <!-- javascript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/javascript.js"></script>
+</body>
+
+</html>
