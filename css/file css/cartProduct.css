@@ -1,0 +1,43 @@
+.marginText {
+    display: flex;
+}
+
+.marginTextOne {
+    margin-left: 20px;
+    /* text-decoration: none; */
+}
+
+.formBody {
+    margin-top: 25px;
+}
+
+.add-to-cart .btn-qty {
+    width: 52px;
+    height: 46px;
+}
+
+.fontSizeText {
+    font-size: 18pt;
+}
+
+.add-to-cartOne .btn-qtyOne {
+    width: 80px;
+    height: 35px;
+    background-color: yellow;
+}
+
+.btn-qtyOne {
+    margin-left: 35px;
+}
+
+.text-padding-one {
+    margin-left: 205px;
+}
+
+.box-padding-form {
+    margin-top: 50px;
+}
+
+.text_style_21 {
+    color: #CC3ACE;
+}
