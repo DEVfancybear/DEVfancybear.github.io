@@ -1,0 +1,173 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 15px;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    color: rgba(0, 0, 0, 0.87);
+    background-color: #e9eaea;
+    margin: 0;
+}
+
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+header {
+    background-color: white;
+    padding: 0;
+}
+
+.img-1 {
+    display: block;
+    float: left;
+}
+
+
+.menu1 {
+    display: block;
+    float: right;
+}
+
+.wrapper-1::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+header img {
+    display: block;
+    margin-top: 10px;
+    height: 44px;
+}
+
+header nav {
+    padding-top: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+header a {
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+.menu2 {
+    font-size: 1.2rem;
+}
+
+.menu2 ul {
+    padding-left: 0;
+}
+
+.menu2 li {
+    display: inline-block;
+    font-weight: bold;
+}
+
+.menu2 a {
+    font-weight: normal;
+}
+
+.menu2 a::after {
+    content: ">";
+    display: inline-block;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+
+.text-01, .text-02, .text-03 {
+    float: left;
+    width: 33.33%;
+}
+
+.text-01 {
+    padding-right: 10px;
+}
+
+.text-02 {
+    padding:0 5px;
+}
+
+.text-03 {
+    padding-left: 10px;
+}
+
+article {
+    background-color: #fff;
+    margin-top: 5%;
+}
+
+article img {
+    width: 100%;
+}
+
+article h1 {
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 0 10px;
+}
+
+article p {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    padding: 0 10px;
+    border-bottom: solid 1px #e9eaea;
+}
+
+article footer {
+    padding: 10px;
+}
+
+.pagination {
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.pagination a {
+    display: inline-block;
+    padding-top: 10px;
+    width: 35px;
+    height: 35px;
+}
+
+
+footer.menu1 {
+    background-color: #222428;
+    color: #fff;
+    font-size: 0.9rem;
+    padding-top: 20px;
+    line-height: 1.5rem;
+    width: 100%;
+}
+
+.text1, .text2, .text3 {
+    float: left;
+    width: 25%;
+}
+
+footer h1 {
+    font-size: 1.1rem;
+}
+
+footer ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+footer ul li {
+    padding: 5px 0 5px 0;
+}
+

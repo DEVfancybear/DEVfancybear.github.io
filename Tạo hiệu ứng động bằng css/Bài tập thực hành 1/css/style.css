@@ -1,0 +1,21 @@
+body {
+    background: lightblue;
+    text-align: center;
+}
+
+.login {
+    width: 200px;
+    padding: 30px 0;
+    line-height: 0;
+    margin: 30px auto;
+    background: red;
+    color: white;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+.login:hover {
+    background: blueviolet;
+    transform: rotate(360deg);
+}

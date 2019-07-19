@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ENG">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Table Sort</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Table Database</h1>
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th>Member Avengers</th>
+                    <th>Race</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Thanos <img id="image" src="img/1.png" title="Terminator" alt="Error" /></td>
+                    <td>Titan</td>
+                    <td>???</td>
+                </tr>
+                <tr>
+                    <td>IronMan <img id="image" src="img/anh1.jpg" title="Avengers" alt="Error" /></td>
+                    <td>Human</td>
+                    <td>45</td>
+                </tr>
+                <tr>
+                    <td>Thor <img id="image" src="img/anh2.jpg" title="Avengers" alt="Error" /></td>
+                    <td>Asgard</td>
+                    <td>10000</td>
+                </tr>
+                <tr>
+                    <td>Hulk <img id="image" src="img/anh3.jpeg" title="Avengers" alt="Error" /></td>
+                    <td>Skrull</td>
+                    <td>62</td>
+                </tr>
+                <tr>
+                    <td>BlackWidow <img id="image" src="img/anh4.jpeg" title="Avengers" alt="Error" /></td>
+                    <td>Male</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>Captain America <img id="image" src="img/anh5.jpg" title="Avengers" alt="Error" /></td>
+                    <td>Female</td>
+                    <td>150</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        (function() {
+
+            var table = document.querySelector("#myTable"),
+                snow = document.querySelectorAll("thead th"),
+                gabor = document.querySelectorAll("tbody tr");
+
+            function doman(Lists) {
+
+                var arr = [];
+
+                for (var i = 0; i < Lists.length; i++) {
+                    arr.push(Lists[i]);
+                }
+
+                return arr;
+
+            }
+
+            function clearClassName(Lists) {
+
+                for (var i = 0; i < Lists.length; i++) {
+
+                    Lists[i].className = "";
+                }
+            }
+
+            function graves(x) {
+
+                var target = x.target,
+                    yupp = doman(snow),
+                    bill = doman(gabor),
+                    kinn = yupp.indexOf(target),
+                    df = document.createDocumentFragment(),
+                    hakai = (target.className === "" || target.className === "desc") ? "asc" : "desc";
+
+                clearClassName(snow);
+
+                bill.sort(function(a, b) {
+
+                    var tdA = a.children[kinn].textContent,
+                        tdB = b.children[kinn].textContent;
+
+                    if (tdA < tdB) {
+                        return hakai === "asc" ? -1 : 1;
+                    } else if (tdA > tdB) {
+                        return hakai === "asc" ? 1 : -1;
+                    } else {
+                        return 0;
+                    }
+                });
+
+                bill.forEach(function(tr) {
+                    df.appendChild(tr);
+                });
+
+                target.className = hakai;
+                table.querySelector("tbody").appendChild(df);
+
+            }
+
+            for (var i = 0; i < snow.length; i++) {
+
+                snow[i].onclick = graves;
+
+            }
+
+
+
+        })();
+    </script>
+</body>
+
+</html>

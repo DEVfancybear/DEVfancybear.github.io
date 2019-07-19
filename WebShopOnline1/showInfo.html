@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Tạo 1 website bán hàng bằng Bootstrap gồm 3 trang, mỗi trang đều có favicon và title, nếu dùng ảnh phải có alt:
+        - Trang chủ: Hiển thị thông tin khuyến mãi, dùng Banner hoặc Slider (carousel). Hiển thị 1 số sản phẩm hot hoặc bán chạy, bấm vào sản phẩm bay ra trang Chi tiết sản phẩm.
+        - Trang danh sách sản phẩm: Hiển thị thông tin các sản phẩm, có breadcrumb, filter, pagenation. Sản phẩm có tên, ảnh và giá. Bấm vào sản phẩm chuyển qua trang Chi tiết sản phẩm.
+        - Trang chi tiết sản phẩm: Hiển thị thông tin chi tiết của sản phẩm bao gồm: Tên, ảnh (có thể có nhiều ảnh), mô tả chi tiết sản phẩm. -->
+    <title>Online Shop</title>
+    <link rel="shortcut icon " type="img/png" href="img/favicon.ico.ico" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+
+</head>
+<nav aria-label="breadcrumb">
+    <ol class="info-1 breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+        <!-- <li class="breadcrumb-item"><a href="#">Library</a></li> -->
+        <li class="breadcrumb-item active" aria-current="page">Chi tiết sản phẩm</li>
+    </ol>
+</nav>
+<!-- Image and text -->
+
+<body>
+    <div class="container">
+        <div class="row show-grid">
+            <div class="col-md-6">
+                <img src="img/anh7.png" alt="Dell" />
+            </div>
+            <div class="col-md-6">
+                <div class="col-md-2">
+                    <p style="font-size: 20px; color:red;">
+                        27.990.000₫</p>
+                </div>
+                <div class="col-md-12">
+                    <p style="background: #f8d7da">Từ ngày 25/04/2019 đến hết ngày 31/05/2019 : Miễn phí nâng cấp SSD 512Gb Samsung cho Quý khách hàng khi mua sản phẩm Dell XPS 13 9370 bản Core i5 tại ThinkPro.
+                    </p>
+                </div>
+                <div class="col-md-12">
+                    <p style="background: #30a43b;">Balo laptop chính hãng (chi tiết)<br> Vệ sinh máy, tra keo tản nhiệt<br> Cài đặt phần mềm miễn phí<br> Hỗ trợ giao hàng toàn quốc (Hỗ trợ COD)<br> Cân chỉnh màu sắc màn hình miễn phí bằng Spyder 5 Elite<br> Hỗ trợ sao lưu dữ liệu miễn
+                        phí, nhanh chóng</p>
+                </div>
+            </div>
+            <div class="w-100"></div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="img/anh7.png" style="width: 123px;" alt="Dell" />
+                    </div>
+                    <div class="col-md-3">
+                        <img src="img/anh9.png" style="width: 123px;" alt="Dell" />
+                    </div>
+                    <div class="col-md-3">
+                        <img src="img/anh8.png" style="width: 123px;" alt="Dell" />
+                    </div>
+                    <div class="col-md-3">
+                        <img src="img/anh8.png" style="width: 123px;" alt="Dell" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row show-grid">
+                    <div class="col-md-4">
+                        <p style="background: #fa7814;">Mua hàng</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p style="background: #288ad6">Trả góp</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="zoom-3 content">
+            <p>Dell XPS 13 với bộ vi xử lý Intel Core thế hệ 8 mới nhất đã trở thành chiếc laptop 13.3 Inch nhỏ nhất thế giới nhưng vẫn đầy đủ các cổng kết nối và tính năng tốt. Đây là chiếc laptop dẫn đầu trong danh sách top 5 laptop sử dụng bộ vi xử lý
+                thế hệ 8.
+
+            </p>
+
+            <div class="writing">
+                <p style="color: #30a43b ;">Thiết kế đặc trưng của XPS <br>
+                    <div>
+                        <b>Dell XPS 13</b> sử dụng bộ vi xử lý thế hệ mới nhất không có nhiều thay đổi về thiết kế, nó vẫn giữ những thiết kế tốt của phiên bản trước đó. Phần vỏ bên ngoài của Dell XPS 13 thế hệ 8 vẫn được làm bằng những tấm nhôm phay,
+                        ở giữa là lớp làm bằng sợi Carbon.<br>
+                    </div>
+                </p>
+                <img src="img/anh10.jpg" style="margin-bottom: 20px; text-align: center; max-width: 500px;" alt="Dell" />
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
+
+</html>

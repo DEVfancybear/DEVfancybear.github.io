@@ -1,0 +1,56 @@
+* {
+    font-family: Roboto;
+    /*text-align: center;*/
+}
+img {
+    text-align: center;
+}
+.row .text-1 {
+    /* position: absolute; */
+    left: 0%;
+    right: 84.49%;
+    top: 0%;
+    bottom: 0%;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 23px;
+    /* identical to box height */
+    display: flex;
+    align-items: flex-end;
+    color: #303030;
+}
+
+footer .container .row h3 {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    display: flex;
+    align-items: flex-end;
+    letter-spacing: 2.4px;
+    color: #292929;
+}
+
+footer .container .row p {
+    font-size: 14px;
+    line-height: 36px;
+    /* or 257% */
+
+    display: flex;
+    align-items: center;
+
+    color: #6C6C6C;
+}
+
+footer .container .text-1 p {
+    font-size: 14px;
+    line-height: 36px;
+    /* or 257% */
+
+    /*display: flex;*/
+    /*align-items: center;*/
+
+    color: #6C6C6C;
+}
+
+
+
