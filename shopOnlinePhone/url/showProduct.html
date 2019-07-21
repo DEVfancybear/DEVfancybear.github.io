@@ -46,8 +46,9 @@
                 <div class="col-sm-2">
                     <div class="row">
                         <div class="col-sm-12 col-lg-12 set-padding-4">
-                            <a href="cartNoProduct.html"><img src="../img/trolley.png" alt="AQ Mobile"></a>
-                            <a href="cartNoProduct.html"><span>Giỏ hàng (0)</span></a>
+                            <a href="cartNoProduct.html"> <img src="../img/trolley.png" alt="AQ Mobile">
+                                <span>Giỏ hàng (<span class='cart-counter'> 0</span>)</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -401,7 +402,7 @@
                             <a href="cartProduct.html"><button type="button" class="btn btn-warning">MUA NGAY</button></a>
                         </div>
                         <div class="buttonBox text-center">
-                            <a href=""><button type="button" class="btn btn-info"><i class="fa fa-cart-plus" aria-hidden="true"></i> THÊM VÀO GIỎ HÀNG</button></a>
+                            <button type="button" class="btn btn-info add-item addToCart"><i class="fa fa-cart-plus" aria-hidden="true"></i> THÊM VÀO GIỎ HÀNG</button>
                         </div>
                     </div>
                 </div>
@@ -591,7 +592,37 @@
                                     <ul class="social">
                                         <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
                                         <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                        <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                        <li>
+                                            <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                        </li>
+                                    </ul>
+                                    <span class="product-new-label">Mới</span>
+                                    <span class="product-discount-label">-10%</span>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="title"><a href="showProduct.html">iPhone 8 Plus 64 GB Like New</a></h3>
+                                    <div class="price">
+                                        14.660.000 đ
+                                        <span>15.999.000đ</span>
+                                    </div>
+
+                                    <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 float-left">
+                            <div class="product-grid4">
+                                <div class="product-image4">
+                                    <a href="#">
+                                        <img class="pic-1" src="../img/img-2.png" alt="AQ Mobile">
+                                        <img class="pic-2" src="../img/img-3.png" alt="AQ Mobile">
+                                    </a>
+                                    <ul class="social">
+                                        <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                        <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                        <li>
+                                            <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                        </li>
                                     </ul>
                                     <span class="product-new-label">Mới</span>
                                     <span class="product-discount-label">-10%</span>
@@ -616,7 +647,9 @@
                                     <ul class="social">
                                         <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
                                         <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                        <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                        <li>
+                                            <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                        </li>
                                     </ul>
                                     <span class="product-new-label">Mới</span>
                                     <span class="product-discount-label">-10%</span>
@@ -641,32 +674,9 @@
                                     <ul class="social">
                                         <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
                                         <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                        <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                                    </ul>
-                                    <span class="product-new-label">Mới</span>
-                                    <span class="product-discount-label">-10%</span>
-                                </div>
-                                <div class="product-content">
-                                    <h3 class="title"><a href="showProduct.html">iPhone 8 Plus 64 GB Like New</a></h3>
-                                    <div class="price">
-                                        14.660.000 đ
-                                        <span>15.999.000đ</span>
-                                    </div>
-                                    <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-3 float-left">
-                            <div class="product-grid4">
-                                <div class="product-image4">
-                                    <a href="#">
-                                        <img class="pic-1" src="../img/img-2.png" alt="AQ Mobile">
-                                        <img class="pic-2" src="../img/img-3.png" alt="AQ Mobile">
-                                    </a>
-                                    <ul class="social">
-                                        <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                        <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                        <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                        <li>
+                                            <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                        </li>
                                     </ul>
                                     <span class="product-new-label">Mới</span>
                                     <span class="product-discount-label">-10%</span>
@@ -693,7 +703,9 @@
                                     <ul class="social">
                                         <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
                                         <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                        <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                        <li>
+                                            <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                        </li>
                                     </ul>
                                     <span class="product-new-label">Mới</span>
                                     <span class="product-discount-label">-10%</span>
@@ -718,7 +730,9 @@
                                     <ul class="social">
                                         <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
                                         <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                        <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                        <li>
+                                            <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                        </li>
                                     </ul>
                                     <span class="product-new-label">Mới</span>
                                     <span class="product-discount-label">-10%</span>
@@ -743,7 +757,9 @@
                                     <ul class="social">
                                         <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
                                         <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                        <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                        <li>
+                                            <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                        </li>
                                     </ul>
                                     <span class="product-new-label">Mới</span>
                                     <span class="product-discount-label">-10%</span>
@@ -768,7 +784,9 @@
                                     <ul class="social">
                                         <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
                                         <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                        <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                        <li>
+                                            <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                        </li>
                                     </ul>
                                     <span class="product-new-label">Mới</span>
                                     <span class="product-discount-label">-10%</span>
@@ -1023,7 +1041,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
     <script src="../OwlCarousel2-2.3.4/docs/assets/vendors/jquery.min.js"></script>
     <script src="../OwlCarousel2-2.3.4/dist/owl.carousel.js"></script>
-    <script src="../woocommerce-FlexSlider-690832b/jquery.flexslider.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/javascript.js"></script>
     <script>
