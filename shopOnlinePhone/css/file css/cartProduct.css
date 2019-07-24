@@ -1,105 +1,43 @@
-/*****MAIN STYLING ******/
-
-#shopping-cart {
-    /* background-color: #f9f7ea; */
-    padding: 20px;
-    margin: 100px 50px 50px 50px;
-    position: relative;
-    top: 5%;
-    min-height: 300px;
+.marginText {
+    display: flex;
 }
 
-#cart th {
-    /* background-color: #03a075; */
-    padding: 5px;
-    text-align: center;
-    width: 20%;
-    /* color: white; */
+.marginTextOne {
+    margin-left: 20px;
+    /* text-decoration: none; */
 }
 
-#cart td {
-    text-align: center;
-    padding: 4px;
+.formBody {
+    margin-top: 25px;
 }
 
-#cart #remove-item {
-    width: 3.5%;
-    /* background-color: #018e67; */
-    /* color: white; */
-    padding: auto;
+.add-to-cart .btn-qty {
+    width: 52px;
+    height: 46px;
 }
 
-#cart {
-    margin-left: auto;
-    margin-right: auto;
-    font-family: "Century Gothic";
+.fontSizeText {
+    font-size: 18pt;
 }
 
-
-/* #cart tr:nth-child(even) {
-    background-color: #fffee2;
+.add-to-cartOne .btn-qtyOne {
+    width: 80px;
+    height: 35px;
+    background-color: yellow;
 }
 
-#cart tr:nth-child(odd) {
-    background-color: #f2f1ed;
-} */
-
-#cart tr {
-    border-bottom: 1px solid #ddd;
+.btn-qtyOne {
+    margin-left: 35px;
 }
 
-.remove {
-    padding: 5px auto;
-    border: 1px solid #03a075;
-    border-radius: 8px;
-    background-color: #03a075;
-    color: white;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    pointer: cursor;
+.text-padding-one {
+    margin-left: 205px;
 }
 
-.remove:hover {
-    background-color: #018e67;
-    border: 1px solid #018e67;
+.box-padding-form {
+    margin-top: 50px;
 }
 
-#cart img {
-    display: block;
-    width: 40%;
-    height: auto;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-
-/* 
-td:nth-child(1) {
-    background-color: white;
-    border: 5px solid #E8E6E1;
-} */
-
-td:nth-child(6) {
-    background-color: #018e67;
-}
-
-#checkout {
-    padding: 5px;
-    font-family: "Calibri";
-    font-size: 18px;
-    border-radius: 5px;
-    border: 2px solid #03a075;
-    background-color: #03a075;
-    color: white;
-    position: relative;
-    left: 85%;
-    margin-top: 15px;
-    width: 15%;
-    cursor: pointer;
-}
-
-#checkout:hover {
-    border: 2px solid #018e67;
-    background-color: #018e67;
+.text_style_21 {
+    color: #CC3ACE;
 }

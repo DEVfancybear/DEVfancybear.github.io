@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi" dir="ltr">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AQ Mobile</title>
     <link rel="shortcut icon" type="image/png" href="../img/favicon.ico" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -43,9 +42,8 @@
                 <div class="col-sm-2">
                     <div class="row">
                         <div class="col-sm-12 col-lg-12 set-padding-4">
-                            <a href="cartNoProduct.html"> <img src="../img/trolley.png" alt="AQ Mobile">
-                                <span>Giỏ hàng (<span class='cart-counter'> 0</span>)</span>
-                            </a>
+                            <a href="cartProduct.html"><img src="../img/trolley.png" alt="AQ Mobile"></a>
+                            <a href="cartProduct.html"><span>Giỏ hàng (2)</span></a>
                         </div>
                     </div>
                 </div>
@@ -239,99 +237,71 @@
     </header>
     <!-- end phần đầu trang web -->
     <!-- phần thân của trang web -->
-
-
-    <div class="main">
-        <h1 id="category-name">SHOPPING CART</h1>
-
-        <div id="shopping-cart">
-            <div id="cart-container">
-                <table id="cart">
-                    <tr>
-                        <th id="image">Img</th>
-                        <th id="name">Name</th>
-                        <th id="price">Price</th>
-                        <th id="quantity">Quantity</th>
-                        <th id="total-price">Item Total</th>
-                        <th id="remove-item">&times;</th>
-                    </tr>
-
-                    <tr>
-                        <td> <img src="../img/anh3.jpeg
-                    " alt="" class="item-img" /></td>
-                        <td class="item-name"> Earthbou1nd Farm Organic Carrots</td>
-                        </td>
-                        <td class="item-price">
-                            $5555.99
-                        </td>
-                        <td>
-                            <input type="number" id="quantity" min="1" max="99" value="1" oninput="calculateTotalPriceTable(this)" />
-                        </td>
-                        <td>$4.99</td>
-                        <td> <button class="remove" onclick="removeItem(this); ">&times;</button></td>
-                    </tr>
-                    <tr>
-                        <td> <img src="https://goo.gl/vXWaLF
-        " alt="" class="item-img" /></td>
-                        <td class="item-name"> Earthbound Farm Organic C2arrots</td>
-                        </td>
-                        <td class="item-price">
-                            $4.99
-                        </td>
-                        <td>
-                            <input type="number" id="quantity" min="1" max="99" value="1" oninput="calculateTotalPriceTable(this)" />
-                        </td>
-                        <td>$4.99</td>
-                        <td> <button class="remove" onclick="removeItem(this)">&times;</button></td>
-                    </tr>
-                    <tr>
-                        <td> <img src="https://goo.gl/vXWaLF
-        " alt="" class="item-img" /></td>
-                        <td class="item-name"> Earthbound Farm Organ3ic Carrots</td>
-                        </td>
-                        <td class="item-price">
-                            $4.99
-                        </td>
-                        <td>
-                            <input type="number" id="quantity" min="1" max="99" value="1" oninput="calculateTotalPriceTable(this)" />
-                        </td>
-                        <td>$4.99</td>
-                        <td> <button class="remove" onclick="removeItem(this)">&times;</button></td>
-                    </tr>
-                    <tr>
-                        <td> <img src="https://goo.gl/vXWaLF
-        " alt="" class="item-img" /></td>
-                        <td class="item-name"> Earthbou1nd Farm Organic Carrots</td>
-                        </td>
-                        <td class="item-price">
-                            $4.99
-                        </td>
-                        <td>
-                            <input type="number" id="quantity" min="1" max="99" value="1" onclick="calculateTotalPriceTable(this)" />
-                        </td>
-                        <td>$4.99</td>
-                        <td> <button class="remove" onclick="removeItem(this)">&times;</button></td>
-                    </tr>
-                    <tr>
-                        <td> <img src="https://goo.gl/vXWaLF
-        " alt="" class="item-img" /></td>
-                        <td class="item-name"> Earthbou1nd Farm Organic Carrots</td>
-                        </td>
-                        <td class="item-price">
-                            $4.99
-                        </td>
-                        <td>
-                            <input type="number" id="quantity" min="1" max="99" value="1" onclick="calculateTotalPriceTable(this)" />
-                        </td>
-                        <td>$4.99</td>
-                        <td> <button class="remove" onclick="removeItem(this)">&times;</button></td>
-                    </tr>
-                </table>
-                <button id="checkout">Checkout</button>
-
+    <div class="container">
+        <div class="row">
+            <h3>GIỎ HÀNG (02 SẢN PHẨM)</h3>
+        </div>
+        <div class="row formBody">
+            <div class="col-lg-4">
+                <div class="marginText">
+                    <img src="../img/img-15.png" alt="AQ Mobile">
+                    <div>
+                        <h4 class="marginTextOne">XIAOMI BLACKSHARK</h4>
+                        <a href="#" class="marginTextOne">Cung cấp bởi Xiaomi Việt Nam</a>
+                        <div class="row marginTextOne">
+                            <a href="#">Xóa</a>
+                            <a href="#" class="marginTextOne">Thêm vào giỏ hàng</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="row">
+                    <div class="col-12">
+                        <h3>11.690.000 đ <span><s><small class="text_style_21">10.690.000 đ</small></s></span></h3>
+                    </div>
+                    <div class="col-12">
+                        <div class="add-to-cart">
+                            <div class="product-qty qty">
+                                <span>Số lượng: </span>
+                                <span class="minus bg-dark">-</span>
+                                <input type="number" class="count" name="qty" value="1">
+                                <span class="plus bg-dark">+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="row">
+                    <div class="col-12">
+                        <h4>Số tiền hiện tại: <span class="fontSizeText">11.600.000 đ</span></h4>
+                    </div>
+                    <div class="col-12">
+                        <div class="add-to-cartOne">
+                            <div class="product-qty">
+                                <span class="fontSizeText">Mã giảm giá: </span>
+                                <input class="btn btn-default btn-lg btn-qtyOne" value="2019" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <img src="../img/img-18.png" alt="AQ Mobile">
+                    </div>
+                    <div class="col-12">
+                        <p class="fontSizeText">TỔNG HÓA ĐƠN: <span class="fontSizeText">
+                                11.600.000 đ
+                            </span></p>
+                        <p class="text-padding-one"><small>(đã bao gồm vat)</small></p>
+                    </div>
+                    <div class="col-4 offset-2">
+                        <a href="infoPayMent.html"><button class="subscribe btn btn-primary " type="button"> TIẾN HÀNH THANH TOÁN </button></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <!-- end phần thân của trang web -->
     <!-- end phần thân của trang web -->
     <!-- phần cuối trang web -->
     <footer class="page-footer font-small indigo">
@@ -539,73 +509,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
-    <script src="../OwlCarousel2-2.3.4/docs/assets/vendors/jquery.min.js"></script>
-    <script src="../OwlCarousel2-2.3.4/dist/owl.carousel.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/javascript.js"></script>
-    <script>
-        /********SHOPPING CART FUNCTIONS *****/
-
-        //GLOBAL VARIABLES 
-        var table = document.getElementById("cart");
-        var totalRow = table.insertRow(table.rows.length);
-        var cell1 = totalRow.insertCell(0);
-        var cell2 = totalRow.insertCell(1);
-        var cell3 = totalRow.insertCell(2)
-        cell1.colSpan = "3";
-        cell2.colSpan = "1";
-        cell3.colSpan = "2";
-        cell2.innerHTML = "Total";
-        cell2.style.fontWeight = "bold";
-        cell1.style.border = "none";
-
-        window.onload = sumPrice();
-
-        //display row that includes the subtotal
-        function sumPrice() {
-            var tableTotal = 0;
-            var tempPrice;
-            for (var i = 0; i < table.rows.length; i++) {
-                tempPrice = table.rows[i + 1].cells[4].innerHTML;
-                tempPrice = tempPrice.substring(1, tempPrice.length);
-                tableTotal = parseFloat(tempPrice) + tableTotal;
-                cell3.innerHTML = "$" + tableTotal.toFixed(2);
-            }
-        }
-
-        function removeItem(row) {
-            /*remove respective row when user presses the "x" button to remove item from cart*/
-            var p = row.parentNode.parentNode;
-            p.parentNode.removeChild(p);
-            if (table.rows.length == 2) {
-                // if shopping cart is empty then display this message
-                cell1.colSpan = "6";
-                totalRow.deleteCell(1);
-                totalRow.deleteCell(-1);
-                cell1.innerHTML = "Your shopping cart is empty. ";
-                cell1.style.padding = "10px";
-            } else {
-                sumPrice();
-            }
-        }
-
-        function calculateTotalPriceTable(x) {
-            /*** calculating item price total = quantity x individual price**/
-            var rowIndex = x.parentNode.parentNode.rowIndex;
-            var indPrice = table.rows[rowIndex].cells[2].innerHTML;
-            indPrice = indPrice.replace(/ /g, "").substring(2, indPrice.length - 2);
-            var quantity = table.rows[rowIndex].cells[3].children[0].value;
-            var totalPrice = quantity * indPrice;
-            var displayPrice = table.rows[rowIndex].cells[4];
-            if (quantity <= 99) {
-                displayPrice.innerHTML = "$" + totalPrice.toFixed(2);
-                sumPrice();
-            } else {
-                displayPrice.innerHTML = "Limit exceeded";
-            }
-
-        }
-    </script>
 </body>
 
 </html>
