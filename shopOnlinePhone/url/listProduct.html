@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="vi" dir="ltr">
+<html>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AQ Mobile</title>
     <link rel="shortcut icon" type="image/png" href="../img/favicon.ico" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -23,32 +24,17 @@
     <header>
         <div class="container-fluid headerDescription">
             <div class="row">
-                <div class="col-sm-8">
-                    <div class="row headerRow">
-                        <div class="col-sm-4">
-                            <img src="../img/placeholder.png" alt="AQ Mobile" />
-                            <span class="headerTextOne">Miễn phí giao hàng</span>
-                        </div>
-                        <div class="col-sm-4">
-                            <img src="../img/best-price.png" alt="AQ Mobile" />
-                            <span class="headerTextOne">Tiết kiệm thời gian mua sắm</span>
-                        </div>
-                        <div class="col-sm-4">
-                            <img src="../img/protection.png" alt="AQ Mobile" />
-                            <span class="headerTextOne">Kiểm tra sản phẩm trước khi nhận</span>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-sm-2">
-                    <div class="row">
+                    <div class="row shopping-cart-container">
                         <div class="col-sm-12 col-lg-12 set-padding-4">
-                            <a href="cartNoProduct.html"><img src="../img/trolley.png" alt="AQ Mobile"></a>
-                            <a href="cartNoProduct.html"><span>Giỏ hàng (0)</span></a>
+                            <a href="cartNoProduct.html"> <img src="../img/trolley.png" alt="AQ Mobile">
+                                <span>Giỏ hàng (<span class='cart-counter'> 0</span>)</span>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-2">
-                    <div class="row">
+                <div class="col-sm-4">
+                    <div class="row shopping-cart-container">
                         <br>
                         <center>
                             <button class="btn btn-primary btn-sm btn-lg" href="#signup" data-toggle="modal" data-target=".log-sign">Đăng nhập/Đăng kí</button>
@@ -61,41 +47,41 @@
                                 <div class="modal-content">
                                     <div class="bs-example bs-example-tabs">
                                         <ul id="myTab" class="nav nav-tabs">
-                                            <li id="tab1" class=" active tab-style login-shadow "><a href="#signin" data-toggle="tab">Đăng nhập</a></li>
-                                            <li id="tab2" class=" tab-style "><a href="#signup" data-toggle="tab">Đăng kí</a></li>
+                                            <li id="tab1 lt" onclick="loginTabFun()" class=" active tab-style login-shadow "><a href="#signin" data-toggle="tab">Đăng nhập</a></li>
+                                            <li id="tab2 rt" onclick="regTabFun()" class=" tab-style "><a href="#signup" data-toggle="tab">Đăng kí</a></li>
                                         </ul>
                                     </div>
                                     <div class="modal-body">
                                         <div id="myTabContent" class="tab-content">
                                             <div class="tab-pane fade active in" id="signin">
-                                                <form class="form-horizontal">
+                                                <form class="form-horizontal" id="login">
                                                     <fieldset>
                                                         <!-- Sign In Form -->
                                                         <!-- Text input-->
                                                         <div class="group">
-                                                            <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                                                            <input required="" id="se" class="input" type="email"><span class="highlight"></span><span class="bar"></span>
                                                             <label class="label" for="date">Email của bạn</label></div>
                                                         <!-- Password input-->
                                                         <div class="group">
-                                                            <input required="" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
+                                                            <input required="" id="sp" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
                                                             <label class="label" for="date">Nhập mật khẩu</label>
                                                         </div>
                                                         <em>minimum 6 characters</em>
-                                                        <div class="forgot-link">
-                                                            <a href="#forgot" data-toggle="modal" data-target="#forgot-password">Quên mật khẩu?</a>
+                                                        <div class="forgot-link headerDescriptionOne">
+                                                            <a href="#forgot" data-toggle="modal" onclick="forTabFun()" data-target="#forgot-password">Quên mật khẩu?</a>
                                                         </div>
                                                         <!-- Button -->
                                                         <div class="control-group">
                                                             <label class="control-label" for="signin"></label>
                                                             <div class="controls">
-                                                                <button id="signin" name="signin" class="btn btn-primary btn-block">Đăng nhập</button>
+                                                                <button id="signin" name="signin" type="submit" onclick="login()" value="Submit" class="btn btn-primary btn-block">Đăng nhập</button>
                                                             </div>
                                                         </div>
                                                     </fieldset>
                                                 </form>
                                             </div>
                                             <div class="tab-pane fade" id="signup">
-                                                <form class="form-horizontal">
+                                                <form class="form-horizontal" id="register">
                                                     <fieldset>
                                                         <!-- Sign Up Form -->
                                                         <!-- Text input-->
@@ -108,28 +94,22 @@
                                                             <label class="label" for="date">Tên</label></div>
                                                         <!-- Password input-->
                                                         <div class="group">
-                                                            <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                                                            <input required="" id="re" class="input" type="email"><span class="highlight"></span><span class="bar"></span>
                                                             <label class="label" for="date">Email mới</label></div>
                                                         <!-- Text input-->
                                                         <div class="group">
-                                                            <input required="" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
+                                                            <input required="" id="rp" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
                                                             <label class="label" for="date">Mật khẩu</label></div>
                                                         <em>1-8 Characters</em>
                                                         <div class="group2">
-                                                            <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                                                            <input required="" id="rrp" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
                                                             <label class="label" for="date">Nhập lại mật khẩu</label></div>
                                                         <em>Mật khẩu này phải trùng khợp với mật khẩu đã nhập trên</em>
-                                                        <div class="group2">
-                                                            <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
-                                                            <label class="label" for="date">Thành phố</label></div>
-                                                        <div class="group2">
-                                                            <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
-                                                            <label class="label" for="date">Địa chỉ chi tiết</label></div>
                                                         <!-- Button -->
                                                         <div class="control-group">
                                                             <label class="control-label" for="confirmsignup"></label>
                                                             <div class="controls">
-                                                                <button id="confirmsignup" name="confirmsignup" class="btn btn-primary btn-block">Đăng kí</button>
+                                                                <button id="confirmsignup" onclick="register()" value="Submit" name="confirmsignup" type="submit" class="btn btn-primary btn-block">Đăng kí</button>
                                                             </div>
                                                         </div>
                                                     </fieldset>
@@ -168,6 +148,22 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-sm-6">
+                    <div class="row headerRow">
+                        <div class="col-sm-3">
+                            <img src="../img/placeholder.png" alt="AQ Mobile" />
+                            <span class="headerTextOne">Miễn phí giao hàng</span>
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="../img/best-price.png" alt="AQ Mobile" />
+                            <span class="headerTextOne">Tiết kiệm thời gian mua sắm</span>
+                        </div>
+                        <div class="col-sm-5">
+                            <img src="../img/protection.png" alt="AQ Mobile" />
+                            <span class="headerTextOne">Kiểm tra sản phẩm trước khi nhận</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- phần thanh menu và dropdown -->
@@ -188,36 +184,37 @@
                                     <li class="dropdown">
                                         <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Điện thoại</a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><a href="showProduct.html">Apple</a></li>
-                                            <li><a href="showProduct.html">Samsung</a></li>
-                                            <li><a href="showProduct.html">Huawei</a></li>
-                                            <li><a href="showProduct.html">Oppo</a></li>
-                                            <li><a href="showProduct.html">Xiaomi</a></li>
+                                            <li><a href="listProduct.html">Apple</a></li>
+                                            <li><a href="listProduct.html">Samsung</a></li>
+                                            <li><a href="listProduct.html">Huawei</a></li>
+                                            <li><a href="listProduct.html">Oppo</a></li>
+                                            <li><a href="listProduct.html">Xiaomi</a></li>
                                         </ul>
                                     </li>
                                     <li class="dropdown">
                                         <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hàng cũ</a>
                                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <li><a href="showProduct.html">Apple</a></li>
-                                            <li><a href="showProduct.html">Samsung</a></li>
-                                            <li><a href="showProduct.html">Huawei</a></li>
-                                            <li><a href="showProduct.html">Oppo</a></li>
-                                            <li><a href="showProduct.html">Xiaomi</a></li>
+                                            <li><a href="listProduct.html">Apple</a></li>
+                                            <li><a href="listProduct.html">Samsung</a></li>
+                                            <li><a href="listProduct.html">Huawei</a></li>
+                                            <li><a href="listProduct.html">Oppo</a></li>
+                                            <li><a href="listProduct.html">Xiaomi</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="showProduct.html">Khuyến mại</a></li>
-                                    <li><a href="showProduct.html">Bán chạy</a></li>
-                                    <li><a href="showProduct.html">Giới thiệu</a></li>
+                                    <li><a href="listProduct.html">Khuyến mại</a></li>
+                                    <li><a href="listProduct.html">Bán chạy</a></li>
+                                    <li><a href="#">Giới thiệu</a></li>
                                 </ul>
                             </div>
                         </nav>
                     </div>
                 </div>
                 <div class="col-sm-3">
+                    <!-- <div class="row"> -->
                     <div class="col-11 headerSearchBar headerSearchBox">
                         <div class="main-f5">
                             <div class="input-group">
-                                <input type="text" id="quicksearch" class="form-control" placeholder="Tìm kiếm">
+                                <input type="text" class="form-control" placeholder="Tìm kiếm">
                                 <div class="input-group-append">
                                     <button class="btn btn-secondary" type="button">
                                         <i class="fa fa-search"></i>
@@ -228,6 +225,7 @@
                     </div>
                     <div class="col-1">
                     </div>
+                    <!-- </div> -->
                 </div>
             </div>
         </div>
@@ -285,8 +283,8 @@
                     Sắp xếp theo
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Từ A-Z</a>
-                    <a class="dropdown-item" href="#">Từ Z-A</a>
+                    <button class="dropdown-item" type="button" onclick="sortPriceLowHigh()">Giá tăng dần</button>
+                    <button class="dropdown-item" type="button" onclick="sortPriceHighLow()">Giá giảm dần</button>
                 </div>
             </div>
         </div>
@@ -304,45 +302,51 @@
                             <form>
                                 <div class="form-check">
                                     <label>
-                                        <input type="checkbox" name="check"> <span class="label-text">Apple</span>
+                                        <input type="checkbox" class="form-check-input" value="apple" name="check"> <span class="label-text form-check-label">Apple</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <label>
-                                        <input type="checkbox" name="check"> <span class="label-text">Samsung</span>
+                                        <input type="checkbox" class="form-check-input" value="samsung" name="check"> <span class="label-text form-check-label">Samsung</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <label>
-                                        <input type="checkbox" name="check"> <span class="label-text">Huawei</span>
+                                        <input type="checkbox" class="form-check-input" value="huawei" name="check"> <span class="label-text form-check-label">Huawei</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <label>
-                                        <input type="checkbox" name="check"> <span class="label-text">Xiaomi</span>
+                                        <input type="checkbox" class="form-check-input" value="xiaomi" name="check"> <span class="label-text form-check-label">Xiaomi</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <label>
-                                        <input type="checkbox" name="check"> <span class="label-text">Oppo</span>
+                                        <input type="checkbox" class="form-check-input" value="oppo" name="check"> <span class="label-text form-check-label">Oppo</span>
                                     </label>
                                 </div>
                             </form>
                         </div>
                     </div>
                     <div class="col-sm-12 col-3 boxStyleTwo">
-                        <h4>Tầm giá</h5>
+                        <h4>Mức giá</h5>
                             <div class="row">
-                                <div id="rangeBox">
-                                    <div id="sliderBox">
-                                        <input type="range" id="slider0to50" step="5" min="0" max="10000000">
-                                        <input type="range" id="slider51to100" step="5" min="50" max="20000000">
+                                <form>
+                                    <div class="form-check">
+                                        <label>
+                                            <input type="checkbox" class="form-check-input" value="25-35" name="check"> <span class="label-text form-check-label">
+                                                Dưới 5 triệu</span> </label> </div>
+                                    <div class="form-check">
+                                        <label>
+                                                        <input type="checkbox" class="form-check-input" value="35-45" name="check"> <span class="label-text form-check-label">Từ 5 - 15 triệu</span>
+                                                    </label>
                                     </div>
-                                    <div id="inputRange">
-                                        <input type="number" step="5" min="0" max="10000000" placeholder="VNĐ" id="min">
-                                        <input type="number" step="5" min="10000001" max="20000000" placeholder="VNĐ" id="max">
+                                    <div class="form-check">
+                                        <label>
+                                                        <input type="checkbox" class="form-check-input" value="55" name="check"> <span class="label-text form-check-label">Trên 15 triệu</span>
+                                                    </label>
                                     </div>
-                                </div>
+                                </form>
                             </div>
                     </div>
                     <div class="col-sm-12 col-3 boxStyleTwo">
@@ -351,11 +355,11 @@
                             <form>
                                 <div class="form-check">
                                     <label>
-                                        <input type="checkbox" name="check"> <span class="label-text">
+                                        <input type="checkbox" class="form-check-input" value="0-5" name="check"> <span class="label-text form-check-label">
                                             < 5 inches</span> </label> </div>
                                 <div class="form-check">
                                     <label>
-                                                    <input type="checkbox" name="check"> <span class="label-text">> 5 inches</span>
+                                                    <input type="checkbox" class="form-check-input" value="5-10" name="check"> <span class="label-text form-check-label">> 5 inches</span>
                                                 </label>
                                 </div>
                             </form>
@@ -367,17 +371,17 @@
                             <form>
                                 <div class="form-check">
                                     <label>
-                                        <input type="checkbox" name="check"> <span class="label-text">>256 GB</span>
+                                        <input type="checkbox" value="256-512" class="form-check-input" name="check"> <span class="label-text form-check-label">> 256 GB</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <label>
-                                        <input type="checkbox" name="check"> <span class="label-text">Từ 64 GB - 256 GB</span>
+                                        <input type="checkbox" value="64-256" class="form-check-input" name="check"> <span class="label-text form-check-label">Từ 64 GB - 256 GB</span>
                                     </label>
                                 </div>
                                 <div class="form-check">
                                     <label>
-                                        <input type="checkbox" name="check"> <span class="label-text">
+                                        <input type="checkbox" value="0-64" class="form-check-input" name="check"> <span class="label-text form-check-label">
                                             < 64 GB</span> </label> </div>
                             </form>
                         </div>
@@ -388,12 +392,12 @@
                                 <form>
                                     <div class="form-check">
                                         <label>
-                                                                    <input type="checkbox" name="check"> <span class="label-text">>8 Gb</span>
+                                                                    <input type="checkbox" value="0-8" class="form-check-input" name="check"> <span class="label-text form-check-label">> 8 GB</span>
                                                                 </label>
                                     </div>
                                     <div class="form-check">
                                         <label>
-                                                                    <input type="checkbox" name="check"> <span class="label-text">
+                                                                    <input type="checkbox" value="8-16" class="form-check-input" name="check"> <span class="label-text form-check-label">
                                                                         < 8 GB</span> </label> </div>
                                 </form>
                             </div>
@@ -404,12 +408,12 @@
                                 <form>
                                     <div class="form-check">
                                         <label>
-                                                                                                <input type="checkbox" name="check"> <span class="label-text">1 Sim</span>
+                                                                                                <input type="checkbox" value="1" class="form-check-input" name="check"> <span class="label-text form-check-label">1 Sim</span>
                                                                                             </label>
                                     </div>
                                     <div class="form-check">
                                         <label>
-                                                                                                <input type="checkbox" name="check"> <span class="label-text">2 Sim</span>
+                                                                                                <input type="checkbox" value="2" class="form-check-input" name="check"> <span class="label-text form-check-label">2 Sim</span>
                                                                                             </label>
                                     </div>
                                 </form>
@@ -420,326 +424,332 @@
             <!-- end phần checkbox và lọc sản phẩm -->
             <!-- phần show sản phẩm -->
             <div class="col-sm-9 col-lg-9">
-                <div class="row boxStyleThree">
-                    <div class="col-12">
-                        <div class="row">
-                            <div class="col-md-4 col-sm-6">
-                                <div class="product-grid4">
-                                    <div class="product-image4">
-                                        <a href="#">
-                                            <img class="pic-1" src="../img/img-2.png" alt="AQ Mobile">
-                                            <img class="pic-2" src="../img/img-3.png" alt="AQ Mobile">
-                                        </a>
-                                        <ul class="social">
-                                            <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                            <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                        <span class="product-new-label">98%</span>
-                                        <span class="product-discount-label">-10%</span>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3 class="title"><a href="showProduct.html">iPhone 8 Plus 64 GB Like New</a></h3>
-                                        <div class="price">
-                                            14.660.000 đ
-                                            <span>15.999.000đ</span>
-                                        </div>
-                                        <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
-                                    </div>
-                                </div>
+                <div class="row boxStyleThree products" id="products1">
+                    <div class="col-md-4 col-sm-6 productItem" data-price="35-45" data-name="apple" data-display="0-5" data-popularity="1" data-ram="0-8" data-sim="1" data-rom="0-64">
+                        <div class="product-grid4">
+                            <div class="product-image4">
+                                <a href="#">
+                                    <img class="pic-1" src="../img/iphone-x-64gb15.png" alt="AQ Mobile">
+                                    <img class="pic-2" src="../img/iphone-x-64gb19.png" alt="AQ Mobile">
+                                </a>
+                                <ul class="social">
+                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li>
+                                        <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                    </li>
+                                </ul>
+                                <span class="product-new-label">Mới</span>
+                                <span class="product-discount-label">-10%</span>
                             </div>
-                            <div class="col-md-4 col-sm-6">
-                                <div class="product-grid4">
-                                    <div class="product-image4">
-                                        <a href="#">
-                                            <img class="pic-1" src="../img/img-2.png" alt="AQ Mobile">
-                                            <img class="pic-2" src="../img/img-3.png" alt="AQ Mobile">
-                                        </a>
-                                        <ul class="social">
-                                            <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                            <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                        <span class="product-new-label">98%</span>
-                                        <span class="product-discount-label">-10%</span>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3 class="title"><a href="showProduct.html">iPhone 8 Plus 64 GB Like New</a></h3>
-                                        <div class="price">
-                                            14.660.000 đ
-                                            <span>15.999.000đ</span>
-                                        </div>
-                                        <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
-                                    </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="showProduct.html">iPhone X Plus 64 GB</a></h3>
+                                <div class="price">
+                                    12.660.000 đ
+                                    <span>15.999.000đ</span>
                                 </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6">
-                                <div class="product-grid4">
-                                    <div class="product-image4">
-                                        <a href="#">
-                                            <img class="pic-1" src="../img/img-2.png" alt="AQ Mobile">
-                                            <img class="pic-2" src="../img/img-3.png" alt="AQ Mobile">
-                                        </a>
-                                        <ul class="social">
-                                            <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                            <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                        <span class="product-new-label">99%</span>
-                                        <span class="product-discount-label">-10%</span>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3 class="title"><a href="showProduct.html">iPhone 8 Plus 64 GB Like New</a></h3>
-                                        <div class="price">
-                                            14.660.000 đ
-                                            <span>15.999.000đ</span>
-                                        </div>
-                                        <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
-                                    </div>
-                                </div>
+                                <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row boxStyleThree">
-                    <div class="col-12">
-                        <div class="row">
-                            <div class="col-md-4 col-sm-6">
-                                <div class="product-grid4">
-                                    <div class="product-image4">
-                                        <a href="#">
-                                            <img class="pic-1" src="../img/img-2.png" alt="AQ Mobile">
-                                            <img class="pic-2" src="../img/img-3.png" alt="AQ Mobile">
-                                        </a>
-                                        <ul class="social">
-                                            <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                            <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                        <span class="product-new-label">Mới</span>
-                                        <span class="product-discount-label">-10%</span>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3 class="title"><a href="showProduct.html">iPhone 8 Plus 64 GB Like New</a></h3>
-                                        <div class="price">
-                                            14.660.000 đ
-                                            <span>15.999.000đ</span>
-                                        </div>
-                                        <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
-                                    </div>
-                                </div>
+                    <div class="col-md-4 col-sm-6 productItem" data-price="55" data-name="samsung" data-display="5-10" data-popularity="99" data-ram="0-8" data-rom="256-512" data-sim="2">
+                        <div class="product-grid4">
+                            <div class="product-image4">
+                                <a href="#">
+                                    <img class="pic-1" src="../img/562_s10.png" alt="AQ Mobile">
+                                    <img class="pic-2" src="../img/563_s10.png" alt="AQ Mobile">
+                                </a>
+                                <ul class="social">
+                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li>
+                                        <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                    </li>
+                                </ul>
+                                <span class="product-new-label">Mới</span>
+                                <span class="product-discount-label">-10%</span>
                             </div>
-                            <div class="col-md-4 col-sm-6">
-                                <div class="product-grid4">
-                                    <div class="product-image4">
-                                        <a href="#">
-                                            <img class="pic-1" src="../img/img-2.png" alt="AQ Mobile">
-                                            <img class="pic-2" src="../img/img-3.png" alt="AQ Mobile">
-                                        </a>
-                                        <ul class="social">
-                                            <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                            <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                        <span class="product-new-label">Mới</span>
-                                        <span class="product-discount-label">-10%</span>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3 class="title"><a href="showProduct.html">iPhone 8 Plus 64 GB Like New</a></h3>
-                                        <div class="price">
-                                            14.660.000 đ
-                                            <span>15.999.000đ</span>
-                                        </div>
-                                        <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
-                                    </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="showProduct.html">Samsung Galaxy S10 256GB</a></h3>
+                                <div class="price">
+                                    27.990.000 đ
+                                    <!-- <span>11.999.000đ</span> -->
                                 </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6">
-                                <div class="product-grid4">
-                                    <div class="product-image4">
-                                        <a href="#">
-                                            <img class="pic-1" src="../img/img-2.png" alt="AQ Mobile">
-                                            <img class="pic-2" src="../img/img-3.png" alt="AQ Mobile">
-                                        </a>
-                                        <ul class="social">
-                                            <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                            <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                        <span class="product-new-label">98%</span>
-                                        <span class="product-discount-label">-10%</span>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3 class="title"><a href="showProduct.html">iPhone 8 Plus 64 GB Like New</a></h3>
-                                        <div class="price">
-                                            14.660.000 đ
-                                            <span>15.999.000đ</span>
-                                        </div>
-                                        <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
-                                    </div>
-                                </div>
+                                <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row boxStyleThree">
-                    <div class="col-12">
-                        <div class="row">
-                            <div class="col-md-4 col-sm-6">
-                                <div class="product-grid4">
-                                    <div class="product-image4">
-                                        <a href="#">
-                                            <img class="pic-1" src="../img/img-2.png" alt="AQ Mobile">
-                                            <img class="pic-2" src="../img/img-3.png" alt="AQ Mobile">
-                                        </a>
-                                        <ul class="social">
-                                            <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                            <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                        <span class="product-new-label">99%</span>
-                                        <span class="product-discount-label">-10%</span>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3 class="title"><a href="showProduct.html">iPhone 8 Plus 64 GB Like New</a></h3>
-                                        <div class="price">
-                                            14.660.000 đ
-                                            <span>15.999.000đ</span>
-                                        </div>
-                                        <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
-                                    </div>
-                                </div>
+                    <div class="col-md-4 col-sm-6 productItem" data-price="55" data-name="oppo" data-display="5-10" data-popularity="20" data-ram="8-16" data-rom="64-256" data-sim="2">
+                        <div class="product-grid4">
+                            <div class="product-image4">
+                                <a href="#">
+                                    <img class="pic-1" src="../img/oppo-f5-2-1.png" alt="AQ Mobile">
+                                    <img class="pic-2" src="../img/oppo-f5-6-1.png" alt="AQ Mobile">
+                                </a>
+                                <ul class="social">
+                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li>
+                                        <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                    </li>
+                                </ul>
+                                <span class="product-new-label">Mới</span>
+                                <span class="product-discount-label">-10%</span>
                             </div>
-                            <div class="col-md-4 col-sm-6">
-                                <div class="product-grid4">
-                                    <div class="product-image4">
-                                        <a href="#">
-                                            <img class="pic-1" src="../img/img-2.png" alt="AQ Mobile">
-                                            <img class="pic-2" src="../img/img-3.png" alt="AQ Mobile">
-                                        </a>
-                                        <ul class="social">
-                                            <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                            <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                        <span class="product-new-label">Mới</span>
-                                        <span class="product-discount-label">-10%</span>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3 class="title"><a href="showProduct.html">iPhone 8 Plus 64 GB Like New</a></h3>
-                                        <div class="price">
-                                            14.660.000 đ
-                                            <span>15.999.000đ</span>
-                                        </div>
-                                        <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
-                                    </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="showProduct.html">Oppo F10 Full Box</a></h3>
+                                <div class="price">
+                                    18.770.000 đ
+                                    <!-- <span>14.599.00đ</span> -->
                                 </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6">
-                                <div class="product-grid4">
-                                    <div class="product-image4">
-                                        <a href="#">
-                                            <img class="pic-1" src="../img/img-2.png" alt="AQ Mobile">
-                                            <img class="pic-2" src="../img/img-3.png" alt="AQ Mobile">
-                                        </a>
-                                        <ul class="social">
-                                            <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                            <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                        <span class="product-new-label">Mới</span>
-                                        <span class="product-discount-label">-10%</span>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3 class="title"><a href="showProduct.html">iPhone 8 Plus 64 GB Like New</a></h3>
-                                        <div class="price">
-                                            14.660.000 đ
-                                            <span>15.999.000đ</span>
-                                        </div>
-                                        <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
-                                    </div>
-                                </div>
+                                <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row boxStyleThree">
-                    <div class="col-12">
-                        <div class="row">
-                            <div class="col-md-4 col-sm-6">
-                                <div class="product-grid4">
-                                    <div class="product-image4">
-                                        <a href="#">
-                                            <img class="pic-1" src="../img/img-2.png" alt="AQ Mobile">
-                                            <img class="pic-2" src="../img/img-3.png" alt="AQ Mobile">
-                                        </a>
-                                        <ul class="social">
-                                            <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                            <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                        <span class="product-new-label">Mới</span>
-                                        <span class="product-discount-label">-10%</span>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3 class="title"><a href="showProduct.html">iPhone 8 Plus 64 GB Like New</a></h3>
-                                        <div class="price">
-                                            14.660.000 đ
-                                            <span>15.999.000đ</span>
-                                        </div>
-                                        <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
-                                    </div>
-                                </div>
+
+                    <div class="col-md-4 col-sm-6 productItem" data-price="35-45" data-name="huawei" data-display="0-5" data-popularity="2" data-ram="0-8" data-sim="2" data-rom="64-256">
+                        <div class="product-grid4">
+                            <div class="product-image4">
+                                <a href="#">
+                                    <img class="pic-1" src="../img/mate20_1.png" alt="AQ Mobile">
+                                    <img class="pic-2" src="../img/mate20_2.png" alt="AQ Mobile">
+                                </a>
+                                <ul class="social">
+                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li>
+                                        <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                    </li>
+                                </ul>
+                                <span class="product-new-label">Mới</span>
+                                <span class="product-discount-label">-10%</span>
                             </div>
-                            <div class="col-md-4 col-sm-6">
-                                <div class="product-grid4">
-                                    <div class="product-image4">
-                                        <a href="#">
-                                            <img class="pic-1" src="../img/img-2.png" alt="AQ Mobile">
-                                            <img class="pic-2" src="../img/img-3.png" alt="AQ Mobile">
-                                        </a>
-                                        <ul class="social">
-                                            <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                            <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                        <span class="product-new-label">Mới</span>
-                                        <span class="product-discount-label">-10%</span>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3 class="title"><a href="showProduct.html">iPhone 8 Plus 64 GB Like New</a></h3>
-                                        <div class="price">
-                                            14.660.000 đ
-                                            <span>15.999.000đ</span>
-                                        </div>
-                                        <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
-                                    </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="showProduct.html">Huawei Mate 20 Pro</a></h3>
+                                <div class="price">
+                                    13.590.000 đ
+                                    <!-- <span>15.999.000đ</span> -->
                                 </div>
+                                <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
                             </div>
-                            <div class="col-md-4 col-sm-6">
-                                <div class="product-grid4">
-                                    <div class="product-image4">
-                                        <a href="#">
-                                            <img class="pic-1" src="../img/img-2.png" alt="AQ Mobile">
-                                            <img class="pic-2" src="../img/img-3.png" alt="AQ Mobile">
-                                        </a>
-                                        <ul class="social">
-                                            <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                            <li><a href="#" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                        <span class="product-new-label">Mới</span>
-                                        <span class="product-discount-label">-10%</span>
-                                    </div>
-                                    <div class="product-content">
-                                        <h3 class="title"><a href="showProduct.html">iPhone 8 Plus 64 GB Like New</a></h3>
-                                        <div class="price">
-                                            14.660.000 đ
-                                            <span>15.999.000đ</span>
-                                        </div>
-                                        <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
-                                    </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 productItem" data-price="35-45" data-name="xiaomi" data-display="0-5" data-popularity="3" data-ram="8-16" data-sim="1" data-rom="64-256">
+                        <div class="product-grid4">
+                            <div class="product-image4">
+                                <a href="#">
+                                    <img class="pic-1" src="../img/mi9_1.png" alt="AQ Mobile">
+                                    <img class="pic-2" src="../img/mi9_2.png" alt="AQ Mobile">
+                                </a>
+                                <ul class="social">
+                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li>
+                                        <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                    </li>
+                                </ul>
+                                <span class="product-new-label">Mới</span>
+                                <span class="product-discount-label">-10%</span>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="showProduct.html">Xiaomi Mi 9</a></h3>
+                                <div class="price">
+                                    13.990.000 đ
+                                    <span>15.999.000đ</span>
                                 </div>
+                                <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 productItem" data-price="35-45" data-name="samsung" data-display="5-10" data-popularity="4" data-ram="0-8" data-sim="1" data-rom="64-256">
+                        <div class="product-grid4">
+                            <div class="product-image4">
+                                <a href="#">
+                                    <img class="pic-1" src="../img/note9_1.png" alt="AQ Mobile">
+                                    <img class="pic-2" src="../img/note9_2.png" alt="AQ Mobile">
+                                </a>
+                                <ul class="social">
+                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li>
+                                        <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                    </li>
+                                </ul>
+                                <span class="product-new-label">Mới</span>
+                                <span class="product-discount-label">-10%</span>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="showProduct.html">Galaxy Galaxy Note 9</a></h3>
+                                <div class="price">
+                                    14.190.000 đ
+                                    <span>15.999.000đ</span>
+                                </div>
+                                <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6 productItem" data-price="35-45" data-name="apple" data-display="0-5" data-ram="0-8" data-popularity="5" data-sim="1" data-rom="0-64">
+                        <div class="product-grid4">
+                            <div class="product-image4">
+                                <a href="#">
+                                    <img class="pic-1" src="../img/iphone-8-plus-red-2.png" alt="AQ Mobile">
+                                    <img class="pic-2" src="../img/iphone-8-plus-red-3.png" alt="AQ Mobile">
+                                </a>
+                                <ul class="social">
+                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li>
+                                        <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                    </li>
+                                </ul>
+                                <span class="product-new-label">Mới</span>
+                                <span class="product-discount-label">-10%</span>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="showProduct.html">iPhone 8 Plus 64 GB Red</a></h3>
+                                <div class="price">
+                                    14.560.000 đ
+                                    <!-- <span>15.999.000đ</span> -->
+                                </div>
+                                <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 productItem" data-price="35-45" data-name="huawei" data-display="5-10" data-popularity="6" data-ram="0-8" data-sim="1" data-rom="64-256">
+                        <div class="product-grid4">
+                            <div class="product-image4">
+                                <a href="#">
+                                    <img class="pic-1" src="../img/p30_1.png" alt="AQ Mobile">
+                                    <img class="pic-2" src="../img/p30_2.png" alt="AQ Mobile">
+                                </a>
+                                <ul class="social">
+                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li>
+                                        <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                    </li>
+                                </ul>
+                                <span class="product-new-label">Mới</span>
+                                <span class="product-discount-label">-10%</span>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="showProduct.html">Huawei P30 Pro</a></h3>
+                                <div class="price">
+                                    14.660.000 đ
+                                    <!-- <span>15.999.000đ</span> -->
+                                </div>
+                                <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 productItem" data-price="35-45" data-name="oppo" data-display="5-10" data-popularity="7" data-ram="8-16" data-sim="1" data-rom="64-256">
+                        <div class="product-grid4">
+                            <div class="product-image4">
+                                <a href="#">
+                                    <img class="pic-1" src="../img/oppo_reno_1.png" alt="AQ Mobile">
+                                    <img class="pic-2" src="../img/oppo_reno_2.png" alt="AQ Mobile">
+                                </a>
+                                <ul class="social">
+                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li>
+                                        <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                    </li>
+                                </ul>
+                                <span class="product-new-label">Mới</span>
+                                <span class="product-discount-label">-10%</span>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="showProduct.html">Oppo Reno</a></h3>
+                                <div class="price">
+                                    14.990.000 đ
+                                    <!-- <span>15.999.000đ</span> -->
+                                </div>
+                                <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-4 col-sm-6 productItem" data-price="55" data-name="xiaomi" data-display="0-5" data-popularity="8" data-ram="8-16" data-sim="2" data-rom="0-64">
+                        <div class="product-grid4">
+                            <div class="product-image4">
+                                <a href="#">
+                                    <img class="pic-1" src="../img/mimix2_1.png" alt="AQ Mobile">
+                                    <img class="pic-2" src="../img/mimix2_2.png" alt="AQ Mobile">
+                                </a>
+                                <ul class="social">
+                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li>
+                                        <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                    </li>
+                                </ul>
+                                <span class="product-new-label">Mới</span>
+                                <span class="product-discount-label">-10%</span>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="showProduct.html">Xiaomi Mimix 2 Plus</a></h3>
+                                <div class="price">
+                                    15.360.000 đ
+                                    <!-- <span>15.999.000đ</span> -->
+                                </div>
+                                <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 productItem" data-price="55" data-name="samsung" data-display="5-10" data-popularity="9" data-ram="8-16" data-sim="2" data-rom="64-256">
+                        <div class="product-grid4">
+                            <div class="product-image4">
+                                <a href="#">
+                                    <img class="pic-1" src="../img/s8_1.png" alt="AQ Mobile">
+                                    <img class="pic-2" src="../img/s8_2.png" alt="AQ Mobile">
+                                </a>
+                                <ul class="social">
+                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li>
+                                        <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                    </li>
+                                </ul>
+                                <span class="product-new-label">Mới</span>
+                                <span class="product-discount-label">-10%</span>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="showProduct.html">Samsung Galaxy S8 New</a></h3>
+                                <div class="price">
+                                    15.960.000 đ
+
+                                </div>
+                                <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 productItem" data-price="55" data-name="oppo" data-display="0-5" data-ram="0-8" data-popularity="10" data-sim="1" data-rom="0-64">
+                        <div class="product-grid4">
+                            <div class="product-image4">
+                                <a href="#">
+                                    <img class="pic-1" src="../img/oppo_reno_3.png" alt="AQ Mobile">
+                                    <img class="pic-2" src="../img/oppo_reno_4.png" alt="AQ Mobile">
+                                </a>
+                                <ul class="social">
+                                    <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                    <li>
+                                        <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                    </li>
+                                </ul>
+                                <span class="product-new-label">Mới</span>
+                                <span class="product-discount-label">-10%</span>
+                            </div>
+                            <div class="product-content">
+                                <h3 class="title"><a href="showProduct.html">Oppo Reno Zoom 10x</a></h3>
+                                <div class="price">
+                                    16.000.000 đ
+
+                                </div>
+                                <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
                             </div>
                         </div>
                     </div>
@@ -750,7 +760,7 @@
     </div>
     <!-- end phần checkbox lọc sản phẩm và show sản phẩm -->
     <div class="container">
-        <div class="row">
+        <div class="row boxStyleTwo">
             <div class="col-sm-5">
                 <div class="row position-relative">
                     <img src="../img/img-12.png" class="img-fluid" alt="AQ Mobile">
@@ -852,9 +862,33 @@
     <!-- phần cuối trang web -->
     <footer class="page-footer font-small indigo">
         <!-- Footer Links -->
-        <div class="container boxStyleThree text-center text-md-left">
+        <!-- chatbox message -->
+        <div class="floating-chat">
+            <i class="fa fa-comments" aria-hidden="true"></i>
+            <div class="chat">
+                <div class="header">
+                    <span class="title">
+                                        CHAT VỚI CHÚNG TÔI
+                                    </span>
+                    <button>
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                    </button>
+
+                </div>
+                <ul class="messages">
+                    <li class="other">Chào mừng bạn quay trở lại với AQ Mobile. Mình có thể hỗ trợ thông tin gì giúp bạn ạ?
+                    </li>
+                </ul>
+                <div class="footer">
+                    <div class="text-box" contenteditable="true" disabled="true"></div>
+                    <button id="sendMessage">send</button>
+                </div>
+            </div>
+        </div>
+        <!-- end message -->
+        <div class="container text-center text-md-left">
             <!-- Grid row -->
-            <div class="row">
+            <div class="row boxStyleThree">
                 <!-- Grid column -->
                 <div class="col-4 col-md-4 mx-auto">
                     <!-- Links -->
@@ -863,7 +897,8 @@
                         <img src="../img/img 6.png" alt="AQ Mobile">
                         <ul class="list-unstyled">
                             <!--  <li>
-                                            </li> -->
+                                                
+                                                    </li> -->
                             <li>
                                 <h4 class="footerStyle">Tổng đài hỗ trợ khách hàng</h4>
                             </li>
@@ -874,11 +909,11 @@
                             <li class="footerStyle">
                                 <h5>Tổng đài tư vấn dịch vụ</h5>
                             </li>
-                            <li class="footerStyle">
+                            <li class="../footerStyle">
                                 <img src="../img/img-9.png" alt="AQ Mobile">
                                 <span class="headerTextOne">0123456789</span>
                             </li>
-                            <li class="footerStyle">
+                            <li class="../footerStyle">
                                 <h5>Email nhận phản hồi</h5>
                             </li>
                             <li class="footerStyle">
@@ -898,27 +933,27 @@
                         <img src="../img/img 6.png" alt="AQ Mobile">
                         <ul class="list-unstyled">
                             <!-- <li>
-                                                
-                                            </li> -->
+                                                        
+                                                    </li> -->
                             <li>
                                 <h4 class="footerStyle">Thông tin</h4>
                             </li>
-                            <li>
+                            <li class="footer-text-margin">
                                 <a href="#!">Quy chế hoạt động</a>
                             </li>
-                            <li>
+                            <li class="footer-text-margin">
                                 <a href="#!">Chính sách bảo mật</a>
                             </li>
-                            <li>
+                            <li class="footer-text-margin">
                                 <a href="#!">Chính sách đổi trả</a>
                             </li>
-                            <li>
+                            <li class="footer-text-margin">
                                 <a href="#!">Chính sách thanh toán</a>
                             </li>
-                            <li>
+                            <li class="footer-text-margin">
                                 <a href="#!">Chính sách thanh toán</a>
                             </li>
-                            <li>
+                            <li class="footer-text-margin">
                                 <a href="#!">Câu hỏi thường gặp</a>
                             </li>
                         </ul>
@@ -934,8 +969,8 @@
                         <img src="../img/img 6.png" alt="AQ Mobile">
                         <ul class="list-unstyled">
                             <!-- <li>
-                                                
-                                            </li> -->
+                                                        
+                                                    </li> -->
                             <li>
                                 <h4 class="footerStyle">Hệ thống cửa hàng</h4>
                             </li>
@@ -943,23 +978,23 @@
                                 <h5>Trụ sở</h5>
                             </li>
                             <li>
-                                <img src="../img/pin.png" alt="AQ Mobile">
+                                <i class="fas fa-map-marker-alt icon-color-style"></i>
                                 <span>Xóm 3, thôn Nam Hải, tỉnh Cà Mau</span>
                             </li>
                             <li>
                                 <h5>Hà Nội</h5>
                             </li>
                             <li>
-                                <img src="../img/pin.png" alt="AQ Mobile">
+                                <i class="fas fa-map-marker-alt icon-color-style"></i>
                                 <span>Số 455 Đội Cấn, Quận Ba Đình, Hà Nội</span>
                             </li>
                             <li>
                                 <h5>TP.Hồ Chí Minh</h5>
                             </li>
                             <li>
-                                <img src="../img/pin.png" alt="AQ Mobile">
+                                <i class="fas fa-map-marker-alt icon-color-style"></i>
                                 <span>Số 70 Lữ Gia, Phường 15, Quận 11, TP. Hồ Chí Minh
-                                                </span>
+                                        </span>
                             </li>
                         </ul>
                     </div>
@@ -982,7 +1017,7 @@
                 </div>
                 <!-- Grid column -->
                 <div class="row">
-                    <div class="col-md-4 mt-md-0 mt-3">
+                    <div class="col-md-4">
                         <h4 class="text-uppercase font-weight-bold footerStyle">KẾT NỐI VỚI AQ MOBILE</h4>
                         <div class="row">
                             <!-- Content -->
@@ -1003,7 +1038,7 @@
                     <!-- Grid column -->
                     <hr class="clearfix w-100 d-md-none pb-3">
                     <!-- Grid column -->
-                    <div class="col-md-4 mb-md-0 mb-3">
+                    <div class="col-md-4">
                         <div class="row">
                             <!-- Content -->
                             <h4 class="text-uppercase font-weight-bold footerStyle">ĐĂNG KÍ NHẬN TIN TỨC</h4>
@@ -1021,21 +1056,22 @@
                         </div>
                     </div>
                     <hr class="clearfix w-100 d-md-none pb-3">
-                    <div class="col-md-4 mt-md-0 mt-3">
-                        <div class="row boxStyleFour">
+                    <div class="col-md-4">
+                        <h4 class="text-uppercase font-weight-bold footerStyle text-center">TÀI TRỢ BỞI</h4>
+                        <div class="row">
                             <!-- Content -->
-                            <!-- <h4 class="text-uppercase font-weight-bold">TÀI TRỢ BỞI</h4> -->
+
                             <div class="col-sm-3 col-lg-3">
-                                <a href="#"><img src="../img/visa.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                                <a href="#" class="img-margin-left-one"><img src="../img/visa.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
                             </div>
                             <div class="col-sm-3 col-lg-3">
-                                <a href="#"><img src="../img/mastercard.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                                <a href="#" class="img-margin-left-one"><img src="../img/mastercard.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
                             </div>
                             <div class="col-sm-3 col-lg-3">
-                                <a href="#"><img src="../img/american-express.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                                <a href="#" class="img-margin-left-one"><img src="../img/american-express.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
                             </div>
                             <div class="col-sm-3 col-lg-3">
-                                <a href="#"><img src="../img/discover.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                                <a href="#" class="img-margin-left-one"><img src="../img/discover.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
                             </div>
                         </div>
                     </div>
@@ -1055,8 +1091,87 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <script src="../OwlCarousel2-2.3.4/docs/assets/vendors/jquery.min.js"></script>
+    <script src="../OwlCarousel2-2.3.4/dist/owl.carousel.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/javascript.js"></script>
+    <script>
+        $('input[type="checkbox"]').click(function() {
+            var $checked = $('input[type="checkbox"]:checked');
+            var $productItem = $('.productItem');
+
+            if ($checked.length > 0) {
+                $productItem.hide();
+
+                $checked.each(function() {
+                    $('.productItem[data-rom=' + this.value + ']').show();
+                    $('.productItem[data-name=' + this.value + ']').show();
+                    $('.productItem[data-ram=' + this.value + ']').show();
+                    $('.productItem[data-display=' + this.value + ']').show();
+                    $('.productItem[data-sim=' + this.value + ']').show();
+                    $('.productItem[data-price=' + this.value + ']').show();
+                });
+            } else {
+                $productItem.show();
+            }
+        });
+
+        function anNoidung() {
+            let x = document.getElementById("noidung-an");
+            let y = document.getElementById("btn-hide");
+            let hr = document.getElementById("hr");
+            x.style.display = "block";
+            y.style.display = "none";
+            hr.style.display = "none";
+        }
+
+        function sortPriceLowHigh() {
+            let divList = $(".productItem");
+            divList.sort(function(a, b) {
+                return $(a).data("popularity") - $(b).data("popularity")
+            });
+            $(".products").html(divList);
+        }
+
+        function sortPriceHighLow() {
+            let divList = $(".productItem");
+            divList.sort(function(a, b) {
+                return $(b).data("popularity") - $(a).data("popularity")
+            });
+            $(".products").html(divList);
+        }
+
+        function myFunction() {
+            var input, filter, cards, h5, title, i;
+            input = document.getElementById("myFilter");
+            filter = input.value.toUpperCase();
+            cards = document.getElementsByClassName("productItem");
+            for (i = 0; i < cards.length; i++) {
+                title = cards[i].querySelector("b");
+                if (title.innerText.toUpperCase().search(filter) > -1) {
+                    cards[i].style.display = "block";
+                } else {
+                    cards[i].style.display = "none";
+                }
+            }
+        }
+
+
+        //document.getElementById("check").innerHTML = decodeURIComponent(window.location.href);
+        let str = decodeURIComponent(window.location.href);
+        let n = str.slice(str.indexOf("?") + 1); //link.split('?')[1]:(split:cắt chuỗi thành mảng(số phần tử của mảng tương ứng vs số "?"))
+        let y = n.replace(/&/g, "<br>"); //dùng thay nhiều '&',//gi: k phân biệt hoa thường
+        let x = y.replace(/=/g, ": ")
+        let q = x.split('+').join(' ');
+        let z = q.split('<br>')
+        let f = [];
+        for (i = 0; i < z.length; i++) {
+            let e = z[i].slice(0, z[i].indexOf(':')) + '<i>' + z[i].slice(z[i].indexOf(':')) + '</i>';
+            f.push(e)
+        } //let b=[];
+        //b.push(f(0).charAt(0).toUpperCase());
+        document.getElementById("check1").innerHTML = f.join('<br>');
+    </script>
 </body>
 
 </html>

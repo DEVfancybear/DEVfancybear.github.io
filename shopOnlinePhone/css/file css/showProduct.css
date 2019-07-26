@@ -486,7 +486,7 @@
 .rating-star .stars .star:hover:before,
 .rating-star .stars .star.to_rate:before,
 .rating-star .stars .star.rated:before {
-    color: yellow;
+    color: #007bff;
 }
 
 .rating-star .stars .star.no_to_rate:before {
