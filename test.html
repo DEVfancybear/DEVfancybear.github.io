@@ -1,0 +1,136 @@
+Skip to content Search… All gists Back to GitHub @DEVfancybear @Dynyx Dynyx/Paginate.html Created 7 năm trước • Report abuse 5 0 Code Revisions 1 Stars 5
+
+<script src="https://gist.github.com/Dynyx/2868402.js"></script>
+
+JSON AJAX pagination Paginate.html
+<html>
+
+<head>
+    <script type="text/javascript">
+        var pageSize = 10;
+        var currentPageIndex = 0;
+        var pageCount = 0;
+        var startItemIndex = 0;
+        var itemsToDisplay = 0;
+
+        function PaginateSetPageObjects() {
+            $('#pageTitle').text('Page ' + (currentPageIndex + 1) + ' of ' + pageCount);
+            if (pageCount <= 1) {
+                $('#nextPage').hide();
+                $('#previousPage').hide();
+                $('#lastPage').hide();
+                $('#firstPage').hide();
+            } else {
+                $('#nextPage').show();
+                $('#previousPage').show();
+                $('#lastPage').show();
+                $('#firstPage').show();
+                if (currentPageIndex == 0) {
+                    $('#previousPage').hide();
+                    $('#firstPage').hide();
+                } else if (currentPageIndex == (pageCount - 1)) {
+                    $('#nextPage').hide();
+                    $('#lastPage').hide();
+                }
+            }
+        }
+
+        function PaginateCalculatePageIndexes(length) {
+            pageCount = 1;
+            if (length > pageSize) {
+                if (length / pageSize > parseInt(length / pageSize)) {
+                    pageCount = parseInt(length / pageSize) + 1;
+                } else {
+                    pageCount = length / pageSize;
+                }
+            }
+            startItemIndex = currentPageIndex * pageSize;
+            var remainingItems = length - startItemIndex;
+            itemsToDisplay = pageSize + startItemIndex;
+            if (remainingItems < pageSize) {
+                itemsToDisplay = remainingItems + startItemIndex;
+            }
+        }
+
+        function displayObjects() {
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: "/ControllerName/ActionName",
+                data: {
+                    parameterName: parameterValue
+                },
+                success: function(jsonresults) {
+                    $("tbody#contentContainer").find("tr").remove().end();
+                    for (var i = 0; i < jsonresults.length; i++) {
+                        $('tbody#contentContainer').append('<tr>' +
+                            // continue with remaining columns
+                            '</tr>');
+                    }
+                },
+                error: function(cc, bb, aa) {
+                    alert(aa);
+                }
+            });
+        }
+
+        function moveFirstPage() {
+            currentPageIndex = 0;
+            displayObjects();
+        }
+
+        function moveLastPage() {
+            currentPageIndex = pageCount - 1;
+            displayObjects();
+        }
+
+        function movePreviousPage() {
+            currentPageIndex--;
+            displayObjects();
+        }
+
+        function moveNextPage() {
+            currentPageIndex++;
+            displayObjects();
+        }
+
+        $(document).ready(function() {
+            displayObjects();
+        });
+    </script>
+</head>
+
+<body>
+    <tableid="recordNav">
+        <tr>
+            <td nowrap="nowrap">
+                <a href="javascript:void(0);" onclick="moveFirstPage()" id="firstPage"><img src="/Content/first.png" alt="" /></a>
+            </td>
+            <td nowrap="nowrap">
+                <a href="javascript:void(0);" onclick="movePreviousPage()" id="previousPage"><img src="/Content/previous.png" alt="" /></a>
+            </td>
+            <td id="pageTitle"></td>
+            <td nowrap="nowrap">
+                <a href="javascript:void(0);" onclick="moveNextPage()" id="nextPage"><img src="/Content/next.png" alt="" /></a>
+            </td>
+            <td nowrap="nowrap">
+                <a href="javascript:void(0);" onclick="moveLastPage()" id="lastPage"><img src="/Content/last.png" alt="" /></a>
+            </td>
+        </tr>
+        </table>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width:1%"></th>
+                    <th style="width:94%" nowrap="nowrap">Description</th>
+                    <th style="width:1%" nowrap="nowrap">Date</th>
+                    <th style="width:1%" nowrap="nowrap">Acquisition Cost</th>
+                    <th style="width:1%" nowrap="nowrap">Installation Cost</th>
+                    <th class="last" style="width:1%" nowrap="nowrap">Delivery Cost</th>
+                </tr>
+            </thead>
+            <tbody id="acquisitionContent"></tbody>
+        </table>
+</body>
+
+</html>
