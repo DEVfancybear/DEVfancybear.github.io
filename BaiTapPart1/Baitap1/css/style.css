@@ -1,0 +1,235 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 2000px;
+    margin: auto;
+}
+
+
+.img1 {
+    margin:30px 10px 20px 10px;
+    max-height: 44px;
+    
+}
+
+.menu-1 {
+    list-style: none;
+    margin:30px 10px 20px 10px;
+    float: right;
+    display: flex;
+}
+
+.menu-1 li {
+    padding: 0 15px;
+}
+
+.menu li:hover {
+    background-color: yellow;
+}
+
+
+.has-menu {
+    position: relative;
+
+}
+
+.submenu {
+    list-style-type: none;
+    display: none;
+    position: absolute;
+}
+
+
+.has-menu:hover > .submenu {
+    display: block;
+}
+
+
+i {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+
+}
+
+
+.menu-2 {
+   width: 100%;
+   margin-left: auto;
+   left: auto;
+   right: auto;
+       
+}
+.arrow {
+    transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+   
+}
+
+
+.table-4 {
+   padding-left: 10px;
+   padding-top: 30px; 
+}
+
+.table-1 {
+    width: 66.666666%;
+    height: 1200px;
+    background-color: white;
+    float: left;
+    padding-bottom: 5px;
+    margin: 20px 10px 20px 10px;
+    border: 1px solid black;
+}
+
+.table-2 {
+    width: 30%;
+    height: 300px;
+    background-color: white;
+    margin: auto;
+    float: left;
+    margin:20px 10px 20px 10px;
+    border: 1px solid black;
+}
+
+.table-3 {
+    width: 30%;
+    height: 600px;
+    background-color: white;
+    float: left;
+    margin: 5px 10px 5px 10px;
+    border: 1px solid black;
+}
+
+
+.text1 {
+    padding: 10px 15px;
+    border-bottom: 4px solid black;
+    width: 100%;
+    display: inline-block;
+    padding-bottom: 10px;
+    text-transform: none;
+}
+
+.text2 {
+    background-color: yellow;
+}
+
+
+
+.text3 {
+    border-bottom: 4px solid black;
+    width: 100%;
+    display: inline-block;
+    padding: 10px 15px;
+    padding-bottom: 10px;
+    text-transform: none;
+
+}
+
+.text5 {
+    color: #ffab40;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.table-2 i {
+  border: solid black;
+  border-width: 0 9px 9px 0;
+  display: inline-block;
+  padding: 3px;
+ 
+
+}
+
+.arrow-a {
+    transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+
+.text4 {
+    border-bottom: 4px solid black;
+    width: 100%;
+    padding: 10px 15px;
+    display: inline-block;
+    padding-bottom: 10px;
+    text-transform: none;
+}
+
+.img-3 {
+    padding-left: 20px;
+    vertical-align: text-top;
+}
+
+.btn btn-default btn-sm {
+   padding: 10px 0;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.text7 {
+    color: black;
+    font-size: 2.2rem;
+ 
+}
+
+.edit {
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.footer {
+    width: 100%;
+    background: #222428;
+    height: 450px;
+    float: left;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    color: #fff;
+    
+}
+
+.table-01 {
+    width: 25%;
+    left: auto;
+}
+
+.table-02 {
+    width: 41.6666666667%;
+   float: left;
+}
+
+.table-03 {
+    width: 58.3333333333%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+}
+
+.table-04 {
+    width: 41.6666666667%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+}
+
+.table-01-1 {
+    float: left;
+    list-style-type: none;
+    padding-left: 25px;
+}
+
+.table-02-2 {
+    float: left;
+    list-style-type: none;
+    padding: 0 2rem;
+    color: #919294;
+}

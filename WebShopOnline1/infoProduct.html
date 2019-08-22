@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Tạo 1 website bán hàng bằng Bootstrap gồm 3 trang, mỗi trang đều có favicon và title, nếu dùng ảnh phải có alt:
+        - Trang chủ: Hiển thị thông tin khuyến mãi, dùng Banner hoặc Slider (carousel). Hiển thị 1 số sản phẩm hot hoặc bán chạy, bấm vào sản phẩm bay ra trang Chi tiết sản phẩm.
+        - Trang danh sách sản phẩm: Hiển thị thông tin các sản phẩm, có breadcrumb, filter, pagenation. Sản phẩm có tên, ảnh và giá. Bấm vào sản phẩm chuyển qua trang Chi tiết sản phẩm.
+        - Trang chi tiết sản phẩm: Hiển thị thông tin chi tiết của sản phẩm bao gồm: Tên, ảnh (có thể có nhiều ảnh), mô tả chi tiết sản phẩm. -->
+    <title>Online Shop</title>
+    <link rel="shortcut icon " type="img/png" href="img/favicon.ico.ico" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="css/style.css" type="text/css" rel="stylesheet" />
+
+</head>
+<nav aria-label="breadcrumb">
+    <ol class="info-1 breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+        <!-- <li class="breadcrumb-item"><a href="#">Library</a></li> -->
+        <li class="breadcrumb-item active" aria-current="page">Kho sản phẩm đang bán</li>
+    </ol>
+</nav>
+<!-- Image and text -->
+<div class="list-img-2 card-group">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="img/anh1.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Dell XPS 13 9370</h5>
+            <p class="card-text">Ultrabook cao cấp, màn hình Infinity tràn viền, thời lượng pin dài.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Có 1 phiên bản cấu hình</li>
+            <li class="list-group-item">
+                <p style="color: red;">Giá từ 27.990.000 ₫</p>
+            </li>
+        </ul>
+        <div class="card-body">
+            <a href="showInfo.html" class="card-link">Chi tiết sản phẩm tại đây</a>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="img/anh2.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">HP Pavilion 15 Gaming</h5>
+            <p class="card-text">Gaming giá rẻ, thiết kế chắc chắn, viền màn hình mỏng, hiệu năng cao</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Có 5 phiên bản cấu hình</li>
+            <li class="list-group-item">
+                <p style="color: red;">Giá từ 19.990.000 ₫
+                </p>
+            </li>
+        </ul>
+        <div class="card-body">
+            <a href="showInfo.html" class="card-link">Chi tiết sản phẩm tại đây</a>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="img/anh3.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Thinkpad P50</h5>
+            <p class="card-text">Máy trạm mạnh mẽ, bàn phím hàng đầu, màn hình hiển thị sống động.
+            </p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Có 9 phiên bản cấu hình</li>
+            <li class="list-group-item">
+                <p style="color: red;">23.990.000 ₫
+                </p>
+            </li>
+        </ul>
+        <div class="card-body">
+            <a href="showInfo.html" class="card-link">Chi tiết sản phẩm tại đây</a>
+        </div>
+    </div>
+</div>
+<div class="list-img-1 card-group">
+    <div class="card px-2" style="width: 18rem;">
+        <img class="card-img-top" src="img/anh4.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Macbook Air 2018 (Retina)</h5>
+            <p class="card-text">Thiết kế mỏng nhẹ, Màn hình Retina hiển thị xuất sắc.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Có 2 phiên bản cấu hình</li>
+            <li class="list-group-item">
+                <p style="color: red;">Giá từ 29.990.000 ₫</p>
+            </li>
+        </ul>
+        <div class="card-body">
+            <a href="showInfo.html" class="card-link">Chi tiết sản phẩm tại đây</a>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="img/anh5.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Dell Inspiron 7577</h5>
+            <p class="card-text">Gaming tầm trung, Thiết kế chắc chắn, Máy hoạt động mát
+
+            </p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Có 5 phiên bản cấu hình</li>
+            <li class="list-group-item">
+                <p style="color: red;">Giá từ 19.990.000 ₫
+                </p>
+            </li>
+        </ul>
+        <div class="card-body">
+            <a href="showInfo.html" class="card-link">Chi tiết sản phẩm tại đây</a>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="img/images1.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Thinkpad P52</h5>
+            <p class="card-text">Máy trạm thế hệ mới, hiệu suất cao, ổn định.
+
+
+            </p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Có 1 phiên bản cấu hình</li>
+            <li class="list-group-item">
+                <p style="color: red;">Giá từ 41.990.000 ₫
+                </p>
+            </li>
+        </ul>
+        <div class="card-body">
+            <a href="showInfo.html" class="card-link">Chi tiết sản phẩm tại đây</a>
+        </div>
+    </div>
+</div>
+<div class="pagination">
+    <a href="#">&laquo;</a>
+    <a href="infoProduct.html">1</a>
+    <a href="infoProduct1.html">2</a>
+    <a href="infoProduct2.html">3</a>
+    <a href="infoProduct3.html">4</a>
+    <a href="#">&laquo;</a>
+</div>
+
+
+<body>
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js " integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl " crossorigin="anonymous "></script>
+
+</html>

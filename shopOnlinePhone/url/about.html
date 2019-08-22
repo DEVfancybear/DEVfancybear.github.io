@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AQ Mobile</title>
+    <link rel="shortcut icon" type="image/png" href="../img/favicon.ico" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Oregano&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Open+Sans" rel="stylesheet">
+    <link href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- file css chung cho cả trang web -->
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- phần đầu trang web -->
+    <header>
+        <div class="container-fluid headerDescription">
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="row shopping-cart-container">
+                        <div class="col-sm-12 col-lg-12 set-padding-4">
+                            <a href="cartNoProduct.html"> <img src="../img/trolley.png" alt="AQ Mobile">
+                                <span>Giỏ hàng (<span class='cart-counter'> 0</span>)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="row shopping-cart-container">
+                        <br>
+                        <center>
+                            <button class="btn btn-primary btn-sm btn-lg" href="#signup" data-toggle="modal" data-target=".log-sign">Đăng nhập/Đăng kí</button>
+                        </center>
+                        <br>
+                        <!-- </div> -->
+                        <!-- Modal -->
+                        <div class="modal fade bs-modal-sm log-sign" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="bs-example bs-example-tabs">
+                                        <ul id="myTab" class="nav nav-tabs">
+                                            <li id="tab1 lt" onclick="loginTabFun()" class=" active tab-style login-shadow "><a href="#signin" data-toggle="tab">Đăng nhập</a></li>
+                                            <li id="tab2 rt" onclick="regTabFun()" class=" tab-style "><a href="#signup" data-toggle="tab">Đăng kí</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div id="myTabContent" class="tab-content">
+                                            <div class="tab-pane fade active in" id="signin">
+                                                <form class="form-horizontal" id="login">
+                                                    <fieldset>
+                                                        <!-- Sign In Form -->
+                                                        <!-- Text input-->
+                                                        <div class="group">
+                                                            <input required="" id="se" class="input" type="email"><span class="highlight"></span><span class="bar"></span>
+                                                            <label class="label" for="date">Email của bạn</label></div>
+                                                        <!-- Password input-->
+                                                        <div class="group">
+                                                            <input required="" id="sp" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
+                                                            <label class="label" for="date">Nhập mật khẩu</label>
+                                                        </div>
+                                                        <em>minimum 6 characters</em>
+                                                        <div class="forgot-link headerDescriptionOne">
+                                                            <a href="#forgot" data-toggle="modal" onclick="forTabFun()" data-target="#forgot-password">Quên mật khẩu?</a>
+                                                        </div>
+                                                        <!-- Button -->
+                                                        <div class="control-group">
+                                                            <label class="control-label" for="signin"></label>
+                                                            <div class="controls">
+                                                                <button id="signin" name="signin" type="submit" onclick="login()" value="Submit" class="btn btn-primary btn-block">Đăng nhập</button>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </form>
+                                            </div>
+                                            <div class="tab-pane fade" id="signup">
+                                                <form class="form-horizontal" id="register">
+                                                    <fieldset>
+                                                        <!-- Sign Up Form -->
+                                                        <!-- Text input-->
+                                                        <div class="group">
+                                                            <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                                                            <label class="label" for="date">Họ</label></div>
+                                                        <!-- Text input-->
+                                                        <div class="group">
+                                                            <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                                                            <label class="label" for="date">Tên</label></div>
+                                                        <!-- Password input-->
+                                                        <div class="group">
+                                                            <input required="" id="re" class="input" type="email"><span class="highlight"></span><span class="bar"></span>
+                                                            <label class="label" for="date">Email mới</label></div>
+                                                        <!-- Text input-->
+                                                        <div class="group">
+                                                            <input required="" id="rp" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
+                                                            <label class="label" for="date">Mật khẩu</label></div>
+                                                        <em>1-8 Characters</em>
+                                                        <div class="group2">
+                                                            <input required="" id="rrp" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
+                                                            <label class="label" for="date">Nhập lại mật khẩu</label></div>
+                                                        <em>Mật khẩu này phải trùng khợp với mật khẩu đã nhập trên</em>
+                                                        <!-- Button -->
+                                                        <div class="control-group">
+                                                            <label class="control-label" for="confirmsignup"></label>
+                                                            <div class="controls">
+                                                                <button id="confirmsignup" onclick="register()" value="Submit" name="confirmsignup" type="submit" class="btn btn-primary btn-block">Đăng kí</button>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--modal2-->
+                        <div class="modal fade bs-modal-sm" id="forgot-password" tabindex="0" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Bạn cần điền địa chỉ email vào đây để chúng tôi gửi lại mã</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form class="form-horizontal">
+                                            <fieldset>
+                                                <div class="group">
+                                                    <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                                                    <label class="label" for="date">Địa chỉ email tài khoản</label></div>
+                                                <div class="control-group">
+                                                    <label class="control-label" for="forpassword"></label>
+                                                    <div class="controls">
+                                                        <button id="forpasswodr" name="forpassword" class="btn btn-primary btn-block">Gửi tới email này</button>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="row headerRow">
+                        <div class="col-sm-3">
+                            <img src="../img/placeholder.png" alt="AQ Mobile" />
+                            <span class="headerTextOne">Miễn phí giao hàng</span>
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="../img/best-price.png" alt="AQ Mobile" />
+                            <span class="headerTextOne">Tiết kiệm thời gian mua sắm</span>
+                        </div>
+                        <div class="col-sm-5">
+                            <img src="../img/protection.png" alt="AQ Mobile" />
+                            <span class="headerTextOne">Kiểm tra sản phẩm trước khi nhận</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- phần thanh menu và dropdown -->
+        <div class="container-fluid">
+            <div class="row headerDescriptionOne">
+                <div class="col-sm-4">
+                    <span class="headerTextTwo"><a class="textDecoration" href="../index.html">AQ Mobile</a></span>
+                </div>
+                <div class="col-sm-5">
+                    <div class="row">
+                        <nav class="navbar navbar-light navbar-expand-lg mainmenu">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
+                                    <!-- <li class="active"><a href="#">Trang chủ <span class="sr-only">(current)</span></a></li> -->
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Điện thoại</a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a href="listProduct.html">Apple</a></li>
+                                            <li><a href="listProduct.html">Samsung</a></li>
+                                            <li><a href="listProduct.html">Huawei</a></li>
+                                            <li><a href="listProduct.html">Oppo</a></li>
+                                            <li><a href="listProduct.html">Xiaomi</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hàng cũ</a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a href="listProduct.html">Apple</a></li>
+                                            <li><a href="listProduct.html">Samsung</a></li>
+                                            <li><a href="listProduct.html">Huawei</a></li>
+                                            <li><a href="listProduct.html">Oppo</a></li>
+                                            <li><a href="listProduct.html">Xiaomi</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="listProduct.html">Khuyến mại</a></li>
+                                    <li><a href="listProduct.html">Bán chạy</a></li>
+                                    <li><a href="about.html">Giới thiệu</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <!-- <div class="row"> -->
+                    <div class="col-11 headerSearchBar headerSearchBox">
+                        <div class="main-f5">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Tìm kiếm">
+                                <div class="input-group-append">
+                                    <button class="btn btn-secondary" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-1">
+                    </div>
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+        <!-- end phần thanh menu và dropdown -->
+    </header>
+    <!-- end phần đầu trang web -->
+    <!-- phần thân của trang web -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    <h2>Giới thiệu </h2> <br><br> Cám ơn quý khách đã quan tâm và truy cập vào website. Chúng tôi tôn trọng và cam kết sẽ bảo mật những thông tin mang tính riêng tư của Quý khách.<br><br> Chính sách bảo mật sẽ giải thích cách chúng tôi tiếp
+                    nhận, sử dụng và (trong trường hợp nào đó) tiết lộ thông tin cá nhân của Quý khách.<br><br> Bảo vệ dữ liệu cá nhân và gây dựng được niềm tin cho quý khách là vấn đề rất quan trọng với chúng tôi. Vì vậy, chúng tôi sẽ dùng tên và các
+                    thông tin khác liên quan đến quý khách tuân thủ theo nội dung của Chính sách bảo mật. Chúng tôi chỉ thu thập những thông tin cần thiết liên quan đến giao dịch mua bán.<br><br> Chúng tôi sẽ giữ thông tin của khách hàng trong thời gian
+                    luật pháp quy định hoặc cho mục đích nào đó. Quý khách có thể truy cập vào website và trình duyệt mà không cần phải cung cấp chi tiết cá nhân. Lúc đó, Quý khách đang ẩn danh và chúng tôi không thể biết bạn là ai nếu Quý khách không
+                    đăng nhập vào tài khoản của mình.<br><br>
+                    <h3>1. Thu thập thông tin cá nhân</h3> <br><br> - Chúng tôi thu thập, lưu trữ và xử lý thông tin của bạn cho quá trình mua hàng và cho những thông báo sau này liên quan đến đơn hàng, và để cung cấp dịch vụ, bao gồm một số thông tin cá
+                    nhân: danh hiệu, tên, giới tính, ngày sinh, email, địa chỉ, địa chỉ giao hàng, số điện thoại, fax, chi tiết thanh toán, chi tiết thanh toán bằng thẻ hoặc chi tiết tài khoản ngân hàng.<br><br> - Chúng tôi sẽ dùng thông tin quý khách
+                    đã cung cấp để xử lý đơn đặt hàng, cung cấp các dịch vụ và thông tin yêu cầu thông qua website và theo yêu cầu của bạn.<br><br> - Hơn nữa, chúng tôi sẽ sử dụng các thông tin đó để quản lý tài khoản của bạn; xác minh và thực hiện giao
+                    dịch trực tuyến, nhận diện khách vào web, nghiên cứu nhân khẩu học, gửi thông tin bao gồm thông tin sản phẩm và dịch vụ. Nếu quý khách không muốn nhận bất cứ thông tin tiếp thị của chúng tôi thì có thể từ chối bất cứ lúc nào.<br><br>                    - Chúng tôi có thể chuyển tên và địa chỉ cho bên thứ ba để họ giao hàng cho bạn (ví dụ cho bên chuyển phát nhanh hoặc nhà cung cấp).<br><br> - Chi tiết đơn đặt hàng của bạn được chúng tôi lưu giữ nhưng vì lí do bảo mật nên chúng tôi
+                    không công khai trực tiếp được. Tuy nhiên, quý khách có thể tiếp cận thông tin bằng cách đăng nhập tài khoản trên web. Tại đây, quý khách sẽ thấy chi tiết đơn đặt hàng của mình, những sản phẩm đã nhận và những sản phẩm đã gửi và chi
+                    tiết email, ngân hàng và bản tin mà bạn đặt theo dõi dài hạn.<br><br> - Quý khách cam kết bảo mật dữ liệu cá nhân và không được phép tiết lộ cho bên thứ ba. Chúng tôi không chịu bất kỳ trách nhiệm nào cho việc dùng sai mật khẩu nếu
+                    đây không phải lỗi của chúng tôi. <br><br> - Chúng tôi có thể dùng thông tin cá nhân của bạn để nghiên cứu thị trường. mọi thông tin chi tiết sẽ được ẩn và chỉ được dùng để thống kê. Quý khách có thể từ chố không tham gia bất cứ lúc
+                    nào.
+                    <br><br>
+                    <h3>2. Bảo mật</h3><br><br> - Chúng tôi có biện pháp thích hợp về kỹ thuật và an ninh để ngăn chặn truy cập trái phép hoặc trái pháp luật hoặc mất mát hoặc tiêu hủy hoặc thiệt hại cho thông tin của bạn.<br><br> - Chúng tôi khuyên quý khách
+                    không nên đưa thông tin chi tiết về việc thanh toán với bất kỳ ai bằng e-mail, chúng tôi không chịu trách nhiệm về những mất mát quý khách có thể gánh chịu trong việc trao đổi thông tin của quý khách qua internet hoặc email.<br><br>                    - Quý khách tuyệt đối không sử dụng bất kỳ chương trình, công cụ hay hình thức nào khác để can thiệp vào hệ thống hay làm thay đổi cấu trúc dữ liệu. Nghiêm cấm việ phát tán, truyền bá hay cổ vũ cho bất kỳ hoạt động nào nhằm can thiệp,
+                    phá hoại hay xâm nhập vào dữ liệu của hệ thống website. Mọi vi phạm sẽ bị tước bỏ mọi quyền lợ cũng như sẽ bị truy tố trước pháp luật nếu cần thiết.<br><br> - Mọi thông tin giao dịch sẽ được bảo mật nhưng trong trường hợp cơ quan pháp
+                    luật yêu cầu, chúng tôi sẽ buộc phải cung cấp những thông tin này cho các cơ quan pháp luật. Các điều kiện, điều khoản và nội dung của trang web này được điều chỉnh bởi luật pháp Việt Nam và tòa án Việt Nam có thẩm quyền xem xét.<br><br>
+                    <h3>3. Quyền lợi khách hàng</h3><br><br> - Quý khách có quyền yêu cầu truy cập vào dữ liệu cá nhân của mình, có quyền yêu cầu chúng tôi sửa lại những sai sót trong dữ liệu của bạn mà không mất phí. Bất cứ lúc nào bạn cũng có quyền yêu
+                    cầu chúng tôi ngưng sử dụng dữ liệu cá nhân của bạn cho mục đích tiếp thị.<br><br>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <!-- <div class="row"> -->
+        <div class="col-md-8 offset-md-2">
+            <div class="contactus">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#registered">Hà Nội</a></li>
+                    <li><a data-toggle="tab" href="#branch">TP.Hồ Chí Minh</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div id="registered" class="tab-pane fade in active">
+                        <div id="gmap_canvas" style="height:300px;"></div>
+                    </div>
+                    <div id="branch" class="tab-pane fade">
+                        <div id="gmap_canvas2" style="height:300px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+    </div>
+    <!-- phần cuối trang web -->
+    <footer class="page-footer font-small indigo">
+        <!-- Footer Links -->
+        <!-- chatbox message -->
+        <div class="floating-chat">
+            <i class="fa fa-comments" aria-hidden="true"></i>
+            <div class="chat">
+                <div class="header">
+                    <span class="title">
+                                        CHAT VỚI CHÚNG TÔI
+                                    </span>
+                    <button>
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                    </button>
+
+                </div>
+                <ul class="messages">
+                    <li class="other">Chào mừng bạn quay trở lại với AQ Mobile. Mình có thể hỗ trợ thông tin gì giúp bạn ạ?
+                    </li>
+                </ul>
+                <div class="footer">
+                    <div class="text-box" contenteditable="true" disabled="true"></div>
+                    <button id="sendMessage">send</button>
+                </div>
+            </div>
+        </div>
+        <!-- end message -->
+        <div class="container text-center text-md-left">
+            <!-- Grid row -->
+            <div class="row boxStyleThree">
+                <!-- Grid column -->
+                <div class="col-4 col-md-4 mx-auto">
+                    <!-- Links -->
+                    <!-- <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5> -->
+                    <div class="row">
+                        <img src="../img/img 6.png" alt="AQ Mobile">
+                        <ul class="list-unstyled">
+                            <!--  <li>
+                                                
+                                                    </li> -->
+                            <li>
+                                <h4 class="footerStyle">Tổng đài hỗ trợ khách hàng</h4>
+                            </li>
+                            <li class="footerStyle">
+                                <img src="../img/img-9.png" alt="AQ Mobile">
+                                <span class="headerTextOne">0123456789</span>
+                            </li>
+                            <li class="footerStyle">
+                                <h5>Tổng đài tư vấn dịch vụ</h5>
+                            </li>
+                            <li class="../footerStyle">
+                                <img src="../img/img-9.png" alt="AQ Mobile">
+                                <span class="headerTextOne">0123456789</span>
+                            </li>
+                            <li class="../footerStyle">
+                                <h5>Email nhận phản hồi</h5>
+                            </li>
+                            <li class="footerStyle">
+                                <img src="../img/email.png" alt="AQ Mobile">
+                                <span class="headerTextOne">support@service.com</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Grid column -->
+                <hr class="clearfix w-100 d-md-none">
+                <!-- Grid column -->
+                <div class="col-4 col-md-4 mx-auto">
+                    <!-- Links -->
+                    <!-- <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5> -->
+                    <div class="row">
+                        <img src="../img/img 6.png" alt="AQ Mobile">
+                        <ul class="list-unstyled">
+                            <!-- <li>
+                                                        
+                                                    </li> -->
+                            <li>
+                                <h4 class="footerStyle">Thông tin</h4>
+                            </li>
+                            <li class="footer-text-margin">
+                                <a href="#!">Quy chế hoạt động</a>
+                            </li>
+                            <li class="footer-text-margin">
+                                <a href="#!">Chính sách bảo mật</a>
+                            </li>
+                            <li class="footer-text-margin">
+                                <a href="#!">Chính sách đổi trả</a>
+                            </li>
+                            <li class="footer-text-margin">
+                                <a href="#!">Chính sách thanh toán</a>
+                            </li>
+                            <li class="footer-text-margin">
+                                <a href="#!">Chính sách thanh toán</a>
+                            </li>
+                            <li class="footer-text-margin">
+                                <a href="#!">Câu hỏi thường gặp</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Grid column -->
+                <hr class="clearfix w-100 d-md-none">
+                <!-- Grid column -->
+                <div class="col-4 col-md-4 mx-auto">
+                    <!-- Links -->
+                    <!-- <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5> -->
+                    <div class="row">
+                        <img src="../img/img 6.png" alt="AQ Mobile">
+                        <ul class="list-unstyled">
+                            <!-- <li>
+                                                        
+                                                    </li> -->
+                            <li>
+                                <h4 class="footerStyle">Hệ thống cửa hàng</h4>
+                            </li>
+                            <li>
+                                <h5>Trụ sở</h5>
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marker-alt icon-color-style"></i>
+                                <span>Xóm 3, thôn Nam Hải, tỉnh Cà Mau</span>
+                            </li>
+                            <li>
+                                <h5>Hà Nội</h5>
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marker-alt icon-color-style"></i>
+                                <span>Số 455 Đội Cấn, Quận Ba Đình, Hà Nội</span>
+                            </li>
+                            <li>
+                                <h5>TP.Hồ Chí Minh</h5>
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marker-alt icon-color-style"></i>
+                                <span>Số 70 Lữ Gia, Phường 15, Quận 11, TP. Hồ Chí Minh
+                                        </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Grid column -->
+                <hr class="clearfix w-100 d-md-none">
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+        </div>
+        <!-- Footer Links -->
+        <!-- Footer Text -->
+        <div class="container text-center text-md-left">
+            <!-- Grid row -->
+            <div class="row">
+                <div class="col-sm-12 col-lg-12">
+                    <div class="row">
+                        <img src="../img/img-10.png" class="img-fluid" alt="AQ Mobile">
+                    </div>
+                </div>
+                <!-- Grid column -->
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4 class="text-uppercase font-weight-bold footerStyle">KẾT NỐI VỚI AQ MOBILE</h4>
+                        <div class="row">
+                            <!-- Content -->
+                            <div class="col-sm-3 col-lg-3">
+                                <a href="#"><img src="../img/youtube.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                            </div>
+                            <div class="col-sm-3 col-lg-3">
+                                <a href="#"> <img src="../img/twitter.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                            </div>
+                            <div class="col-sm-3 col-lg-3">
+                                <a href="#"><img src="../img/instagram.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                            </div>
+                            <div class="col-sm-3 col-lg-3">
+                                <a href="#"><img src="../img/fb.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    <hr class="clearfix w-100 d-md-none pb-3">
+                    <!-- Grid column -->
+                    <div class="col-md-4">
+                        <div class="row">
+                            <!-- Content -->
+                            <h4 class="text-uppercase font-weight-bold footerStyle">ĐĂNG KÍ NHẬN TIN TỨC</h4>
+                            <div class="col-md-12 mb-4">
+                                <div class="row">
+                                    <form class="input-group">
+                                        <input type="text" class="form-control form-control-sm" placeholder="Email" aria-label="Your email" aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-sm btn-outline-white my-0" type="button">ĐĂNG KÍ</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!--Grid column-->
+                        </div>
+                    </div>
+                    <hr class="clearfix w-100 d-md-none pb-3">
+                    <div class="col-md-4">
+                        <h4 class="text-uppercase font-weight-bold footerStyle text-center">TÀI TRỢ BỞI</h4>
+                        <div class="row">
+                            <!-- Content -->
+
+                            <div class="col-sm-3 col-lg-3">
+                                <a href="#" class="img-margin-left-one"><img src="../img/visa.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                            </div>
+                            <div class="col-sm-3 col-lg-3">
+                                <a href="#" class="img-margin-left-one"><img src="../img/mastercard.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                            </div>
+                            <div class="col-sm-3 col-lg-3">
+                                <a href="#" class="img-margin-left-one"><img src="../img/american-express.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                            </div>
+                            <div class="col-sm-3 col-lg-3">
+                                <a href="#" class="img-margin-left-one"><img src="../img/discover.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Grid column -->
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2019 Copyright:
+                <a href="#">Le Trung Duong</a>
+            </div>
+            <!-- Copyright -->
+        </div>
+    </footer>
+    <!-- end phần cuối trang web -->
+    <!-- javascript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <script src="../OwlCarousel2-2.3.4/docs/assets/vendors/jquery.min.js"></script>
+    <script src="../OwlCarousel2-2.3.4/dist/owl.carousel.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBgAkv0vX0ZZ-VI6Z7vdqj1_RUKgNnTFmY'></script>
+    <script src="../js/javascript.js"></script>
+    <script>
+        function init_map() {
+            var myOptions = {
+                zoom: 4,
+                styles: [{
+                    stylers: [{
+                        saturation: -50
+                    }]
+                }],
+                center: new google.maps.LatLng(21.0294498, 105.8544441),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var myOptions2 = {
+                zoom: 4,
+                styles: [{
+                    stylers: [{
+                        saturation: -50
+                    }]
+                }],
+                center: new google.maps.LatLng(10.7758439, 106.7017555),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+            map2 = new google.maps.Map(document.getElementById('gmap_canvas2'), myOptions2);
+
+            //FIRST MARKER
+
+            marker1 = new google.maps.Marker({
+                map: map,
+                position: new google.maps.LatLng(21.0294498, 105.8544441)
+            });
+            infowindow1 = new google.maps.InfoWindow({
+                content: 'Office 1'
+            });
+            google.maps.event.addListener(marker1, 'click', function() {
+                infowindow1.open(map, marker1);
+            });
+            infowindow1.open(map, marker1);
+
+
+            //SECOND MARKER
+
+            marker2 = new google.maps.Marker({
+                map: map2,
+                position: new google.maps.LatLng(10.7758439, 106.7017555)
+            });
+            infowindow2 = new google.maps.InfoWindow({
+                content: 'Office 2'
+            });
+            google.maps.event.addListener(marker2, 'click', function() {
+                infowindow2.open(map2, marker2);
+            });
+            infowindow2.open(map2, marker2);
+
+        }
+        google.maps.event.addDomListener(window, 'load', init_map);
+
+        $('.nav-tabs a').on('shown.bs.tab', function(event) {
+            if ($(event.target).text() == 'Office2')
+                google.maps.event.trigger(map2, 'resize');
+            else if ($(event.target).text() == 'Office')
+                google.maps.event.trigger(map, 'resize');
+        });
+    </script>
+</body>
+
+</html>

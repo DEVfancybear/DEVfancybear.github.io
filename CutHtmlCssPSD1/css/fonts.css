@@ -1,0 +1,10 @@
+@font-face {
+    font-family: font_strong;
+    src: url(‘../fonts/Georgia.ttf’) format(‘truetype’), url(‘../fonts/Captureit.eot#iefix’) format(’embedded-opentype’), url(‘../fonts/Captureit.woff’) format(‘woff’);
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: font_strong;
+}

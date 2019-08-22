@@ -1,0 +1,30 @@
+@font-face {
+    font-family: ”Georgia Condensed”;
+    src: url(“fonts/Roboto-Condensed.eot?”)format(“eot”), url(“fonts/Roboto-Condensed.woff”)format(“woff”), url(“./fonts/Georgia.ttf”)format(“truetype”), url(“fonts/Roboto-Condensed.svg#Roboto-Condensed”)format(“svg”);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+body {
+    font-size: 12px;
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+.hala .meta .img-1 img {
+    padding-top: 62px;
+}
+
+.hala .meta-1 .col-md-5 {
+    padding-top: 61px;
+}
+
+
+/* .meta .img-2 .img-2-a .col-2 img {
+    padding-top: 60px;
+} */

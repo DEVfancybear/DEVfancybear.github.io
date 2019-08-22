@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>JAVASCRIPT CACULATOR</header>
+        <div class="screen">
+            <h1 id="ShowScreen">0</h1>
+        </div>
+        <table>
+            <tr>
+                <td><button value="7" id="7" onclick="Dots_Number(7)">7</button></td>
+                <td><button value="8" id="8" onclick="Dots_Number(8)">8</button></td>
+                <td><button value="9" id="9" onclick="Dots_Number(9)">9</button></td>
+                <td><button onclick="delete_Symbol()">c</button></td>
+            </tr>
+            <tr>
+                <td><button value="4" id="4" onclick="Dots_Number(4)">4</button></td>
+                <td><button value="5" id="5" onclick="Dots_Number(5)">5</button></td>
+                <td><button value="6" id="6" onclick="Dots_Number(6)">6</button></td>
+                <td><button value="/" id="104" onclick="Dots_Number(104)">/</button></td>
+            </tr>
+            <tr>
+                <td><button value="1" id="1" onclick="Dots_Number(1)">1</button></td>
+                <td><button value="2" id="2" onclick="Dots_Number(2)">2</button></td>
+                <td><button value="3" id="3" onclick="Dots_Number(3)">3</button></td>
+                <td><button value="*" id="103" onclick="Dots_Number(103)">*</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button value="0" id="0" onclick="Dots_Number(0)">0</button></td>
+                <td><button value="-" id="102" onclick="Dots_Number(102)">-</button></td>
+                <td><button value="+" id="101" onclick="Dots_Number(101)">+</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button onclick="Reset_Screen()">clear</button></td>
+                <td colspan="2"><button onclick="CalculateTotal()">=</button></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var number = "",
+            total = 0,
+            setNumber = /[0-9]/,
+            ShowScreen = document.getElementById("ShowScreen");
+
+        function Dots_Number(num) {
+            var akm = document.getElementById(num).value;
+            var cmd = number.slice(-1);
+            if (!setNumber.test(cmd) && !setNumber.test(akm)) {
+                console.log(" ");
+                return;
+            }
+            number = number.concat(akm);
+            ShowScreen.innerHTML = number;
+        }
+
+        function CalculateTotal() {
+            total = (Math.round(eval(number) * 100) / 100);
+            ShowScreen.innerHTML = total;
+        }
+
+        function delete_Symbol() {
+            if (number) {
+                number = number.slice(0, -1);
+                ShowScreen.innerHTML = number;
+            }
+            if (number.length === 0) {
+                ShowScreen.innerHTML = "0";
+            }
+        }
+
+        function Reset_Screen() {
+            number = "";
+            ShowScreen.innerHTML = 0;
+        }
+    </script>
+
+</body>
+
+</html>

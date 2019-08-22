@@ -1,0 +1,460 @@
+html,
+body {
+    font-family: 'Chivo', sans-serif;
+
+}
+
+.imgMargin {
+    margin-bottom: 20px;
+}
+
+.sizeFont {
+    font-size: 33pt;
+    color: #13AA57;
+    margin-left: 10px;
+}
+
+.boxMenu {
+    margin-top: 20px;
+}
+
+.textStyle {
+    text-decoration: none !important;
+    color: black;
+    font-size: 16pt;
+}
+
+.textStyle:hover {
+    color: #13AA57;
+}
+
+.testImg {
+    position: absolute;
+    margin-left: 580px;
+}
+
+.testImgOne {
+    position: relative;
+}
+
+.marginButton {
+    margin-left: 250px;
+    margin-top: 15px;
+}
+
+.textStyleOne {
+    font-size: 36pt;
+}
+
+.textStyleTwo {
+    font-size: 18px;
+}
+
+.textStyleThree {
+    font-size: 36pt;
+}
+
+
+.textStyleFour {
+    font-size: 18pt;
+}
+
+.boxMenuTwo {
+    margin-top: 150px;
+}
+
+.boxMenuOne {
+    margin-top: 120px;
+}
+
+.marginButtonOne {
+    margin-top: 50px;
+    background: #66BB6A;
+}
+
+.boxUser {
+    border: 0.5px solid #f2f2f2;
+}
+
+.boxUser:hover {
+    background: #66BB6A;
+}
+
+.boxUser p:hover {
+    color: #fff;
+}
+
+.styleTextOne {
+    font-size: 18pt;
+    color: #263238;
+}
+
+.boxUserOne {
+    border: 0.5px solid #f2f2f2;
+    margin-left: 20px;
+}
+
+.boxUserOne:hover {
+    background: #66BB6A;
+}
+
+.boxUserOne p:hover {
+    color: #fff;
+}
+
+.boxMenuThree {
+    margin-top: 200px;
+}
+
+.marginImg {
+    margin-top: 35px;
+    margin-left: 20px;
+}
+
+.marginText {
+    margin-top: 20pt;
+    margin-left: 20px;
+}
+
+.marginTextOne {
+    margin-top: 31px;
+    margin-left: 20px;
+}
+
+.marginTextTwo {
+    margin-top: 22px;
+    margin-left: 20px;
+}
+
+.marginTextThree {
+    margin-left: 20px;
+    position: relative;
+}
+
+.marginTextFour {
+    margin-top: 305px;
+    margin-left: 20px;
+    position: absolute;
+}
+
+.marginTextFive {
+    position: relative;
+}
+
+.marginTextSix {
+    position: absolute;
+    margin-top: 100px;
+}
+
+.boxSetting {
+    margin-top: 150px;
+}
+
+.imgBoxStyle {
+    position: relative;
+}
+
+.imgBoxStyleOne {
+    position: absolute;
+}
+
+.text-style {
+    color: white;
+}
+
+.text-style-1 {
+    margin-top: 40px;
+    margin-left: 60px;
+    font-size: 14pt;
+    color: #66BB6A;
+}
+
+.text-style-2 {
+    margin-top: 80px;
+    margin-left: 60px;
+}
+
+.text-style-3 {
+    margin-top: 100px;
+    margin-left: 60px;
+    font-size: 31pt;
+}
+
+.text-style-4 {
+    margin-top: 230px;
+    margin-left: 60px;
+}
+
+.text-style-5 {
+    margin-top: 320px;
+    margin-left: 60px;
+    background: white;
+}
+
+.style-text-7 {
+    color: #66BB6A;
+}
+
+.text-style-6 {
+    margin-top: 150px;
+    margin-left: 60px;
+    font-size: 31pt;
+}
+
+.imgBoxStyleThree {
+    position: absolute;
+}
+
+.imgBoxStyleTwo {
+    position: relative;
+}
+
+.boxMenuFive {
+    padding-left: 300px;
+}
+
+.boxMenuSix {
+    margin-top: 500px;
+    margin-left: 250px;
+}
+
+.img-style-11 {
+    position: relative;
+}
+
+.styleTextTwo {
+    position: absolute;
+    padding-left: 550px;
+    margin-top: 100px;
+    font-size: 36pt;
+    color: white;
+}
+
+.styleTextThree {
+    position: absolute;
+    padding-left: 200px;
+    margin-top: 250px;
+    font-size: 18pt;
+    color: white;
+
+}
+
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 24px;
+    line-height: 1.33;
+    border: 2px solid white;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+    background: #66BB6A;
+
+}
+
+.btn-circle-one {
+    position: absolute;
+    margin-top: 450px;
+    margin-left: 200px;
+    color: white;
+}
+
+.btn-circle-one:hover {
+    background: white;
+}
+
+.btn-circle-two {
+    position: absolute;
+    margin-top: 450px;
+    margin-left: 550px;
+    color: white;
+}
+
+.btn-circle-two:hover {
+    background: white;
+}
+
+.boxMenuNight {
+    position: absolute;
+}
+
+.btn-circle-three {
+    position: absolute;
+    margin-top: 450px;
+    margin-left: 850px;
+    color: white;
+}
+
+.btn-circle-three:hover {
+    background: white;
+}
+
+.btn-circle-four {
+    position: absolute;
+    margin-top: 450px;
+    margin-left: 1150px;
+    color: white;
+}
+
+.btn-circle-four:hover {
+    background: white;
+}
+
+.imgBox1 {
+    position: absolute;
+    margin-bottom: 300px;
+}
+
+.textPaddingOne {
+    font-size: 24px;
+    color: white;
+    padding-top: 600px;
+    margin-left: 250px;
+}
+
+.textPaddingTwo {
+    color: white;
+    margin-left: 333px;
+    font-size: 16px;
+    padding-top: 600px;
+    color: #E8F5E9;
+}
+
+.boxMenuEight {
+    margin-top: 150px;
+}
+
+.style-img {
+    position: relative;
+}
+
+.style-img-1 {
+    position: absolute;
+    font-size: 36px;
+}
+
+/*test*/
+.testimonial {
+    padding: 30px 15px 30px 30px;
+    b/*order-style: solid;*/
+    border-width: 5px 1px 1px;
+    margin: 15px 0;
+    /*border-color: #cfb87c #ddd #ddd;*/
+}
+
+.testimonial img {
+    border: 1px solid #ddd;
+    margin: auto auto 15px;
+    width: 100%;
+}
+
+.testimonial blockquote {
+    font-family: "source sans pro";
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.testimonial blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 5em;
+    line-height: 0em;
+    margin-right: 0.1em;
+    vertical-align: -0.4em;
+}
+
+.testimonial blockquote:after {
+    content: close-quote;
+    visibility: hidden;
+}
+
+.col-md-3 .testimonial {
+    padding: 30px;
+}
+
+.col-md-4 .testimonial .col-md-5,
+.col-md-3 .testimonial .col-md-5,
+.col-md-2 .testimonial .col-md-5,
+.col-md-1 .testimonial .col-md-5 {
+    width: 100%;
+    margin: 0 0 15px;
+}
+
+.col-md-4 .testimonial .col-md-7,
+.col-md-3 .testimonial .col-md-7,
+.col-md-2 .testimonial .col-md-7,
+.col-md-1 .testimonial .col-md-7 {
+    padding: 0;
+    width: 100%;
+}
+
+.testimonial blockquote cite {
+    float: left;
+    font-weight: 600;
+    margin-top: 10px;
+    width: 100%;
+}
+
+@media (min-width:992px) {
+    .testimonial img {
+        max-width: 200px;
+    }
+
+}
+
+.text-style-115 {
+    color: #66BB6A;
+    font-size: 18px;
+}
+
+.text-style-116 {
+    color: #263238;
+    font-size: 18px;
+}
+
+.text-style-117 {
+    font-size: 36pt; 
+}
+
+.text-style-118{
+    color: #66BB6A;
+}
+
+.btn-box {
+    background: #66BB6A;
+}
+
+.backgroundBox1 {
+    background: #979797;
+}
+
+.textMarginTwo {
+    margin-top: 20px;
+}
+
+.outline-button {
+    background: white;
+}
+
+.backgroundBox2 {
+    background: #66BB6A;
+}
+
+.text-style-119 {
+    font-size: 18px;
+    color: white;
+}
+
+.text-style-120{
+    font-size: 16px;
+    color: white;
+}

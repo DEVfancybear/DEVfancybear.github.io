@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AQ Mobile</title>
+    <link rel="shortcut icon" type="image/png" href="../img/favicon.ico" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Oregano&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Open+Sans" rel="stylesheet">
+    <link href="https://raw.githubusercontent.com/daneden/animate.css/master/animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- owl carousel -->
+    <link href="../OwlCarousel2-2.3.4/dist/assets/owl.carousel.css" rel="stylesheet" type="text/css">
+    <link href="../OwlCarousel2-2.3.4/dist/assets/owl.theme.default.css" rel="stylesheet" type="text/css">
+    <!-- file css chung cho cả trang web -->
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <!-- file css riêng cho trang showProduct -->
+    <link href="../css/file css/showProduct.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- phần đầu trang web -->
+    <header>
+        <div class="container-fluid headerDescription">
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="row shopping-cart-container">
+                        <div class="col-sm-12 col-lg-12 set-padding-4">
+                            <a href="cartNoProduct.html"> <img src="../img/trolley.png" alt="AQ Mobile">
+                                <span>Giỏ hàng (<span class='cart-counter'> 0</span>)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="row shopping-cart-container">
+                        <br>
+                        <center>
+                            <button class="btn btn-primary btn-sm btn-lg" href="#signup" data-toggle="modal" data-target=".log-sign">Đăng nhập/Đăng kí</button>
+                        </center>
+                        <br>
+                        <!-- </div> -->
+                        <!-- Modal -->
+                        <div class="modal fade bs-modal-sm log-sign" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="bs-example bs-example-tabs">
+                                        <ul id="myTab" class="nav nav-tabs">
+                                            <li id="tab1 lt" onclick="loginTabFun()" class=" active tab-style login-shadow "><a href="#signin" data-toggle="tab">Đăng nhập</a></li>
+                                            <li id="tab2 rt" onclick="regTabFun()" class=" tab-style "><a href="#signup" data-toggle="tab">Đăng kí</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div id="myTabContent" class="tab-content">
+                                            <div class="tab-pane fade active in" id="signin">
+                                                <form class="form-horizontal" id="login">
+                                                    <fieldset>
+                                                        <!-- Sign In Form -->
+                                                        <!-- Text input-->
+                                                        <div class="group">
+                                                            <input required="" id="se" class="input" type="email"><span class="highlight"></span><span class="bar"></span>
+                                                            <label class="label" for="date">Email của bạn</label></div>
+                                                        <!-- Password input-->
+                                                        <div class="group">
+                                                            <input required="" id="sp" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
+                                                            <label class="label" for="date">Nhập mật khẩu</label>
+                                                        </div>
+                                                        <em>minimum 6 characters</em>
+                                                        <div class="forgot-link headerDescriptionOne">
+                                                            <a href="#forgot" data-toggle="modal" onclick="forTabFun()" data-target="#forgot-password">Quên mật khẩu?</a>
+                                                        </div>
+                                                        <!-- Button -->
+                                                        <div class="control-group">
+                                                            <label class="control-label" for="signin"></label>
+                                                            <div class="controls">
+                                                                <button id="signin" name="signin" type="submit" onclick="login()" value="Submit" class="btn btn-primary btn-block">Đăng nhập</button>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </form>
+                                            </div>
+                                            <div class="tab-pane fade" id="signup">
+                                                <form class="form-horizontal" id="register">
+                                                    <fieldset>
+                                                        <!-- Sign Up Form -->
+                                                        <!-- Text input-->
+                                                        <div class="group">
+                                                            <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                                                            <label class="label" for="date">Họ</label></div>
+                                                        <!-- Text input-->
+                                                        <div class="group">
+                                                            <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                                                            <label class="label" for="date">Tên</label></div>
+                                                        <!-- Password input-->
+                                                        <div class="group">
+                                                            <input required="" id="re" class="input" type="email"><span class="highlight"></span><span class="bar"></span>
+                                                            <label class="label" for="date">Email mới</label></div>
+                                                        <!-- Text input-->
+                                                        <div class="group">
+                                                            <input required="" id="rp" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
+                                                            <label class="label" for="date">Mật khẩu</label></div>
+                                                        <em>1-8 Characters</em>
+                                                        <div class="group2">
+                                                            <input required="" id="rrp" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
+                                                            <label class="label" for="date">Nhập lại mật khẩu</label></div>
+                                                        <em>Mật khẩu này phải trùng khợp với mật khẩu đã nhập trên</em>
+                                                        <!-- Button -->
+                                                        <div class="control-group">
+                                                            <label class="control-label" for="confirmsignup"></label>
+                                                            <div class="controls">
+                                                                <button id="confirmsignup" onclick="register()" value="Submit" name="confirmsignup" type="submit" class="btn btn-primary btn-block">Đăng kí</button>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--modal2-->
+                        <div class="modal fade bs-modal-sm" id="forgot-password" tabindex="0" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-sm">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Bạn cần điền địa chỉ email vào đây để chúng tôi gửi lại mã</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form class="form-horizontal">
+                                            <fieldset>
+                                                <div class="group">
+                                                    <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
+                                                    <label class="label" for="date">Địa chỉ email tài khoản</label></div>
+                                                <div class="control-group">
+                                                    <label class="control-label" for="forpassword"></label>
+                                                    <div class="controls">
+                                                        <button id="forpasswodr" name="forpassword" class="btn btn-primary btn-block">Gửi tới email này</button>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="row headerRow">
+                        <div class="col-sm-3">
+                            <img src="../img/placeholder.png" alt="AQ Mobile" />
+                            <span class="headerTextOne">Miễn phí giao hàng</span>
+                        </div>
+                        <div class="col-sm-4">
+                            <img src="../img/best-price.png" alt="AQ Mobile" />
+                            <span class="headerTextOne">Tiết kiệm thời gian mua sắm</span>
+                        </div>
+                        <div class="col-sm-5">
+                            <img src="../img/protection.png" alt="AQ Mobile" />
+                            <span class="headerTextOne">Kiểm tra sản phẩm trước khi nhận</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- phần thanh menu và dropdown -->
+        <div class="container-fluid">
+            <div class="row headerDescriptionOne">
+                <div class="col-sm-4">
+                    <span class="headerTextTwo"><a class="textDecoration" href="../index.html">AQ Mobile</a></span>
+                </div>
+                <div class="col-sm-5">
+                    <div class="row">
+                        <nav class="navbar navbar-light navbar-expand-lg mainmenu">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav mr-auto">
+                                    <!-- <li class="active"><a href="#">Trang chủ <span class="sr-only">(current)</span></a></li> -->
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Điện thoại</a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a href="listProduct.html">Apple</a></li>
+                                            <li><a href="listProduct.html">Samsung</a></li>
+                                            <li><a href="listProduct.html">Huawei</a></li>
+                                            <li><a href="listProduct.html">Oppo</a></li>
+                                            <li><a href="listProduct.html">Xiaomi</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hàng cũ</a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a href="listProduct.html">Apple</a></li>
+                                            <li><a href="listProduct.html">Samsung</a></li>
+                                            <li><a href="listProduct.html">Huawei</a></li>
+                                            <li><a href="listProduct.html">Oppo</a></li>
+                                            <li><a href="listProduct.html">Xiaomi</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="listProduct.html">Khuyến mại</a></li>
+                                    <li><a href="listProduct.html">Bán chạy</a></li>
+                                    <li><a href="about.html">Giới thiệu</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <!-- <div class="row"> -->
+                    <div class="col-11 headerSearchBar headerSearchBox">
+                        <div class="main-f5">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Tìm kiếm">
+                                <div class="input-group-append">
+                                    <button class="btn btn-secondary" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-1">
+                    </div>
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+        <!-- end phần thanh menu và dropdown -->
+    </header>
+    <!-- end phần đầu trang web -->
+    <!-- phần thân của trang web -->
+    <div class="container">
+        <div class="row boxStyleThree" style="margin-left: 2px;">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../index.html">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="#">Điện thoại</a></li>
+                    <li class="breadcrumb-item"><a href="#">Apple</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">iPhone 8 64 GB Mới</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <h3>iPhone 8 64 GB Mới</h3>
+    </div>
+    <!-- phần hiển thị chi tiết sản phẩm -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 boxSliderOne">
+                <div class="row boxTop">
+                    <div class="col-12">
+                        <div class="wrapCarouselFull boxImgText">
+                            <div class="owl-carousel carousel-full">
+                                <div class="item-carousel-full magnify">
+                                    <div class="large"></div>
+                                    <img src="../img/img-4.png" class="small" alt="AQ Mobile">
+                                </div>
+                                <div class="item-carousel-full magnify">
+                                    <div class="large"></div>
+                                    <img src="../img/img-21.png" class="small" alt="AQ Mobile">
+                                </div>
+                                <div class="item-carousel-full magnify">
+                                    <div class="large"></div>
+                                    <img src="../img/img-22.png" class="small" alt="AQ Mobile">
+                                </div>
+                                <div class="item-carousel-full magnify">
+                                    <div class="large"></div>
+                                    <img src="../img/img-23.png" class="small" alt="AQ Mobile">
+                                </div>
+                                <div class="item-carousel-full magnify">
+                                    <div class="large"></div>
+                                    <img src="../img/img-4.png" class="small" alt="AQ Mobile">
+                                </div>
+                                <div class="item-carousel-full magnify">
+                                    <div class="large"></div>
+                                    <img src="../img/img-21.png" class="small" alt="AQ Mobile">
+                                </div>
+                                <div class="item-carousel-full magnify">
+                                    <div class="large"></div>
+                                    <img src="../img/img-22.png" class="small" alt="AQ Mobile">
+                                </div>
+                                <div class="item-carousel-full magnify">
+                                    <div class="large"></div>
+                                    <img src="../img/img-23.png" class="small" alt="AQ Mobile">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="wrapCarouselThumbs boxImgTextOne">
+                            <div class="owl-carousel carousel-thumbs">
+                                <div class="item-carousel-thumbs">
+                                    <img src="../img/img-4.png" alt="AQ Mobile">
+                                </div>
+                                <div class="item-carousel-thumbs">
+                                    <img src="../img/img-21.png" alt="AQ Mobile">
+                                </div>
+                                <div class="item-carousel-thumbs">
+                                    <img src="../img/img-22.png" alt="AQ Mobile">
+                                </div>
+                                <div class="item-carousel-thumbs">
+                                    <img src="../img/img-23.png" alt="AQ Mobile">
+                                </div>
+                                <div class="item-carousel-thumbs">
+                                    <img src="../img/img-4.png" alt="AQ Mobile">
+                                </div>
+                                <div class="item-carousel-thumbs">
+                                    <img src="../img/img-21.png" alt="AQ Mobile">
+                                </div>
+                                <div class="item-carousel-thumbs">
+                                    <img src="../img/img-22.png" alt="AQ Mobile">
+                                </div>
+                                <div class="item-carousel-thumbs">
+                                    <img src="../img/img-23.png" alt="AQ Mobile">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- product -->
+            <div class="col-lg-5">
+                <div class="row">
+                    <div class="product-content product-wrap clearfix product-deatil boxTopTwo">
+                        <h2 class="name">
+                            <!-- <i class="fa fa-star fa-2x text-primary"></i>
+                            <i class="fa fa-star fa-2x text-primary"></i>
+                            <i class="fa fa-star fa-2x text-primary"></i>
+                            <i class="fa fa-star fa-2x text-primary"></i>
+                            <i class="fa fa-star fa-2x text-muted"></i> -->
+                            <div class="rating-star">
+                                <div class="stars">
+                                    <a class="star rated"></a>
+                                    <a class="star rated"></a>
+                                    <a class="star rated"></a>
+                                    <a class="star"></a>
+                                    <a class="star"></a>
+                                    <span class="fa fa-2x">
+                                        <h5>(109) Đánh gía</h5>
+                                    </span>
+                                </div>
+                            </div>
+                        </h2>
+                        <div class="textCol">18.890.000 đ <span class="textColOne"><s>21.199.000 đ</s></span></div>
+                        <div>
+                            <p class="textColTwo">Tình trạng: <span class="textColThree">Còn hàng</span></p>
+                        </div>
+                        <hr>
+                        <div>
+                            <img src="../img/circular-shape-silhouette.png" alt="AQ Mobile"><span class="headerTextOne">Màn hình: 6.5””, Full HD</span>
+                            <br>
+                            <img src="../img/circular-shape-silhouette.png" alt="AQ Mobile"><span class="headerTextOne">Kích thước: 157.5 - 77.4 - 7.7 m</span>
+                            <br>
+                            <img src="../img/circular-shape-silhouette.png" alt="AQ Mobile"><span class="headerTextOne">Trọng lượng: 208 g</span><br>
+                            <img src="../img/circular-shape-silhouette.png" alt="AQ Mobile"><span class="headerTextOne">Bộ nhớ đệm / Ram: 4 GB RAM</span><br>
+                            <img src="../img/circular-shape-silhouette.png" alt="AQ Mobile"><span class="headerTextOne">Bộ nhớ trong: 64 GB</span><br>
+                            <img src="../img/circular-shape-silhouette.png" alt="AQ Mobile"><span class="headerTextOne">Loại SIM: Nano-SIM</span><br>
+                            <img src="../img/circular-shape-silhouette.png" alt="AQ Mobile"><span class="headerTextOne">Chipset: Apple A12 Bionic 6 nhân</span>
+                        </div>
+                        <div class="add-to-cart boxStyleThree">
+                            <div class="product-qty qty">
+                                <span>Số lượng: </span>
+                                <span class="minus bg-dark">-</span>
+                                <input type="number" class="count" name="qty" value="1">
+                                <span class="plus bg-dark">+</span>
+                            </div>
+                        </div>
+                        <div class="boxStyleThree">
+                            <span>Màu sắc: </span>
+                            <span class="headerTextOne">
+                                <!-- <button type="button" class="btn btn-danger btn-circle"><i class="fa fa-heart"></i>
+                                </button> -->
+                                <button type="button" class="btn btn-danger btn-circle"></i>
+                                </button>
+                            </span>
+                            <span class="headerTextOne">
+                                <button type="button" class="btn btn-warning btn-circle"></i>
+                                </button>
+                            </span>
+                            <span class="headerTextOne">
+                                <button type="button" class="btn btn-dark btn-circle"></i>
+                                </button>
+                            </span>
+                        </div>
+                        <div class="buttonBox">
+                            <a href="cartProduct.html"><button type="button" class="btn btn-warning">MUA NGAY</button></a>
+                        </div>
+                        <div class="buttonBox">
+                            <button type="button" class="btn btn-info add-item addToCart"><i class="fa fa-cart-plus" aria-hidden="true"></i> THÊM VÀO GIỎ HÀNG</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="row boxTopOne">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <img src="../img/img-7.png" class="img-fluid" alt="AQ Mobile">
+                        </div>
+                    </div>
+                    <div class="col-lg-12 buttonBox">
+                        <img src="../img/rocket.png" alt="AQ Mobile"><span class="textStyle">GIAO HÀNG MIỄN PHÍ</span>
+                        <p class="textStyleOne">Áp dụng cho đơn hàng trên 500.000đ tại Hà Nội và TP. HCM
+                        </p>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <img src="../img/img-11.png" class="img-fluid" alt="AQ Mobile">
+                        </div>
+                    </div>
+                    <div class="col-lg-12 buttonBox">
+                        <img src="../img/save-money.png" alt="AQ Mobile"><span class="textStyle">TRI ÂN KHÁCH HÀNG
+                        </span>
+                        <p class="textStyleOne">Ưu đãi cực lớn, giảm thêm 10% cho khách hàng thân thiết
+                        </p>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <img src="../img/img-11.png" class="img-fluid" alt="AQ Mobile">
+                        </div>
+                    </div>
+                    <div class="col-lg-12 buttonBox">
+                        <img src="../img/award.png" alt="AQ Mobile"><span class="textStyle">ĐỔI TRẢ TRONG 30 NGÀY
+                        </span>
+                        <p class="textStyleOne">Dịch vụ đổi trả, hoàn tiền nhanh chóng với tất cả sản phẩm
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end product -->
+    </div>
+    <!-- end phần hiển thị chi tiết sản phẩm -->
+    <!-- đánh giá phản hồi từ người dùng, chi tiết sản phẩm -->
+    <section class="container py-4">
+        <div class="row">
+            <div class="col-md-12">
+                <ul id="tabsJustified" class="nav nav-tabs">
+                    <li class="nav-item"><a href="" data-target="#home1" data-toggle="tab" class="nav-link small text-uppercase">MÔ TẢ SẢN PHẨM</a></li>
+                    <li class="nav-item"><a href="" data-target="#profile1" data-toggle="tab" class="nav-link small text-uppercase active">CAM KẾT TỪ CHÚNG TÔI</a></li>
+                    <li class="nav-item"><a href="" data-target="#messages1" data-toggle="tab" class="nav-link small text-uppercase">ĐÁNH GIÁ TỪ NGƯỜI DÙNG</a></li>
+                </ul>
+                <br>
+                <div id="tabsJustifiedContent" class="tab-content">
+                    <div id="home1" class="tab-pane fade">
+                        <p>Bộ vi xử lý Apple A10 Fusion với 4 lõi xử lý cho hiệu năng hoạt động tốt hơn, giúp tiết kiệm pin khá tốt cho thiết bị. Ngoài ra, vi xử lý đồ họa cũng được tích hợp sẵn với tốc độ xử lý nhanh hơn tới 50% so với các nhân đồ họa trong
+                            các sản phẩm tiền nhiệm trước đây. Với cấu hình này, người dùng sẽ chẳng phải lo lắng hay có những bận tâm nào bởi việc xử lý quá nhanh chóng cùng một hiệu năng mạnh mẽ chắc chắn iPhone 7 Plus sẽ làm hài lòng những khách hàng
+                            khó tính nhất.
+                        </p>
+                    </div>
+                    <div id="profile1" class="tab-pane fade active show">
+                        <div class="row pb-2">
+                            <div class="col-md-7">
+                                <p>Được ra mắt sau chiếc iPhone 7. IPhone 7 Plus sở hữu những thiết kế mới mẻ, độc đáo trên thị trường công nghệ với vô vàn những tính năng hết sức vượt trội. Với thiết kế mỏng, nhẹ mang lại cho người dùng cảm giác khá chắc
+                                    chắn khi cầm. Thêm vào đó, IPhone 7 Plus trông vô cùng sang trọng, lịch sự nhưng cũng không kém phần tinh tế. Ngoài ra, nút Home với cảm ứng lực, chính là điểm khác trên chiếc điện thoại này. Đồng thời còn có sự khác
+                                    biệt hoàn toàn với chiếc camera kép tinh xảo ở mặt sau.
+                                </p>
+                            </div>
+                            <div class="col-md-5"><img src="../img/img-5.png" class="float-right img-fluid img-rounded"></div>
+                        </div>
+                    </div>
+                    <div id="messages1" class="tab-pane fade">
+                        <form method="post" class="well padding-bottom-10" onsubmit="return false;">
+                            <textarea rows="2" class="form-control" placeholder="Write a review"></textarea>
+                            <div class="margin-top-10">
+                                <button type="submit" class="btn btn-sm btn-primary pull-right">
+                                    Gửi Đánh Gía
+                                </button>
+                                <a href="javascript:void(0);" class="btn btn-link profile-link-btn" rel="tooltip" data-placement="bottom" title="" data-original-title="Add Location"><i class="fa fa-location-arrow"></i></a>
+                                <a href="javascript:void(0);" class="btn btn-link profile-link-btn" rel="tooltip" data-placement="bottom" title="" data-original-title="Add Voice"><i class="fa fa-microphone"></i></a>
+                                <a href="javascript:void(0);" class="btn btn-link profile-link-btn" rel="tooltip" data-placement="bottom" title="" data-original-title="Add Photo"><i class="fa fa-camera"></i></a>
+                                <a href="javascript:void(0);" class="btn btn-link profile-link-btn" rel="tooltip" data-placement="bottom" title="" data-original-title="Add File"><i class="fa fa-file"></i></a>
+                            </div>
+                        </form>
+                        <div class="chat-body no-padding profile-message margin-top-10">
+                            <ul>
+                                <li class="message margin-top-10">
+                                    <img src="../img/avatar1.png" class="online" alt="AQ Mobile">
+                                    <span class="message-text">
+                                        <a href="javascript:void(0);" class="username">
+                                            User
+                                            <span class="badge">Người dùng</span>
+                                    <span class="pull-right">
+                                                <i class="fa fa-star text-primary"></i>
+                                                <i class="fa fa-star text-primary"></i>
+                                                <i class="fa fa-star text-primary"></i>
+                                                <i class="fa fa-star text-primary"></i>
+                                                <i class="fa fa-star text-muted"></i>
+                                            </span>
+                                    </a>
+                                    Sản phẩm tốt, nhân viên phục vụ ok, tạm được
+                                    </span>
+                                    <ul class="list-inline font-xs">
+                                        <li>
+                                            <a href="javascript:void(0);" class="text-info"><i class="fa fa-thumbs-up"></i> Lượt thích (22)</a>
+                                        </li>
+                                        <li class="pull-right">
+                                            <small class="text-muted pull-right ultra-light"> Cách đây 1 năm </small>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="message margin-top-10">
+                                    <img src="../img/avatar2.png" class="online" alt="AQ Mobile">
+                                    <span class="message-text">
+                                        <a href="javascript:void(0);" class="username">
+                                            User
+                                            <span class="badge">Người dùng</span>
+                                    <span class="pull-right">
+                                                <i class="fa fa-star text-primary"></i>
+                                                <i class="fa fa-star text-primary"></i>
+                                                <i class="fa fa-star text-primary"></i>
+                                                <i class="fa fa-star text-primary"></i>
+                                                <i class="fa fa-star text-primary"></i>
+                                            </span>
+                                    </a>
+                                    Sản phẩm đóng gói hợp lí
+                                    </span>
+                                    <ul class="list-inline font-xs">
+                                        <li>
+                                            <a href="javascript:void(0);" class="text-info"><i class="fa fa-thumbs-up"></i> Lượt thích (22)</a>
+                                        </li>
+                                        <li class="pull-right">
+                                            <small class="text-muted pull-right ultra-light"> Cách đây 1 năm </small>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container boxTopOne">
+        <h3>CÁC VIDEO ĐÁNH GIÁ VỀ SẢN PHẨM</h3>
+        <div class="row buttonBox">
+            <div class="col-12">
+                <div class="row buttonBox">
+                    <iframe width='1140' height="641" src="https://www.youtube.com/embed/a4kxkT5orwc" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="row buttonBox">
+                    <iframe width='1140' height="641" src="https://www.youtube.com/embed/a4kxkT5orwc" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="row buttonBox">
+                    <iframe width='1140' height="641" src="https://www.youtube.com/embed/a4kxkT5orwc" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="row buttonBox">
+                    <iframe width='1140' height="641" src="https://www.youtube.com/embed/a4kxkT5orwc" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider đề xuất sản phẩm -->
+    <div class="container text-center box-padding">
+        <div class="row">
+            <h3>ĐƯỢC ĐỀ XUẤT CHO BẠN</h3>
+        </div>
+        <div class="row">
+            <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+                <div class="carousel-inner w-100" role="listbox">
+                    <div class="carousel-item row no-gutters active">
+                        <div class="col-3 float-left">
+                            <div class="product-grid4">
+                                <div class="product-image4">
+                                    <a href="#">
+                                        <img class="pic-1" src="../img/img-2.png" alt="AQ Mobile">
+                                        <img class="pic-2" src="../img/img-3.png" alt="AQ Mobile">
+                                    </a>
+                                    <ul class="social">
+                                        <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                        <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                        <li>
+                                            <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                        </li>
+                                    </ul>
+                                    <span class="product-new-label">Mới</span>
+                                    <span class="product-discount-label">-10%</span>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="title"><a href="showProduct.html">iPhone 8 Plus 64 GB Like New</a></h3>
+                                    <div class="price">
+                                        14.660.000 đ
+                                        <span>15.999.000đ</span>
+                                    </div>
+
+                                    <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 float-left">
+                            <div class="product-grid4">
+                                <div class="product-image4">
+                                    <a href="#">
+                                        <img class="pic-1" src="../img/img-2.png" alt="AQ Mobile">
+                                        <img class="pic-2" src="../img/img-3.png" alt="AQ Mobile">
+                                    </a>
+                                    <ul class="social">
+                                        <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                        <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                        <li>
+                                            <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                        </li>
+                                    </ul>
+                                    <span class="product-new-label">Mới</span>
+                                    <span class="product-discount-label">-10%</span>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="title"><a href="showProduct.html">iPhone 8 Plus 64 GB Like New</a></h3>
+                                    <div class="price">
+                                        14.660.000 đ
+                                        <span>15.999.000đ</span>
+                                    </div>
+                                    <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 float-left">
+                            <div class="product-grid4">
+                                <div class="product-image4">
+                                    <a href="#">
+                                        <img class="pic-1" src="../img/img-2.png" alt="AQ Mobile">
+                                        <img class="pic-2" src="../img/img-3.png" alt="AQ Mobile">
+                                    </a>
+                                    <ul class="social">
+                                        <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                        <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                        <li>
+                                            <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                        </li>
+                                    </ul>
+                                    <span class="product-new-label">Mới</span>
+                                    <span class="product-discount-label">-10%</span>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="title"><a href="showProduct.html">iPhone 8 Plus 64 GB Like New</a></h3>
+                                    <div class="price">
+                                        14.660.000 đ
+                                        <span>15.999.000đ</span>
+                                    </div>
+                                    <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 float-left">
+                            <div class="product-grid4">
+                                <div class="product-image4">
+                                    <a href="#">
+                                        <img class="pic-1" src="../img/img-2.png" alt="AQ Mobile">
+                                        <img class="pic-2" src="../img/img-3.png" alt="AQ Mobile">
+                                    </a>
+                                    <ul class="social">
+                                        <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                        <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                        <li>
+                                            <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                        </li>
+                                    </ul>
+                                    <span class="product-new-label">Mới</span>
+                                    <span class="product-discount-label">-10%</span>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="title"><a href="showProduct.html">iPhone 8 Plus 64 GB Like New</a></h3>
+                                    <div class="price">
+                                        14.660.000 đ
+                                        <span>15.999.000đ</span>
+                                    </div>
+                                    <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item row no-gutters">
+                        <div class="col-3 float-left">
+                            <div class="product-grid4">
+                                <div class="product-image4">
+                                    <a href="#">
+                                        <img class="pic-1" src="../img/img-2.png" alt="AQ Mobile">
+                                        <img class="pic-2" src="../img/img-3.png" alt="AQ Mobile">
+                                    </a>
+                                    <ul class="social">
+                                        <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                        <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                        <li>
+                                            <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                        </li>
+                                    </ul>
+                                    <span class="product-new-label">Mới</span>
+                                    <span class="product-discount-label">-10%</span>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="title"><a href="showProduct.html">iPhone 8 Plus 64 GB Like New</a></h3>
+                                    <div class="price">
+                                        14.660.000 đ
+                                        <span>15.999.000đ</span>
+                                    </div>
+                                    <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 float-left">
+                            <div class="product-grid4">
+                                <div class="product-image4">
+                                    <a href="#">
+                                        <img class="pic-1" src="../img/img-2.png" alt="AQ Mobile">
+                                        <img class="pic-2" src="../img/img-3.png" alt="AQ Mobile">
+                                    </a>
+                                    <ul class="social">
+                                        <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                        <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                        <li>
+                                            <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                        </li>
+                                    </ul>
+                                    <span class="product-new-label">Mới</span>
+                                    <span class="product-discount-label">-10%</span>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="title"><a href="showProduct.html">iPhone 8 Plus 64 GB Like New</a></h3>
+                                    <div class="price">
+                                        14.660.000 đ
+                                        <span>15.999.000đ</span>
+                                    </div>
+                                    <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 float-left">
+                            <div class="product-grid4">
+                                <div class="product-image4">
+                                    <a href="#">
+                                        <img class="pic-1" src="../img/img-2.png" alt="AQ Mobile">
+                                        <img class="pic-2" src="../img/img-3.png" alt="AQ Mobile">
+                                    </a>
+                                    <ul class="social">
+                                        <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                        <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                        <li>
+                                            <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                        </li>
+                                    </ul>
+                                    <span class="product-new-label">Mới</span>
+                                    <span class="product-discount-label">-10%</span>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="title"><a href="showProduct.html">iPhone 8 Plus 64 GB Like New</a></h3>
+                                    <div class="price">
+                                        14.660.000 đ
+                                        <span>15.999.000đ</span>
+                                    </div>
+                                    <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 float-left">
+                            <div class="product-grid4">
+                                <div class="product-image4">
+                                    <a href="#">
+                                        <img class="pic-1" src="../img/img-2.png" alt="AQ Mobile">
+                                        <img class="pic-2" src="../img/img-3.png" alt="AQ Mobile">
+                                    </a>
+                                    <ul class="social">
+                                        <li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>
+                                        <li><a href="#" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+                                        <li>
+                                            <i class="fa fa-shopping-cart addToCart addToCartStyle"></i>
+                                        </li>
+                                    </ul>
+                                    <span class="product-new-label">Mới</span>
+                                    <span class="product-discount-label">-10%</span>
+                                </div>
+                                <div class="product-content">
+                                    <h3 class="title"><a href="showProduct.html">iPhone 8 Plus 64 GB Like New</a></h3>
+                                    <div class="price">
+                                        14.660.000 đ
+                                        <span>15.999.000đ</span>
+                                    </div>
+                                    <a class="add-to-cart" href="showProduct.html">MUA NGAY</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#recipeCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--  phân trang cho web -->
+    <div class="container">
+        <nav aria-label="...">
+            <ul class="pagination justify-content-end ">
+                <li class="page-item disabled">
+                    <span class="page-link">Previous</span>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active">
+                    <span class="page-link">
+                        2
+                        <span class="sr-only">(current)</span>
+                    </span>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <!-- end phân trang của trang web -->
+    <!-- end phần thân của trang web -->
+    <!-- phần cuối trang web -->
+    <footer class="page-footer font-small indigo">
+        <!-- Footer Links -->
+        <!-- chatbox message -->
+        <div class="floating-chat">
+            <i class="fa fa-comments" aria-hidden="true"></i>
+            <div class="chat">
+                <div class="header">
+                    <span class="title">
+                                        CHAT VỚI CHÚNG TÔI
+                                    </span>
+                    <button>
+                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                    </button>
+
+                </div>
+                <ul class="messages">
+                    <li class="other">Chào mừng bạn quay trở lại với AQ Mobile. Mình có thể hỗ trợ thông tin gì giúp bạn ạ?
+                    </li>
+                </ul>
+                <div class="footer">
+                    <div class="text-box" contenteditable="true" disabled="true"></div>
+                    <button id="sendMessage">send</button>
+                </div>
+            </div>
+        </div>
+        <!-- end message -->
+        <div class="container text-center text-md-left">
+            <!-- Grid row -->
+            <div class="row boxStyleThree">
+                <!-- Grid column -->
+                <div class="col-4 col-md-4 mx-auto">
+                    <!-- Links -->
+                    <!-- <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5> -->
+                    <div class="row">
+                        <img src="../img/img 6.png" alt="AQ Mobile">
+                        <ul class="list-unstyled">
+                            <!--  <li>
+                                                
+                                                    </li> -->
+                            <li>
+                                <h4 class="footerStyle">Tổng đài hỗ trợ khách hàng</h4>
+                            </li>
+                            <li class="footerStyle">
+                                <img src="../img/img-9.png" alt="AQ Mobile">
+                                <span class="headerTextOne">0123456789</span>
+                            </li>
+                            <li class="footerStyle">
+                                <h5>Tổng đài tư vấn dịch vụ</h5>
+                            </li>
+                            <li class="../footerStyle">
+                                <img src="../img/img-9.png" alt="AQ Mobile">
+                                <span class="headerTextOne">0123456789</span>
+                            </li>
+                            <li class="../footerStyle">
+                                <h5>Email nhận phản hồi</h5>
+                            </li>
+                            <li class="footerStyle">
+                                <img src="../img/email.png" alt="AQ Mobile">
+                                <span class="headerTextOne">support@service.com</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Grid column -->
+                <hr class="clearfix w-100 d-md-none">
+                <!-- Grid column -->
+                <div class="col-4 col-md-4 mx-auto">
+                    <!-- Links -->
+                    <!-- <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5> -->
+                    <div class="row">
+                        <img src="../img/img 6.png" alt="AQ Mobile">
+                        <ul class="list-unstyled">
+                            <!-- <li>
+                                                        
+                                                    </li> -->
+                            <li>
+                                <h4 class="footerStyle">Thông tin</h4>
+                            </li>
+                            <li class="footer-text-margin">
+                                <a href="#!">Quy chế hoạt động</a>
+                            </li>
+                            <li class="footer-text-margin">
+                                <a href="#!">Chính sách bảo mật</a>
+                            </li>
+                            <li class="footer-text-margin">
+                                <a href="#!">Chính sách đổi trả</a>
+                            </li>
+                            <li class="footer-text-margin">
+                                <a href="#!">Chính sách thanh toán</a>
+                            </li>
+                            <li class="footer-text-margin">
+                                <a href="#!">Chính sách thanh toán</a>
+                            </li>
+                            <li class="footer-text-margin">
+                                <a href="#!">Câu hỏi thường gặp</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Grid column -->
+                <hr class="clearfix w-100 d-md-none">
+                <!-- Grid column -->
+                <div class="col-4 col-md-4 mx-auto">
+                    <!-- Links -->
+                    <!-- <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5> -->
+                    <div class="row">
+                        <img src="../img/img 6.png" alt="AQ Mobile">
+                        <ul class="list-unstyled">
+                            <!-- <li>
+                                                        
+                                                    </li> -->
+                            <li>
+                                <h4 class="footerStyle">Hệ thống cửa hàng</h4>
+                            </li>
+                            <li>
+                                <h5>Trụ sở</h5>
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marker-alt icon-color-style"></i>
+                                <span>Xóm 3, thôn Nam Hải, tỉnh Cà Mau</span>
+                            </li>
+                            <li>
+                                <h5>Hà Nội</h5>
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marker-alt icon-color-style"></i>
+                                <span>Số 455 Đội Cấn, Quận Ba Đình, Hà Nội</span>
+                            </li>
+                            <li>
+                                <h5>TP.Hồ Chí Minh</h5>
+                            </li>
+                            <li>
+                                <i class="fas fa-map-marker-alt icon-color-style"></i>
+                                <span>Số 70 Lữ Gia, Phường 15, Quận 11, TP. Hồ Chí Minh
+                                        </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Grid column -->
+                <hr class="clearfix w-100 d-md-none">
+                <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+        </div>
+        <!-- Footer Links -->
+        <!-- Footer Text -->
+        <div class="container text-center text-md-left">
+            <!-- Grid row -->
+            <div class="row">
+                <div class="col-sm-12 col-lg-12">
+                    <div class="row">
+                        <img src="../img/img-10.png" class="img-fluid" alt="AQ Mobile">
+                    </div>
+                </div>
+                <!-- Grid column -->
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4 class="text-uppercase font-weight-bold footerStyle">KẾT NỐI VỚI AQ MOBILE</h4>
+                        <div class="row">
+                            <!-- Content -->
+                            <div class="col-sm-3 col-lg-3">
+                                <a href="#"><img src="../img/youtube.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                            </div>
+                            <div class="col-sm-3 col-lg-3">
+                                <a href="#"> <img src="../img/twitter.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                            </div>
+                            <div class="col-sm-3 col-lg-3">
+                                <a href="#"><img src="../img/instagram.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                            </div>
+                            <div class="col-sm-3 col-lg-3">
+                                <a href="#"><img src="../img/fb.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Grid column -->
+                    <hr class="clearfix w-100 d-md-none pb-3">
+                    <!-- Grid column -->
+                    <div class="col-md-4">
+                        <div class="row">
+                            <!-- Content -->
+                            <h4 class="text-uppercase font-weight-bold footerStyle">ĐĂNG KÍ NHẬN TIN TỨC</h4>
+                            <div class="col-md-12 mb-4">
+                                <div class="row">
+                                    <form class="input-group">
+                                        <input type="text" class="form-control form-control-sm" placeholder="Email" aria-label="Your email" aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-sm btn-outline-white my-0" type="button">ĐĂNG KÍ</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!--Grid column-->
+                        </div>
+                    </div>
+                    <hr class="clearfix w-100 d-md-none pb-3">
+                    <div class="col-md-4">
+                        <h4 class="text-uppercase font-weight-bold footerStyle text-center">TÀI TRỢ BỞI</h4>
+                        <div class="row">
+                            <!-- Content -->
+
+                            <div class="col-sm-3 col-lg-3">
+                                <a href="#" class="img-margin-left-one"><img src="../img/visa.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                            </div>
+                            <div class="col-sm-3 col-lg-3">
+                                <a href="#" class="img-margin-left-one"><img src="../img/mastercard.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                            </div>
+                            <div class="col-sm-3 col-lg-3">
+                                <a href="#" class="img-margin-left-one"><img src="../img/american-express.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                            </div>
+                            <div class="col-sm-3 col-lg-3">
+                                <a href="#" class="img-margin-left-one"><img src="../img/discover.png" class="imgInfo img-fluid" alt="AQ Mobile"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Grid column -->
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3">© 2019 Copyright:
+                <a href="#">Le Trung Duong</a>
+            </div>
+            <!-- Copyright -->
+        </div>
+    </footer>
+    <!-- end phần cuối trang web -->
+    <!-- javascript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+    <script src="../OwlCarousel2-2.3.4/docs/assets/vendors/jquery.min.js"></script>
+    <script src="../OwlCarousel2-2.3.4/dist/owl.carousel.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/javascript.js"></script>
+    <script>
+        // rating star
+        jQuery(document).ready(function($) {
+            $('.rating-star .star').hover(function() {
+                $(this).addClass('to_rate');
+                $(this).parent().find('.star:lt(' + $(this).index() + ')').addClass('to_rate');
+                $(this).parent().find('.star:gt(' + $(this).index() + ')').addClass('no_to_rate');
+            }).mouseout(function() {
+                $(this).parent().find('.star').removeClass('to_rate');
+                $(this).parent().find('.star:gt(' + $(this).index() + ')').removeClass('no_to_rate');
+            }).click(function() {
+                $(this).removeClass('to_rate').addClass('rated');
+                $(this).parent().find('.star:lt(' + $(this).index() + ')').removeClass('to_rate').addClass('rated');
+                $(this).parent().find('.star:gt(' + $(this).index() + ')').removeClass('no_to_rate').removeClass('rated');
+                /*Save your rate*/
+                /*TODO*/
+            });
+        });
+        //end rating star
+        var changeSlide = 4; // mobile -1, desktop + 1
+        // Thay đổi kích thước và làm mới trang. loại bỏ hai thanh trượt
+        var slide = changeSlide;
+        if ($(window).width() < 600) {
+            var slide = changeSlide;
+            slide--;
+        } else if ($(window).width() > 999) {
+            var slide = changeSlide;
+            slide++;
+        } else {
+            var slide = changeSlide;
+        }
+        $(document).ready(function() {
+            $('.one').owlCarousel({
+                nav: true,
+                items: 1,
+            })
+            $('.two').owlCarousel({
+                nav: true,
+                margin: 15,
+                mouseDrag: false,
+                touchDrag: false,
+                responsive: {
+                    0: {
+                        items: changeSlide - 1,
+                        slideBy: changeSlide - 1
+                    },
+                    600: {
+                        items: changeSlide,
+                        slideBy: changeSlide
+                    },
+                    1000: {
+                        items: changeSlide + 1,
+                        slideBy: changeSlide + 1
+                    }
+                }
+            })
+            var owl = $('.one');
+            owl.owlCarousel();
+            owl.on('translated.owl.carousel', function(event) {
+                $(".right").removeClass("nonr");
+                $(".left").removeClass("nonl");
+                if ($('.one .owl-next').is(".disabled")) {
+                    $(".slider .right").addClass("nonr");
+                }
+                if ($('.one .owl-prev').is(".disabled")) {
+                    $(".slider .left").addClass("nonl");
+                }
+                $('.slider-two .item').removeClass("active");
+                var c = $(".slider .owl-item.active").index();
+                $('.slider-two .item').eq(c).addClass("active");
+                var d = Math.ceil((c + 1) / (slide)) - 1;
+                $(".slider-two .owl-dots .owl-dot").eq(d).trigger('click');
+            })
+            $('.right').click(function() {
+                $(".slider .owl-next").trigger('click');
+            });
+            $('.left').click(function() {
+                $(".slider .owl-prev").trigger('click');
+            });
+            $('.slider-two .item').click(function() {
+                var b = $(".item").index(this);
+                $(".slider .owl-dots .owl-dot").eq(b).trigger('click');
+                $(".slider-two .item").removeClass("active");
+                $(this).addClass("active");
+            });
+            var owl2 = $('.two');
+            owl2.owlCarousel();
+            owl2.on('translated.owl.carousel', function(event) {
+                $(".right-t").removeClass("nonr-t");
+                $(".left-t").removeClass("nonl-t");
+                if ($('.two .owl-next').is(".disabled")) {
+                    $(".slider-two .right-t").addClass("nonr-t");
+                }
+                if ($('.two .owl-prev').is(".disabled")) {
+                    $(".slider-two .left-t").addClass("nonl-t");
+                }
+            })
+            $('.right-t').click(function() {
+                $(".slider-two .owl-next").trigger('click');
+            });
+            $('.left-t').click(function() {
+                $(".slider-two .owl-prev").trigger('click');
+            });
+        });
+
+        //slider
+        var slider = $(".carousel-full");
+        var thumbnailSlider = $(".carousel-thumbs");
+        var duration = 500;
+        var syncedSecondary = true;
+
+        setTimeout(function() {
+            $(".cloned .item-slider-model a").attr("data-fancybox", "group-2");
+        }, 500);
+
+        // chức năng băng chuyền cho thanh trượt chính
+        slider
+            .owlCarousel({
+                loop: true,
+                nav: true,
+                navText: ["", ""],
+                items: 1,
+                lazyLoad: true,
+                autoplay: true,
+                smartSpeed: 600
+            })
+            .on("changed.owl.carousel", syncPosition);
+
+        // chức năng băng chuyền cho thanh trượt hình thu nhỏ
+        thumbnailSlider
+            .on("initialized.owl.carousel", function() {
+                thumbnailSlider
+                    .find(".owl-item")
+                    .eq(0)
+                    .addClass("current");
+            })
+            .owlCarousel({
+                loop: false,
+                nav: false,
+                margin: 10,
+                smartSpeed: 600,
+                responsive: {
+                    0: {
+                        items: 4
+                    },
+                    600: {
+                        items: 4
+                    },
+                    1200: {
+                        items: 4,
+                        margin: 20
+                    }
+                }
+            })
+            .on("changed.owl.carousel", syncPosition2);
+
+        // khi nhấp vào Thumbnaisl
+        thumbnailSlider.on("click", ".owl-item", function(e) {
+            e.preventDefault();
+            var number = $(this).index();
+            slider.data("owl.carousel").to(number, 300, true);
+        });
+
+        function syncPosition(el) {
+            var count = el.item.count - 1;
+            var current = Math.round(el.item.index - el.item.count / 2 - 0.5);
+
+            if (current < 0) {
+                current = count;
+            }
+            if (current > count) {
+                current = 0;
+            }
+
+            thumbnailSlider
+                .find(".owl-item")
+                .removeClass("current")
+                .eq(current)
+                .addClass("current");
+            var onscreen = thumbnailSlider.find(".owl-item.active").length - 1;
+            var start = thumbnailSlider
+                .find(".owl-item.active")
+                .first()
+                .index();
+            var end = thumbnailSlider
+                .find(".owl-item.active")
+                .last()
+                .index();
+
+            if (current > end) {
+                thumbnailSlider.data("owl.carousel").to(current, 100, true);
+            }
+            if (current < start) {
+                thumbnailSlider.data("owl.carousel").to(current - onscreen, 100, true);
+            }
+        }
+
+        function syncPosition2(el) {
+            if (syncedSecondary) {
+                var number = el.item.index;
+                slider.data("owl.carousel").to(number, 100, true);
+            }
+        }
+
+        //zoom
+        $(document).ready(function() {
+
+            var native_width = 0;
+            var native_height = 0;
+            $(".large").css("background", "url('" + $(".small").attr("src") + "') no-repeat");
+
+            //chức năng mousemove
+            $(".magnify").mousemove(function(e) {
+                // Khi người dùng di chuyển trên hình ảnh, trước tiên tập lệnh sẽ tính toán
+                // kích thước gốc nếu chúng không tồn tại. Chỉ sau kích thước bản địa
+                // có sẵn, tập lệnh sẽ hiển thị phiên bản phóng to.
+                if (!native_width && !native_height) {
+                    // Điều này sẽ tạo một đối tượng hình ảnh mới có cùng hình ảnh như trong .small
+                                         // không thể trực tiếp lấy kích thước từ .small vì
+                                         // chiều rộng được chỉ định là 200px trong html để có được kích thước thực tế
+                                         // tạo đối tượng hình ảnh này.
+                    var image_object = new Image();
+                    image_object.src = $(".small").attr("src");
+
+                    // Mã này được gói trong hàm .load rất quan trọng.
+                                         // chiều rộng và chiều cao của đối tượng sẽ trả về 0 nếu được truy cập trước
+                                         // hình ảnh được tải.
+                    native_width = image_object.width;
+                    native_height = image_object.height;
+                } else {
+                    // tọa độ x / y của chuột
+                                         // Đây là vị trí của .magnify đối với tài liệu.
+                    var magnify_offset = $(this).offset();
+                    // khấu trừ các vị trí .magnify từ các vị trí chuột với
+                                         // liên quan đến tài liệu để có được vị trí chuột đối với
+                                         //container(.magnify)
+                    var mx = e.pageX - magnify_offset.left;
+                    var my = e.pageY - magnify_offset.top;
+
+                    //mã để làm mờ kính nếu chuột ở ngoài vùng chứa
+                    if (mx < $(this).width() && my < $(this).height() && mx > 0 && my > 0) {
+                        $(".large").fadeIn(100);
+                    } else {
+                        $(".large").fadeOut(100);
+                    }
+                    if ($(".large").is(":visible")) {
+                        // Vị trí nền của .large sẽ được thay đổi theo vị trí
+                                                 // của chuột trên hình ảnh .small. Vì vậy, chuột sẽ nhận được tỷ lệ pixel
+                                                 // bên dưới con trỏ chuột đối với hình ảnh và sử dụng nó để định vị
+                                                 // hình ảnh lớn bên trong kính lúp
+                        var rx = Math.round(mx / $(".small").width() * native_width - $(".large").width() / 2) * -1;
+                        var ry = Math.round(my / $(".small").height() * native_height - $(".large").height() / 2) * -1;
+                        var bgp = rx + "px " + ry + "px";
+
+                        //Thời gian để di chuyển kính lúp bằng chuột
+
+                        var px = mx - $(".large").width() / 2;
+                        var py = my - $(".large").height() / 2;
+                        // Bây giờ kính di chuyển bằng chuột
+                                                 // Logic là khấu trừ một nửa chiều rộng và chiều cao của kính từ
+                                                 // tọa độ chuột để đặt nó với tâm của nó tại tọa độ chuột
+
+                                                 // Nếu bạn di chuột vào hình ảnh bây giờ, bạn sẽ thấy kính lúp hoạt động
+                        $(".large").css({
+                            left: px,
+                            top: py,
+                            backgroundPosition: bgp
+                        });
+                    }
+                }
+            })
+        });
+        $(".stars").mousemove(function(e) {
+            var gLeft = $(".stars .stars-ghost").offset().left,
+                pX = e.pageX;
+
+            $(".stars .stars-ghost").width(pX - gLeft);
+
+        });
+
+        // end zoom
+        // test
+    </script>
+</body>
+
+</html>

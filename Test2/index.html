@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h1>Messi có thể giành 12 danh hiệu trong năm 2019</h1>
+    <div class="box">
+        <p class="paragraph" id="p1"> <a href="http://bongdaplus.vn/tim-kiem/?q=barca">Barca</a> đã giành chức vô địch La Liga 2018/19 trước 3 vòng đấu. Họ cũng đã vào tới chung kết Cúp Nhà Vua và đối thủ sẽ là Valencia. Tại Champions League, Blaugrana đã đặt 1 chân vào chung kết
+            sau khi thắng Liverpool 3-0 ở lượt đi vòng bán kết trên sân Nou Camp.
+        </p>
+
+        <p class="paragraph" id="p2">
+            Nếu không có gì quá bất ngờ, cú ăn ba hoàn toàn nằm trong tầm tay của Messi và các đồng đội. Những danh hiệu khác mà Barca có thể giành được thêm trong năm 2019 là Siêu Cúp Tây Ban Nha, Siêu Cúp châu Âu và FIFA Club World Cup. Tổng cộng Messi sẽ cùng
+            Barca có cú ăn 6 như năm 2009.
+        </p>
+
+        <p class="paragraph" id="p3">
+            Ngoài 6 danh hiệu tập thể, Messi còn có thể giành tới 6 danh hiệu cá nhân. Leo hiện đang dẫn đầu danh sách vua phá lưới tại Champions League (12 bàn) và La Liga (34 bàn). Anh cũng gần như chắc chắn giành Chiếc giày vàng châu Âu khi hơn người xếp thứ 2
+            là Kylian Mbappe của PSG 8 điểm. Tiền đạo người Pháp hiện mới có 30 bàn tại Ligue 1 nhưng <a href="http://bongdaplus.vn/mbappe-bi-treo-gio-dang-chiec-giay-vang-cho-messi-2493271905.html">vừa bị cấm thi đấu 3 trận</a> trong khi
+            giải chỉ còn 4 vòng đấu nữa là hạ màn.
+        </p>
+
+        <script>
+            //Bài 1: Cho 1 mảng có độ dài lớn hơn 2, chứa các số khác nhau. Hãy viết hàm tìm ra số lớn thứ nhì trong mảng
+            function numberTwo(str) {
+                var numberTwo = str.sort(function(a, b) {
+                    return b - a;
+                })[1];
+                return numberTwo;
+            }
+            console.log(numberTwo([15, 18, 22]));
+            // Bài 2: Cho 1 mảng các chuỗi bất kỳ. Hãy viết hàm tìm ra chuỗi có độ dài lớn nhất trong mảng
+            function checkLength(str) {
+                var text = "";
+
+                str.forEach(function(cout) {
+                    if (cout.length > text.length) {
+                        text = cout;
+                    }
+                });
+                return text;
+            }
+
+            checkLength(["duong", "techmaster", "viet nam", "google"]);
+            // Bài 3: Viết hàm có 2 tham số là 2 chuỗi str và target, dùng để kiểm tra chuỗi str có kết thúc bởi chuỗi target hay không. Kết quả trả về là true hoặc false
+            function testStr(str, target) {
+                return str.substr(-1) == target.substr(-1);
+            }
+            console.log(testStr("Duong", "Techmaster"));
+            // Bài 4: Cho 1 mảng bất kỳ. Hãy kiểm tra xem trong mảng đó có phần tử nào bị lặp lại hay không. Kết quả trả về true hoặc false
+            function checkStr(k) {
+                for (var i = 0; i < this.length; i++) {
+                    if (this[i] === k || (this[i] !== this[i] && k !== k)) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+            console.log(checkStr("Duong", "Techmaster"));
+            // Bài 5: Viết hàm truyền vào 1 chuỗi là tên thẻ HTML, kiểm tra xem trong file HTML có bao nhiêu thẻ đó. Kết quả trả về là số lượng thẻ (không bao gồm thẻ đóng), nếu không có trả về 0
+            function changeTags(scanTags) {
+                return document.getElementsByTagName(scanTags).length;
+            }
+            changeTags("p");
+        </script>
+</body>
+
+</html>
