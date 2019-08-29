@@ -33,7 +33,7 @@
                 <input type="text" class="form-control" id="phone">
             </div>
             <button type="button" class="btn btn-primary"><a href="./index.html" style="color: white;">Quay lại</a></button>
-            <button type="button" class="btn btn-primary" onclick="addList()"><a href="./index.html">Cập nhật</a></button>
+            <button type="button" class="btn btn-primary" onclick="addList()"><a style="color: white;" href="./index.html">Cập nhật</a></button>
         </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -49,20 +49,7 @@
         console.log(userId);
         editList(userId);
 
-        // function editList() {
-        //     axios.get(`http://localhost:3000/users/${userID}`),
-        //         .then(resp => {
-        //             data = resp.data;
-        //             $("name").val(data.name);
-        //             $("age").val(data.age);
-        //             $("email").val(data.email);
-        //             $("phone").val(data.phone)
-        //         })
-        //         .catch(error => {
-        //             console.log(error);
-        //         });
-
-        // }
+        //llấy dữ liệu cũ từư bảng để hiệnr thị
         function editList(n) {
             axios.get(`http://localhost:3000/users/${n}`)
                 .then(resp => {
@@ -76,7 +63,7 @@
                 });
 
         };
-
+        //cho phép cập nhật tohong tin người dùng
         function addList() {
             axios.put(`http://localhost:3000/users/${userId}`, {
                 name: $("#name").val(),
