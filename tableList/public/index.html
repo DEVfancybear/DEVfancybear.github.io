@@ -56,9 +56,10 @@
                                 <th>Email</th>
                                 <th>Số điện thoại</th>
                                 <th>Tùy chọn</th>
+                                <!-- <a href="javascript:void(0)" class="text-danger" onclick="deleteUser(' + users[i].id + ', this)">Xóa</a> -->
                             </tr>
                         </thead>
-                        <tbody id="tableData">
+                        <tbody id="tb">
                         </tbody>
                     </table>
                 </div>
@@ -69,72 +70,42 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
-        // var dataTable = [{
-        //     name: "Lê Trung Dương",
-        //     year: 1998,
-        //     email: "duongdepzai@gmail.com",
-        //     phone: 123456789
-        // }, {
-        //     name: "Nguyễn Anh Hào",
-        //     year: 1999,
-        //     email: "haoxaugai1189@gmail.com",
-        //     phone: 123456789
-        // }, {
-        //     name: "Lung Thị Linh",
-        //     year: 2000,
-        //     email: "linhdamdang890@gmail.com",
-        //     phone: 123456789
-        // }, {
-        //     name: "Trần Văn Nam",
-        //     year: 2001,
-        //     email: "nambeztyahoo@gmail.com",
-        //     phone: 123456789
-        // }, {
-        //     name: "Trần Việt Hoàng",
-        //     year: 2000,
-        //     email: "hoangdz118@gmail.com",
-        //     phone: 123456789
-        // }, {
-        //     name: "Nguyễn Linh Chi",
-        //     year: 2000,
-        //     email: "chi817@gmail.com",
-        //     phone: 123456789
-        // }, {
-        //     name: "Phạm Thị Hải",
-        //     year: 2000,
-        //     email: "hai092012@gmail.com",
-        //     phone: 123456789
-        // }, {
-        //     name: "Lê Long Thành",
-        //     year: 2000,
-        //     email: "long20000@gmail.com",
-        //     phone: 123456789
-        // }, ];
-        var k = '<tbody>'
-        for (i = 0; i < dataTable.length; i++) {
-            k += '<tr>';
-            k += '<td>' + dataTable[i].users.name + '</td>';
-            k += '<td>' + dataTable[i].users.year + '</td>';
-            k += '<td>' + dataTable[i].users.email + '</td>';
-            k += '<td>' + dataTable[i].users.phone + '</td>';
-            k += `<td>
-                <button type="button" class="btn btn-success"><span>Chỉnh sửa</span></button>
-                <button type="button" class="btn btn-danger"><span>Xóa</span></button>
-    </td>`;
-            k += '</tr>';
-        }
-        k += '</tbody>';
-        document.getElementById('users').innerHTML = k;
+        // Make a request for a user with a given ID
+        axios.get('http://localhost:3000/users')
+            .then(function(response) {
+                // handle success
+                var k = '<tbody>'
+                for (i = 0; i < response.data.length; i++) {
+                    k += '<tr>';
+                    k += '<td>' + response.data[i].name + '</td>';
+                    k += '<td>' + response.data[i].year + '</td>';
+                    k += '<td>' + response.data[i].email + '</td>';
+                    k += '<td>' + response.data[i].phone + '</td>';
+                    k += `<td>
+                            <button type="button" class="btn btn-success"><span><a href="./editTable.html?id=${response.data[i].id}">Chỉnh sửa</a></span></button>
+                            <button type="button" onclick="deleteUser(${response.data[i].id})" class="btn btn-danger">Xóa</button>
+                </td>`;
+                    k += '</tr>';
+                }
+                k += '</tbody>';
+                document.getElementById('tb').innerHTML = k;
+                console.log(response);
+            })
+            .catch(function(error) {
+                // handle error
+                console.log(error);
+            })
+            .finally(function() {
+                // always executed
+            });
 
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("table").innerHTML = this.responseText;
-            }
+
+        function deleteUser(getId) {
+            axios.delete(`http://localhost:3000/users/${getId}`);
+            location.reload();
         };
-        xhttp.open("GET", "db.json", true);
-        xhttp.send();
     </script>
 </body>
 
