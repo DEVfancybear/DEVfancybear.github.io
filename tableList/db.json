@@ -1,18 +1,18 @@
 {
   "users": [
     {
-      "name": "Dương Trung Lê",
+      "name": "Dương",
       "year": "12/09/1995",
       "email": "letrungduongxx3@gmail.com",
       "phone": "0984760258",
-      "id": 2
+      "id": 5
     },
     {
-      "name": "Dương Trung Lê",
+      "name": "Dương",
       "year": "12/09/1995",
       "email": "letrungduongxx3@gmail.com",
-      "phone": "0984760258",
-      "id": 3
+      "phone": "984760258",
+      "id": 6
     }
   ]
 }

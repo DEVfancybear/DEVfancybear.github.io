@@ -103,10 +103,10 @@
 
         // cho phép xóa các thông tin
         function deleteUser(getId) {
-            var a = confirm("Bạn có muốn xóa không ?");
-            if (a) {
+            var checkConfirm = confirm("Bạn có muốn xóa không ?");
+            if (checkConfirm) {
                 axios.delete(`http://localhost:3000/users/${getId}`);
-            location.reload();
+                location.reload();
             }
         };
     </script>
