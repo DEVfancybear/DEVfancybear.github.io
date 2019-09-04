@@ -4,22 +4,32 @@
     <meta charset="utf-8" />
     <title>Laptop Thinkpad</title>
     <link rel="stylesheet" type="text/css" href="style1.css">
-
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
-
     <h1>Laptop Thinkpad Giá Rẻ</h1>
     <img src="anh1.png" title="Techmaster" alt="Thinkpad" />
     <br>
-
     <a href="about.html">Giới thiệu</a>
     <a href="thinkpad.html">Sản phẩm</a>
     <a href="guarantee.html">Bảo hành</a>
-
-
+    <button type="button" id='check_all'>Check All</button>`
+    <input type="checkbox" name="vehicle" value="Bike">I have a bike<br>
+    <input type="checkbox" name="vehicle" value="Car">I have a car
+    <input type="checkbox" name="vehicle" value="Motorbike">I have a Motorbike
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript">
+$('#check_all').click(function() {
+    $('input[name=vehicle]').prop('checked', true);
+});
 
+$('#check_all').click(function() {
+    $('input[name=vehicle]').prop('checked', false);
+});
+</script>
 
 </html>
