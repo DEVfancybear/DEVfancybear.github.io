@@ -1,25 +1,11 @@
 {
   "users": [
     {
-      "name": "ewqrewqr",
+      "name": "Lê Trung Dương",
       "year": "12/09/1995",
       "email": "letrungduongxx3@gmail.com",
-      "phone": "3856282366",
-      "id": 12
-    },
-    {
-      "name": "dsfsdfdsf",
-      "year": "fdsfd",
-      "email": "sdffs",
-      "phone": "fsfdsfs",
-      "id": 13
-    },
-    {
-      "name": "Dương",
-      "year": "12/09/1995",
-      "email": "letrungduongxx3@gmail.com",
-      "phone": "984760258",
-      "id": 14
+      "phone": "0984760258",
+      "id": 3
     }
   ]
 }

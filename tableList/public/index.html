@@ -72,7 +72,7 @@
                         <thead>
                             <tr class="bgColor">
                                 <th>
-                                    <input type="checkbox" onchange="checkAll(checked)" />
+                                    <button type='button' class='btn btn-primary btn-sm' id="checkall">Chọn tất cả</button>
                                 </th>
                                 <th>Họ tên</th>
                                 <th>Năm sinh</th>
@@ -88,7 +88,7 @@
                 </div>
                 <!--end of .table-responsive-->
             </div>
-            <div onclick="removeSelectedRow()"><button type="button" class="btn btn-success">Xóa tất cả</button>
+            <div onclick="deleteCheckbox()"><button type="button" class="btn btn-success">Xóa tất cả</button>
             </div>
         </div>
     </div>
@@ -106,7 +106,7 @@
                 for (i = 0; i < s.length; i++) {
                     k += '<tr>';
                     k += `<td>
-                            <input class="form-check-input" type="checkbox" value="">
+                            <input class="form-check-input check" type="checkbox" value="${s[i].id}">
                 </td>`;
                     k += '<td>' + s[i].name + '</td>';
                     k += '<td>' + s[i].year + '</td>';
@@ -144,15 +144,44 @@
         };
 
         // chọn tất cả hoặc bỏ chọn tất cả checkbox
-        function checkAll(checked) {
-            var inputs = document.getElementsByTagName("input");
+        let el = document.getElementById("checkall"); //let for ES6 aficionados 
+        el.onclick = checkAll; //again, function reference, no ()
+        // v1
+        function checkAll() {
+
+            var inputs = document.querySelectorAll('.check');
             for (var i = 0; i < inputs.length; i++) {
-                if (inputs[i].type == "checkbox") {
-                    inputs[i].checked = checked;
+                inputs[i].checked = true;
+            }
+
+            this.onclick = uncheckAll;
+        }
+
+        function uncheckAll() {
+            var inputs = document.querySelectorAll('.check');
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].checked = false;
+            }
+
+            this.onclick = checkAll; //function reference to original function
+        }
+        // end chọn tất cả hoặc bỏ chọn tất cả checkbox
+        //delete checkbox
+        function deleteCheckbox() {
+            let $checked = $('input[type="checkbox"]:checked');
+            let r = confirm("Xóa phần đã chọn!");
+            if (r == true) {
+                if ($checked.length > 0) {
+                    $checked.each(function() {
+                        axios({
+                            method: 'DELETE',
+                            url: 'http://localhost:3000/users/' + this.value
+                        })
+                        $(this).parent().parent().hide(400);
+                    })
                 }
             }
         }
-        // end chọn tất cả hoặc bỏ chọn tất cả checkbox
     </script>
 </body>
 
