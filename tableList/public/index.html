@@ -3,7 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 </head>
 <style>
     h2 {
@@ -40,27 +40,8 @@
 </style>
 
 <body>
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" id="yes" class="btn btn-secondary" data-dismiss="modal">Có</button>
-                    <button type="button" id="no" class="btn btn-primary">Không</button>
-                </div>
-            </div>
-        </div>
-    </div>
     <h2>Table with Bootstrap</h2>
+    <input type="search" id="myInput" onkeyup="myFunction()" name="search" placeholder="Search">
     <div class="container">
         <div class="row">
             <button type="button" class="btn btn-success button-add-student"><a href="./formAddStudent.html" class="form-11">Thêm học viên</a></button>
@@ -69,7 +50,7 @@
             <div class="colName-xs-12">
                 <div class="table-responsive" id="table-pani">
                     <table class="table table-bordered table-hover" id="table">
-                        <thead>
+                        <thead id="table-head">
                             <tr class="bgColor">
                                 <th>
                                     <button type='button' class='btn btn-primary btn-sm' id="checkall">Chọn tất cả</button>
@@ -166,7 +147,7 @@
             this.onclick = checkAll; //function reference to original function
         }
         // end chọn tất cả hoặc bỏ chọn tất cả checkbox
-        //delete checkbox
+        //delete all checkbox
         function deleteCheckbox() {
             let $checked = $('input[type="checkbox"]:checked');
             let r = confirm("Xóa phần đã chọn!");
@@ -181,7 +162,15 @@
                     })
                 }
             }
+        };
+        // end delete all checkbox
+        // tìm kiếm trong bảng
+        function myFunction() {
+            const filter = document.querySelector('#myInput').value.toUpperCase();
+            const trs = document.querySelectorAll('#table tr:not(.header)');
+            trs.forEach(tr => tr.style.display = [...tr.children].find(td => td.innerHTML.toUpperCase().includes(filter)) ? '' : 'none');
         }
+        // end tìm kiếm trong bảng
     </script>
 </body>
 
