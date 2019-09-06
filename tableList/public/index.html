@@ -3,8 +3,8 @@
 
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="pagination.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 </head>
 <style>
     h2 {
@@ -56,7 +56,7 @@
                 <div class="table-responsive">
                     <table class="table table-bordered table-hover sortable display" id="table">
                         <thead id="table-head">
-                            <tr class="bgColor">
+                            <tr class="bgColor" id="list-header">
                                 <th>
                                     <button type='button' class='btn btn-primary btn-sm' id="checkall">Chọn tất cả</button>
                                 </th>
@@ -83,7 +83,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="sortTable.js"></script>
-    <script src="pagination.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script>
         // Make a request for a user with a given ID
         axios.get('http://localhost:3000/users')
@@ -178,8 +178,31 @@
             trs.forEach(tr => tr.style.display = [...tr.children].find(td => td.innerHTML.toUpperCase().includes(filter)) ? '' : 'none');
         }
         // end tìm kiếm trong bảng
+        // phân trang
         $(document).ready(function() {
-            $('#table').DataTable();
+            $('#table').after('<div id="nav"></div>');
+            var rowsShown = 5;
+            var rowsTotal = $('#table tbody tr').length;
+            var numPages = rowsTotal / rowsShown;
+            for (i = 0; i < numPages; i++) {
+                var pageNum = i + 1;
+                $('#nav').append('<a href="#" rel="' + i + '">' + pageNum + '</a> ');
+            }
+            $('#table tbody tr').hide();
+            $('#table tbody tr').slice(0, rowsShown).show();
+            $('#nav a:first').addClass('active');
+            $('#nav a').bind('click', function() {
+
+                $('#nav a').removeClass('active');
+                $(this).addClass('active');
+                var currPage = $(this).attr('rel');
+                var startItem = currPage * rowsShown;
+                var endItem = startItem + rowsShown;
+                $('#table tbody tr').css('opacity', '0.0').hide().slice(startItem, endItem).
+                css('display', 'table-row').animate({
+                    opacity: 1
+                }, 300);
+            });
         });
     </script>
 </body>

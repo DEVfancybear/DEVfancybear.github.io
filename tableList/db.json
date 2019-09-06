@@ -1,13 +1,6 @@
 {
   "users": [
     {
-      "name": "Kin",
-      "year": "1997",
-      "email": "letrungduongxx3@gmail.com",
-      "phone": "23",
-      "id": 3
-    },
-    {
       "name": "Affff",
       "year": "2001",
       "email": "1233",
@@ -97,6 +90,27 @@
       "email": "letrungduongxx3@gmail.com",
       "phone": "984760258",
       "id": 16
+    },
+    {
+      "name": "Dương Trung Lê",
+      "year": "12/09/1995",
+      "email": "letrungduongxx3@gmail.com",
+      "phone": "984760258",
+      "id": 17
+    },
+    {
+      "name": "Dương Trung Lê",
+      "year": "12/09/1995",
+      "email": "letrungduongxx3@gmail.com",
+      "phone": "984760258",
+      "id": 18
+    },
+    {
+      "name": "Thosmas Mark",
+      "year": "12/09/1995",
+      "email": "letrungduongxx3@gmail.com",
+      "phone": "3856282366",
+      "id": 19
     }
   ]
 }
