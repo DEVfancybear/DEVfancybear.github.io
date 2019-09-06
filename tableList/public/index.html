@@ -37,28 +37,32 @@
     .form-11:hover {
         text-decoration: none !important;
     }
+    
+    .clicker {
+        cursor: pointer;
+    }
 </style>
 
 <body>
     <h2>Table with Bootstrap</h2>
-    <input type="search" id="myInput" onkeyup="myFunction()" name="search" placeholder="Search">
     <div class="container">
+        <input type="search" id="myInput" onkeyup="myFunction()" name="search" placeholder="Search">
         <div class="row">
             <button type="button" class="btn btn-success button-add-student"><a href="./formAddStudent.html" class="form-11">Thêm học viên</a></button>
         </div>
         <div class="row">
             <div class="colName-xs-12">
                 <div class="table-responsive" id="table-pani">
-                    <table class="table table-bordered table-hover" id="table">
+                    <table class="table table-bordered table-hover sortable" id="table">
                         <thead id="table-head">
                             <tr class="bgColor">
                                 <th>
                                     <button type='button' class='btn btn-primary btn-sm' id="checkall">Chọn tất cả</button>
                                 </th>
-                                <th>Họ tên</th>
-                                <th>Năm sinh</th>
-                                <th>Email</th>
-                                <th>Số điện thoại</th>
+                                <th class="clicker">Họ tên</th>
+                                <th class="clicker">Năm sinh</th>
+                                <th class="clicker">Email</th>
+                                <th class="clicker">Số điện thoại</th>
                                 <th>Tùy chọn</th>
                                 <!-- <a href="javascript:void(0)" class="text-danger" onclick="deleteUser(' + users[i].id + ', this)">Xóa</a> -->
                             </tr>
@@ -77,6 +81,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="sortTable.js"></script>
     <script>
         // Make a request for a user with a given ID
         axios.get('http://localhost:3000/users')
