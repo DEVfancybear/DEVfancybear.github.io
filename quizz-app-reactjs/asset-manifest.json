@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/quizz-app-reactjs/static/css/main.6bd65d50.chunk.css",
+    "main.js": "/quizz-app-reactjs/static/js/main.153e3c3d.chunk.js",
+    "main.js.map": "/quizz-app-reactjs/static/js/main.153e3c3d.chunk.js.map",
+    "runtime~main.js": "/quizz-app-reactjs/static/js/runtime~main.5af3ad1b.js",
+    "runtime~main.js.map": "/quizz-app-reactjs/static/js/runtime~main.5af3ad1b.js.map",
+    "static/js/2.4f612e9c.chunk.js": "/quizz-app-reactjs/static/js/2.4f612e9c.chunk.js",
+    "static/js/2.4f612e9c.chunk.js.map": "/quizz-app-reactjs/static/js/2.4f612e9c.chunk.js.map",
+    "index.html": "/quizz-app-reactjs/index.html",
+    "precache-manifest.f98f1dbb22d2db41da56a45222cff1f2.js": "/quizz-app-reactjs/precache-manifest.f98f1dbb22d2db41da56a45222cff1f2.js",
+    "service-worker.js": "/quizz-app-reactjs/service-worker.js",
+    "static/css/main.6bd65d50.chunk.css.map": "/quizz-app-reactjs/static/css/main.6bd65d50.chunk.css.map"
+  }
+}
