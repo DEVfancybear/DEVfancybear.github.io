@@ -1,5 +1,5 @@
-function Tonghop(props){
-    return(
+function Tonghop(props) {
+    return (
         <div>
             {/* Total */}
             <div className="bo9 w-size18 p-l-40 p-r-40 p-t-30 p-b-38 m-t-30 m-r-0 m-l-auto p-lr-15-sm">
