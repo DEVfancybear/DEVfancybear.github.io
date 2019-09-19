@@ -1,48 +1,62 @@
-form {
-  background: #ccc;
-  margin: 0 auto;
-  width: 300px;
-  padding: 20px;
-  border-radius: 5px;
-}
-form * {
-  box-sizing: border-box;
-}
-form table {
-  width: 100%;
-  border-collapse: collapse;
-}
-form table tr, form table td {
-  border: 1px solid #eee;
-}
-form table tr:first-child input {
-  height: 50px;
-  padding: 0 10px;
-  font-weight: 700;
-}
-form table tr:not(:first-child) td {
-  height: 70px;
-}
-form table tr:not(:first-child) td input {
-  height: 100%;
-}
-form table input {
-  width: 100%;
-  display: block;
-  border: 0;
-  font-size: 16px;
-}
-form table input:focus {
-  outline: none;
-}
-form table input:hover {
-  background: #eee;
-  transition: all 0.2s ease-in-out;
-}
-form table input.operator {
-  font-weight: 700;
-  color: #fff;
-  background: #ffcc00;
+* {
+    padding: 0;
+    margin: 5px;
+    text-align: center;
 }
 
-/*# sourceMappingURL=style.css.map */
+.calculator {
+    width: 350px;
+    height: 320px;
+    background-color: #c0c0c0;
+    box-shadow: 0px 0px 0px 10px #666;
+    border: 5px solid black;
+    border-radius: 10px;
+}
+
+#display {
+    width: 320px;
+    height: 40px;
+    text-align: right;
+    background-color: rgb(223, 96, 96);
+    border: 3px solid white;
+    font-size: 18px;
+    left: 2px;
+    top: 2px;
+    color: #000000;
+}
+
+.btnTop {
+    color: white;
+    background-color: #dbb3b3;
+    font-size: 14px;
+    margin: auto;
+    width: 50px;
+    height: 25px;
+}
+
+.btnNum {
+    color: white;
+    background-color: black;
+    font-size: 14px;
+    margin: auto;
+    width: 50px;
+    height: 25px;
+}
+
+.btnMath {
+    color: white;
+    background-color: #ff4561;
+    font-size: 14px;
+    margin: auto;
+    width: 50px;
+    height: 25px;
+}
+
+.btnOpps {
+    color: white;
+    background-color: #ff9933;
+    font-size: 14px;
+    margin: auto;
+    width: 50px;
+    height: 25px;
+}
