@@ -1,50 +1,52 @@
 <!DOCTYPE html>
 <html>
+  <head> </head>
 
-<head> </head>
+  <body>
+    <canvas
+      id="myCanvas"
+      width="500"
+      height="500"
+      style="border:2px solid #d3d3d3;"
+    ></canvas>
+  </body>
+  <script>
+    var SQUARE_SIZE;
+    const NUMBER_OF_ROWS = 5;
+    const NUMBER_OF_COLS = 5;
+    var NUMBER_OF_SQUARES;
 
-<body>
-    <canvas id="myCanvas" width="500" height="500" style="border:2px solid #d3d3d3;"></canvas>
-</body>
-<script>
-var SQUARE_SIZE;
-const NUMBER_OF_ROWS = 5;
-const NUMBER_OF_COLS = 5;
-var NUMBER_OF_SQUARES;
+    var xValue = 0;
+    var yValue = 0;
 
-var xValue = 0;
-var yValue = 0;
+    var canvas, ctx;
 
-var canvas, ctx;
+    window.onload;
+    canvas = document.getElementById("myCanvas");
+    ctx = canvas.getContext("2d");
+    SQUARE_SIZE = canvas.height / NUMBER_OF_ROWS;
+    NUMBER_OF_SQUARES = NUMBER_OF_ROWS * NUMBER_OF_COLS;
 
-window.onload;
-canvas = document.getElementById("myCanvas");
-ctx = canvas.getContext("2d");
-SQUARE_SIZE = canvas.height / NUMBER_OF_ROWS;
-NUMBER_OF_SQUARES = NUMBER_OF_ROWS * NUMBER_OF_COLS;
+    drawBoard(canvas, NUMBER_OF_ROWS, NUMBER_OF_COLS);
 
+    function drawBoard(can, nRow, nCol) {
+      var ctx = can.getContext("2d");
+      var w = can.width;
+      var h = can.height;
 
-drawBoard(canvas, NUMBER_OF_ROWS, NUMBER_OF_COLS);
+      nRow = nRow || 8; // số lượng hàng mặc định
+      nCol = nCol || 8; // số lượng cột mặc định
 
-function drawBoard(can, nRow, nCol) {
-    var ctx = can.getContext("2d");
-    var w = can.width;
-    var h = can.height;
+      w /= nCol; // chiều rộng của 1 khối
+      h /= nRow; // chiều cao của 1 khối
 
-    nRow = nRow || 8; // số lượng hàng mặc định
-    nCol = nCol || 8; // số lượng cột mặc định
-
-    w /= nCol; // chiều rộng của 1 khối
-    h /= nRow; // chiều cao của 1 khối
-
-    for (var i = 0; i < nRow; ++i) {
+      for (var i = 0; i < nRow; ++i) {
         for (var j = 0, col = nCol / 2; j < col; ++j) {
-            ctx.rect(2 * j * w + (i % 2 ? 0 : w), i * h, w, h);
+          ctx.rect(2 * j * w + (i % 2 ? 0 : w), i * h, w, h);
         }
+      }
+
+      ctx.fill();
     }
-
-    ctx.fill();
-}
-</script>
-
+  </script>
 </html>

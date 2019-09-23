@@ -1,116 +1,32 @@
 {
   "users": [
     {
-      "name": "Affff",
-      "year": "2001",
-      "email": "1233",
-      "phone": "13",
+      "name": "Dương Trung Lê",
+      "year": "12/09/1995",
+      "email": "letrungduongxx3@gmail.com",
+      "phone": "0984760258",
+      "id": 1
+    },
+    {
+      "name": "Thosmas Mark",
+      "year": "12/09/1995",
+      "email": "letrungduongxx3@gmail.com",
+      "phone": "3856282366",
+      "id": 2
+    },
+    {
+      "name": "Dương Trung Lê",
+      "year": "12/09/1995",
+      "email": "letrungduongxx3@gmail.com",
+      "phone": "0984760258",
+      "id": 3
+    },
+    {
+      "name": "Le Danile",
+      "year": "12/09/1995",
+      "email": "admin@tddda.onmicrosoft.com",
+      "phone": "3153053457",
       "id": 4
-    },
-    {
-      "name": "Bon",
-      "year": "2002",
-      "email": "admin@tddda.onmicrosoft.com",
-      "phone": "58",
-      "id": 5
-    },
-    {
-      "name": "Dương Trung Lê",
-      "year": "12/09/1995",
-      "email": "letrungduongxx3@gmail.com",
-      "phone": "984760258",
-      "id": 6
-    },
-    {
-      "name": "Le Danile",
-      "year": "12/09/1995",
-      "email": "admin@tddda.onmicrosoft.com",
-      "phone": "3153053457",
-      "id": 7
-    },
-    {
-      "name": "Dương",
-      "year": "12/09/1995",
-      "email": "letrungduongxx3@gmail.com",
-      "phone": "984760258",
-      "id": 8
-    },
-    {
-      "name": "Dương Trung Lê",
-      "year": "12/09/1995",
-      "email": "letrungduongxx3@gmail.com",
-      "phone": "984760258",
-      "id": 9
-    },
-    {
-      "name": "Thosmas Mark",
-      "year": "12/09/1995",
-      "email": "letrungduongxx3@gmail.com",
-      "phone": "3856282366",
-      "id": 10
-    },
-    {
-      "name": "Dương",
-      "year": "12/09/1995",
-      "email": "letrungduongxx3@gmail.com",
-      "phone": "984760258",
-      "id": 11
-    },
-    {
-      "name": "Dương",
-      "year": "12/09/1995",
-      "email": "letrungduongxx3@gmail.com",
-      "phone": "984760258",
-      "id": 12
-    },
-    {
-      "name": "Dương",
-      "year": "12/09/1995",
-      "email": "letrungduongxx3@gmail.com",
-      "phone": "984760258",
-      "id": 13
-    },
-    {
-      "name": "Le Danile",
-      "year": "12/09/1995",
-      "email": "admin@tddda.onmicrosoft.com",
-      "phone": "3153053457",
-      "id": 14
-    },
-    {
-      "name": "Le Danile",
-      "year": "12/09/1995",
-      "email": "admin@tddda.onmicrosoft.com",
-      "phone": "3153053457",
-      "id": 15
-    },
-    {
-      "name": "Dương Trung Lê",
-      "year": "12/09/1995",
-      "email": "letrungduongxx3@gmail.com",
-      "phone": "984760258",
-      "id": 16
-    },
-    {
-      "name": "Dương Trung Lê",
-      "year": "12/09/1995",
-      "email": "letrungduongxx3@gmail.com",
-      "phone": "984760258",
-      "id": 17
-    },
-    {
-      "name": "Dương Trung Lê",
-      "year": "12/09/1995",
-      "email": "letrungduongxx3@gmail.com",
-      "phone": "984760258",
-      "id": 18
-    },
-    {
-      "name": "Thosmas Mark",
-      "year": "12/09/1995",
-      "email": "letrungduongxx3@gmail.com",
-      "phone": "3856282366",
-      "id": 19
     }
   ]
 }
