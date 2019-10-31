@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <ul id="users"></ul>
+  </body>
+  <script>
+    let request = new XMLHttpRequest();
+    request.open("GET", "https://data-aq-mobile.herokuapp.com/products", true);
+    request.onload = function() {
+      // Convert JSON data to an object
+      let users = JSON.parse(this.response);
+      let output = "";
+      for (var i = 0; i < users.length; i++) {
+        output +=
+          "<li>" + users[i].name + " is " + users[i].vitri + " years old.";
+        ("</li>");
+      }
+      document.getElementById("users").innerHTML = output;
+    };
+    request.send();
+  </script>
+</html>
