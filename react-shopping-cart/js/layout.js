@@ -1,10 +1,10 @@
 ReactDOM.render(
-    <div>
-        <MainHeader />
+  <div>
+    <MainHeader />
 
-        <Content />
+    <Content />
 
-        <MainFooter />
-    </div>,
-    document.getElementById('root')
+    <MainFooter />
+  </div>,
+  document.getElementById("root")
 );
